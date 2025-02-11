@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Interprint - บริการพิมพ์คุณภาพสูง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(270deg, #0059ff, #ffa844, #ff006e, #00d4ff, #ff0000);
+            background-size: 1500% 1500%;
+            animation: gradient 30s ease infinite; /* Increased duration for smoother transitions */
+        }
+    
+        /* Keyframes for a smoother gradient animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            20% {
+                background-position: 20% 50%;
+            }
+            40% {
+                background-position: 40% 50%;
+            }
+            60% {
+                background-position: 60% 50%;
+            }
+            80% {
+                background-position: 80% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        .hero-slideshow {
+            max-width: 100%;
+            margin: 2rem 0 0 0;
+            overflow: hidden;
+        }
+        .hero-slideshow .swiper-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .hero-slideshow .swiper-slide {
+            width: auto;
+            flex-shrink: 0;
+        }
+        .hero-slideshow .swiper-slide img {
+            height: 500px;
+            width: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .floating-line-icon {
+            position: fixed; /* ตำแหน่งคงที่ให้ติดตามผู้ใช้ */
+            bottom: 20px; /* ระยะห่างจากขอบล่าง */
+            right: 20px; /* ระยะห่างจากขอบขวา */
+            z-index: 1000; /* ลำดับชั้นสูงเพื่อให้แน่ใจว่าจะอยู่เหนือเนื้อหาอื่น */
+            background-color: #00c300; /* พื้นหลังสีเขียว LINE */
+            padding: 10px; /* เพิ่มช่องว่างรอบ ๆ ไอคอน */
+            border-radius: 50%; /* มุมมนเป็นวงกลม */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+            cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปมือเมื่อ hover */
+        }
+        .floating-line-icon img {
+            display: block;
+        }
+        
+        .qr-popup {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the parent */
+    top: -150px; /* Position above the LINE icon */
+    right: 150%; /* Center align relative to the icon */
+    transform: translateX(50%); /* Correct centering */
+    background-color: white; /* White background */
+    padding: 10px; /* Padding around the QR code */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 150px; /* Set a fixed width */
+}
+.qr-popup img {
+    display: block; /* Ensures the image is a block-level element */
+    width: 100%; /* Image fills the width of the container */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: contain; /* Ensures the QR code is not distorted */
+    border-radius: 8px; /* Slight rounding for aesthetics */
+}
+        
+        .floating-line-icon:hover .qr-popup {
+            display: block; /* แสดง QR Code เมื่อ hover */
+        }
+        </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="h-12 mr-4">
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">หน้าแรก</a>
+                    <a href="service.html" class="text-gray-600 hover:text-blue-500 transition duration-300">บริการ</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ผลงาน</a>
+                    <a href="report/form.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ขอใบเสนอราคา</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ติดต่อ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- โลโก้ LINE ลอยอยู่มุมล่างขวา -->
+<div class="floating-line-icon">
+    <img src="img/icon-line.png" alt="LINE Logo" class="h-10 w-10">
+    <div class="qr-popup">
+        <img src="img/lineid.png" alt="QR Code Line" class="h-40 w-40">
+    </div>
+    </div>
+</div>
+    <main>
+        <!-- Hero Section -->
+        <section class="gradient-bg py-20 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">บริการพิมพ์คุณภาพสูง ที่ตอบโจทย์ทุกความต้องการ</h1>
+                <p class="text-xl mb-8">งานพิมพ์ที่เหนือกว่าด้วยเทคโนโลยีล้ำสมัย ประหยัดเวลาและค่าใช้จ่าย พร้อมสร้างความประทับใจทุกครั้งที่ใช้บริการ</p>
+                <a href="report/form.html" class="bg-white text-blue-600 py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-100 transition duration-300 inline-block hover-scale">รับใบเสนอราคา</a>
+            </div>
+        </section>
+
+        <!-- Slideshow Section -->
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="hero-slideshow swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/bg/show/18.jpg" alt="Slide 1"></div>
+                        <div class="swiper-slide"><img src="img/bg/show/40.jpg" alt="Slide 2"></div>
+                        <div class="swiper-slide"><img src="img/bg/3.png" alt="Slide 3"></div>
+                        <div class="swiper-slide"><img src="img/bg/show/28.jpg" alt="Slide 4"></div>
+                        <div class="swiper-slide"><img src="img/bg/show/19.jpg" alt="Slide 5"></div>
+                        <div class="swiper-slide"><img src="img/bg/show/27.jpg" alt="Slide 5"></div>
+                        <div class="swiper-slide"><img src="img/bg/show/13.jpg" alt="Slide 5"></div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+        <!-- Swiper Initialization Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                new Swiper('.hero-slideshow', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    },
+                    speed: 1000,
+                    grabCursor: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            });
+        </script>
+
+        <!-- Our Services Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">บริการพิมพ์ครบวงจร สำหรับทุกความต้องการ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6 hover-scale">
+                        <i class="fas fa-print text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">งานพิมพ์ดิจิตอล</h3>
+                        <p>โดดเด่นด้วยความเร็วและความยืดหยุ่น เหมาะสำหรับงานจำนวนน้อยที่ต้องการความเฉพาะเจาะจง</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 hover-scale">
+                        <i class="fas fa-layer-group text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">งานพิมพ์ออฟเซ็ท</h3>
+                        <p>คุ้มค่ากับงานพิมพ์ปริมาณมาก คุณภาพสูงสุดในทุกๆ งานพิมพ์</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 hover-scale">
+                        <i class="fas fa-tags text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">สติ๊กเกอร์และฉลาก</h3>
+                        <p>สร้างแบรนด์ให้โดดเด่นด้วยการพิมพ์สติ๊กเกอร์และฉลากที่หลากหลาย รองรับทุกวัสดุและการใช้งาน</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">ทำไม Expert Interprint คือคำตอบที่ดีที่สุดสำหรับคุณ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-rocket text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">รวดเร็วไม่มีสะดุด</h3>
+                        <p>ระบบการพิมพ์อัตโนมัติที่ล้ำหน้าช่วยให้คุณได้งานเร็วกว่าเดิม</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-cog text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">เทคโนโลยีล้ำสมัย</h3>
+                        <p>ด้วยเครื่องพิมพ์คุณภาพระดับโลก มั่นใจได้ในความคมชัดและสีสันที่สดใส</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-users text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">ทีมงานเชี่ยวชาญ</h3>
+                        <p>เรามีทีมงานที่มากประสบการณ์ พร้อมให้คำแนะนำและดูแลคุณอย่างมืออาชีพ</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-thumbs-up text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">รับประกันความพอใจ</h3>
+                        <p>เรารับประกันคุณภาพและพร้อมแก้ไขทุกปัญหาจนกว่าคุณจะพอใจ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section class="py-16 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">ลูกค้าของเรา</h2>
+                <div class="clients-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Add your client logos here -->
+                        <div class="swiper-slide"><img src="img/logo/Logo_1--01.png" alt="Client 1" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--02.png" alt="Client 2" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--03.png" alt="Client 3" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--04.png" alt="Client 4" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--05.png" alt="Client 5" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--06.png" alt="Client 6" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--07.png" alt="Client 7" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--08.png" alt="Client 8" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--09.png" alt="Client 9" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--10.png" alt="Client 10" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--11.png" alt="Client 11" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--12.png" alt="Client 12" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--13.png" alt="Client 13" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--14.png" alt="Client 14" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--15.png" alt="Client 15" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--16.png" alt="Client 16" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--17.png" alt="Client 17" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--18.png" alt="Client 18" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--19.png" alt="Client 19" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--20.png" alt="Client 20" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--21.png" alt="Client 21" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--22.png" alt="Client 22" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--23.png" alt="Client 23" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--24.png" alt="Client 24" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--25.png" alt="Client 25" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--26.png" alt="Client 26" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--27.png" alt="Client 27" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--28.png" alt="Client 28" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--29.png" alt="Client 29" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--30.png" alt="Client 30" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--31.png" alt="Client 31" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--32.png" alt="Client 32" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--33.png" alt="Client 33" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--34.png" alt="Client 34" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--35.png" alt="Client 35" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--36.png" alt="Client 36" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--37.png" alt="Client 37" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--38.png" alt="Client 38" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--39.png" alt="Client 39" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--40.png" alt="Client 40" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--41.png" alt="Client 41" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--42.png" alt="Client 42" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--43.png" alt="Client 43" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--44.png" alt="Client 44" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--45.png" alt="Client 45" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--46.png" alt="Client 46" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--47.png" alt="Client 47" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--48.png" alt="Client 48" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--49.png" alt="Client 49" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--50.png" alt="Client 50" class="h-16"></div>
+<div class="swiper-slide"><img src="img/logo/Logo_1--51.png" alt="Client 51" class="h-16"></div>
+                        <!-- Repeat for more logos -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .clients-swiper {
+                width: 100%;
+                overflow: hidden;
+            }
+            .clients-swiper .swiper-wrapper {
+                display: flex;
+                transition-property: transform;
+                transition-timing-function: linear;
+            }
+            .clients-swiper .swiper-slide {
+                flex-shrink: 0;
+                width: auto;
+                height: 100%;
+                position: relative;
+                margin-right: 30px;
+            }
+            .clients-swiper .swiper-slide img {
+                display: block;
+                height: 64px;
+                width: auto;
+                object-fit: contain;
+            }
+            
+        </style>
+        
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('.clients-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 5000,
+            grabCursor: true,
+        });
+    });
+</script> <!-- Ensure the script tag is properly closed -->
+
+<!-- Call to Action Section -->
+<section class="gradient-bg py-16 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">ก้าวข้ามขีดจำกัดของงานพิมพ์กับ Expert Interprint</h2>
+        <p class="mb-8">ให้เราช่วยทำให้ไอเดียของคุณกลายเป็นความจริง ด้วยบริการพิมพ์คุณภาพที่ครบครัน ติดต่อเราเพื่อรับคำปรึกษาและใบเสนอราคาฟรี!</p>
+        <a href="contact.html" class="bg-white text-blue-600 py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-100 transition duration-300 inline-block hover-scale">ติดต่อเรา</a>
+    </div>
+</section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="mb-4">
+                    <p class="text-gray-400">Expert Interprint ผู้นำด้านงานพิมพ์คุณภาพที่เชื่อถือได้ เรามุ่งมั่นให้บริการที่ดีที่สุด ด้วยเทคโนโลยีและความใส่ใจที่มากกว่าเดิม</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">บริการของเรา</h4>
+                    <ul class="text-gray-400">
+                        <li class="mb-2"><a href="#" class="hover:text-white transition duration-300">งานพิมพ์ดิจิตอล</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white transition duration-300">งานพิมพ์ออฟเซ็ท</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white transition duration-300">สติ๊กเกอร์และฉลาก</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดต่อเรา</h4>
+                    <p class="text-gray-400 mb-2">โทร: 081-616-4691</p>
+                    <p class="text-gray-400 mb-2">อีเมล: info@expertinterprint.com</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดตามเรา</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-line text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-sm text-center text-gray-400">
+                <p>&copy; 2024 Expert Interprint. สงวนลิขสิทธิ์</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

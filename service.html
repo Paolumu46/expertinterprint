@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริการของเรา - Expert Interprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Minimal Design Styles */
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(145deg, #0059ff, #ffa844, #ff006e, #00d4ff, #ff0000);
+            color: white;
+            padding: 4rem 2rem; /* ลดขนาด padding */
+            text-align: center;
+            border-radius: 20px; /* เพิ่มมุมมนให้พื้นหลัง */
+            max-width: 800px; /* จำกัดความกว้างของพื้นที่พื้นหลัง */
+            margin: 4rem auto; /* จัดให้อยู่กลางหน้าจอ */
+            background-size: 300% 300%; /* ปรับขนาดของพื้นหลังให้เล็กลง */
+            animation: gradientMove 10s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.5s; /* Delay before animation starts */
+        }
+        .fade-in-up-text {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 1s; /* Delay before animation starts */
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e5e7eb;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="h-8">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500 transition duration-300">หน้าแรก</a>
+                <a href="services.html" class="text-gray-600 hover:text-blue-500 transition duration-300">บริการ</a>
+                <a href="portfolio.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ผลงาน</a>
+                <a href="report/form.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ขอใบเสนอราคา</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ติดต่อ</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Smaller Animated Background -->
+    <section class="hero-section">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold mb-4 fade-in-up">บริการของเรา</h1>
+            <p class="text-lg fade-in-up-text">บริการพิมพ์คุณภาพสูง ครบครันด้วยเทคโนโลยีที่ทันสมัยและทีมงานมืออาชีพ</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <main class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Digital Printing -->
+                <div class="service-card bg-white rounded-lg p-6 hover:shadow-lg transition duration-300 fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">งานพิมพ์ดิจิตอล</h3>
+                    <p class="text-gray-600">บริการพิมพ์ดิจิตอลที่รวดเร็วและยืดหยุ่น เหมาะสำหรับการพิมพ์จำนวนน้อยที่ต้องการคุณภาพสูง</p>
+                    <a href="#" class="text-blue-500 hover:underline mt-4 block">อ่านเพิ่มเติม</a>
+                </div>
+                <!-- Offset Printing -->
+                <div class="service-card bg-white rounded-lg p-6 hover:shadow-lg transition duration-300 fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">งานพิมพ์ออฟเซ็ท</h3>
+                    <p class="text-gray-600">งานพิมพ์ที่เหมาะสำหรับการพิมพ์ปริมาณมาก ด้วยคุณภาพที่สูงและคุ้มค่า</p>
+                    <a href="#" class="text-blue-500 hover:underline mt-4 block">อ่านเพิ่มเติม</a>
+                </div>
+                <!-- Sticker and Label Printing -->
+                <div class="service-card bg-white rounded-lg p-6 hover:shadow-lg transition duration-300 fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">สติ๊กเกอร์และฉลาก</h3>
+                    <p class="text-gray-600">บริการพิมพ์สติ๊กเกอร์และฉลากที่หลากหลาย รองรับทุกวัสดุและการใช้งาน</p>
+                    <a href="#" class="text-blue-500 hover:underline mt-4 block">อ่านเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- Additional Contact Information -->
+            <div class="mt-12 text-center">
+                <p class="text-lg font-semibold text-gray-800">หรือมีงานพิมพ์อื่นๆ ติดต่อปรึกษาเราได้</p>
+                <a href="contact.html" class="text-blue-500 hover:underline mt-4 block">ติดต่อเรา</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="h-8 mb-4">
+                    <p class="text-gray-600">ผู้นำด้านงานพิมพ์คุณภาพที่เชื่อถือได้ เรามุ่งมั่นให้บริการที่ดีที่สุด</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-gray-600 mb-2">โทร: 081-616-4691</p>
+                    <p class="text-gray-600">อีเมล: info@expertinterprint.com</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm text-gray-500">
+                &copy; 2024 Expert Interprint. สงวนลิขสิทธิ์.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
+</body>
+</html>

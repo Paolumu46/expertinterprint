@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Interprint - ผลงานของเรา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(270deg, #0059ff, #ffa844, #ff006e, #00d4ff, #ff0000);
+            background-size: 1500% 1500%;
+            animation: gradient 30s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            20% { background-position: 20% 50%; }
+            40% { background-position: 40% 50%; }
+            60% { background-position: 60% 50%; }
+            80% { background-position: 80% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .floating-line-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #00c300;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .floating-line-icon img {
+            display: block;
+        }
+        .qr-popup {
+            display: none;
+            position: absolute;
+            top: -150px;
+            right: 150%;
+            transform: translateX(50%);
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+        }
+        .qr-popup img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .floating-line-icon:hover .qr-popup {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="h-12 mr-4">
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-500 transition duration-300">หน้าแรก</a>
+                    <a href="service.html" class="text-gray-600 hover:text-blue-500 transition duration-300">บริการ</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ผลงาน</a>
+                    <a href="report/form.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ขอใบเสนอราคา</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-500 transition duration-300">ติดต่อ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="floating-line-icon">
+        <img src="img/icon-line.png" alt="LINE Logo" class="h-10 w-10">
+        <div class="qr-popup">
+            <img src="img/lineid.png" alt="QR Code Line" class="h-40 w-40">
+        </div>
+    </div>
+
+    <main>
+        <!-- Portfolio Hero Section -->
+        <section class="gradient-bg py-20 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">ผลงานของเรา</h1>
+                <p class="text-xl mb-8">ชมผลงานคุณภาพที่เราภูมิใจนำเสนอ เพื่อสร้างแรงบันดาลใจให้กับงานของคุณ</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Portfolio Items -->
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/1.jpg" alt="ผลงาน 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/2.jpg" alt="ผลงาน 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/3.jpg" alt="ผลงาน 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/31.jpg" alt="ผลงาน 4" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/30.jpg" alt="ผลงาน 5" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/32.jpg" alt="ผลงาน 6" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/8.jpg" alt="ผลงาน 7" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/9.jpg" alt="ผลงาน 8" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/10.jpg" alt="ผลงาน 9" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/11.jpg" alt="ผลงาน 10" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/12.jpg" alt="ผลงาน 11" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="img/bg/show/13.jpg" alt="ผลงาน 12" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="gradient-bg py-16 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">พร้อมสร้างสรรค์ผลงานคุณภาพให้กับคุณ</h2>
+                <p class="mb-8">ให้เราช่วยทำให้ไอเดียของคุณกลายเป็นความจริง ด้วยบริการพิมพ์คุณภาพที่ครบครัน</p>
+                <a href="report/form.html" class="bg-white text-blue-600 py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-100 transition duration-300 inline-block hover-scale">ขอใบเสนอราคา</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="mb-4">
+                    <p class="text-gray-400">Expert Interprint ผู้นำด้านงานพิมพ์คุณภาพที่เชื่อถือได้ เรามุ่งมั่นให้บริการที่ดีที่สุด ด้วยเทคโนโลยีและความใส่ใจที่มากกว่าเดิม</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">บริการของเรา</h4>
+                    <ul class="text-gray-400">
+                        <li class="mb-2"><a href="#" class="hover:text-white transition duration-300">งานพิมพ์ดิจิตอล</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white transition duration-300">งานพิมพ์ออฟเซ็ท</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white transition duration-300">สติ๊กเกอร์และฉลาก</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดต่อเรา</h4>
+                    <p class="text-gray-400 mb-2">โทร: 081-616-4691</p>
+                    <p class="text-gray-400 mb-2">อีเมล: info@expertinterprint.com</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดตามเรา</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-line text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-sm text-center text-gray-400">
+                <p>&copy; 2024 Expert Interprint. สงวนลิขสิทธิ์</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

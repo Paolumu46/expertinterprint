@@ -1,0 +1,113 @@
+/* ฟอนต์หลัก */
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+/* พื้นหลังแบบ gradient */
+.gradient-bg {
+    background: linear-gradient(45deg, #3490dc, #6574cd);
+}
+
+/* เอฟเฟกต์ overlay สำหรับรูปภาพพื้นหลัง */
+.gradient-overlay {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+/* เงาสำหรับข้อความ */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* เอฟเฟกต์ hover แบบขยาย */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* สไตล์สำหรับ Swiper */
+.clients-swiper {
+    width: 100%;
+    overflow: hidden;
+}
+.clients-swiper .swiper-wrapper {
+    transition-timing-function: linear;
+    display: flex;
+}
+.clients-swiper .swiper-slide {
+    width: auto;
+    margin-right: 30px;
+}
+.clients-swiper .swiper-slide img {
+    height: 64px; /* ปรับขนาดตามที่ต้องการ */
+    width: auto;
+    object-fit: contain;
+}
+
+/* สไตล์สำหรับส่วนหัว */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* สไตล์สำหรับเมนู */
+nav a {
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #3490dc;
+}
+
+/* สไตล์สำหรับปุ่ม */
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+    background-color: #f0f4f8;
+    transform: translateY(-2px);
+}
+
+/* สไตล์สำหรับการ์ดบริการ */
+.service-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.service-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+/* สไตล์สำหรับส่วนท้าย */
+footer {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+footer a {
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: white;
+}
+
+/* สไตล์สำหรับโลโก้ลูกค้า */
+.client-logo {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+.client-logo:hover {
+    filter: grayscale(0%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}

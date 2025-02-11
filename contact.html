@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อเรา - Expert Interprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        /* Animation for sliding customer logos */
+        .logo-slider {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .logo-slider img {
+            height: 60px;
+            margin: 0 15px;
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-50 animate-fade-in" style="animation-delay: 0.2s;">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="img/logo_Expert.png" alt="Expert Interprint Logo" class="h-12 mr-4 animate-float">
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-500 transition duration-300 hover-lift">หน้าแรก</a>
+                    <a href="service.html" class="text-gray-600 hover:text-blue-500 transition duration-300 hover-lift">บริการ</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-blue-500 transition duration-300 hover-lift">ผลงาน</a>
+                    <a href="report/form.html" class="text-gray-600 hover:text-blue-500 transition duration-300 hover-lift">ขอใบเสนอราคา</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-500 transition duration-300 hover-lift">ติดต่อ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <h1 class="text-3xl font-bold mb-8 text-center text-blue-600 animate-fade-in" style="animation-delay: 0.4s;">ติดต่อเรา</h1>
+        
+        <div class="bg-white shadow-md rounded-lg p-6 animate-fade-in" style="animation-delay: 0.6s;">
+            <h2 class="text-2xl font-semibold mb-4 text-center">ข้อมูลติดต่อ</h2>
+            <div class="text-center space-y-2">
+                <p class="animate-fade-in" style="animation-delay: 0.8s;">5/185 ม.2 ซ.แบริ่ง58 ถ.แบริ่ง ต.สำโรงเหนือ อ.เมือง สมุทรปราการ 10270</p>
+                <p class="animate-fade-in" style="animation-delay: 1s;">081-616-4691</p>
+                <p class="text-blue-600 animate-fade-in hover-lift" style="animation-delay: 1.2s;">info@expertinterprint.com</p>
+            </div>
+            <div class="mt-6 text-center">
+                <h3 class="text-xl font-semibold mb-2 animate-fade-in" style="animation-delay: 1.4s;">เวลาทำการ</h3>
+                <p class="animate-fade-in" style="animation-delay: 1.6s;">จันทร์ - ศุกร์: 9:00 - 18:00</p>
+                <p class="animate-fade-in" style="animation-delay: 1.8s;">เสาร์: 9:00 - 14:00</p>
+                <p class="animate-fade-in" style="animation-delay: 2s;">อาทิตย์: ปิดทำการ</p>
+            </div>
+        </div>
+        
+        <!-- Large Company Logo Section -->
+        <div class="text-center my-8 animate-fade-in" style="animation-delay: 2.2s;">
+            <img src="img/logo_Expert.png" alt="Expert Interprint Large Logo" class="mx-auto w-1/2 max-w-xs">
+        </div>
+
+        <!-- Customer Logos Slider Section -->
+        <div class="bg-white shadow-md rounded-lg p-6 mt-8 animate-fade-in" style="animation-delay: 2.4s;">
+            <h2 class="text-2xl font-semibold mb-4 text-center">ลูกค้าของเรา</h2>
+            <div class="logo-slider">
+                <!-- Replace 'img/client1.png' with the actual path to your client logos -->
+                <img src="img/logo/Logo_1--01.png" alt="Client 1 Logo">
+<img src="img/logo/Logo_1--02.png" alt="Client 2 Logo">
+<img src="img/logo/Logo_1--03.png" alt="Client 3 Logo">
+<img src="img/logo/Logo_1--04.png" alt="Client 4 Logo">
+<img src="img/logo/Logo_1--05.png" alt="Client 5 Logo">
+<img src="img/logo/Logo_1--06.png" alt="Client 6 Logo">
+<img src="img/logo/Logo_1--07.png" alt="Client 7 Logo">
+<img src="img/logo/Logo_1--08.png" alt="Client 8 Logo">
+<img src="img/logo/Logo_1--09.png" alt="Client 9 Logo">
+<img src="img/logo/Logo_1--10.png" alt="Client 10 Logo">
+<img src="img/logo/Logo_1--11.png" alt="Client 11 Logo">
+<img src="img/logo/Logo_1--12.png" alt="Client 12 Logo">
+<img src="img/logo/Logo_1--13.png" alt="Client 13 Logo">
+<img src="img/logo/Logo_1--14.png" alt="Client 14 Logo">
+<img src="img/logo/Logo_1--15.png" alt="Client 15 Logo">
+<img src="img/logo/Logo_1--16.png" alt="Client 16 Logo">
+<img src="img/logo/Logo_1--17.png" alt="Client 17 Logo">
+<img src="img/logo/Logo_1--18.png" alt="Client 18 Logo">
+<img src="img/logo/Logo_1--19.png" alt="Client 19 Logo">
+<img src="img/logo/Logo_1--20.png" alt="Client 20 Logo">
+<img src="img/logo/Logo_1--21.png" alt="Client 21 Logo">
+<img src="img/logo/Logo_1--22.png" alt="Client 22 Logo">
+<img src="img/logo/Logo_1--23.png" alt="Client 23 Logo">
+<img src="img/logo/Logo_1--24.png" alt="Client 24 Logo">
+<img src="img/logo/Logo_1--25.png" alt="Client 25 Logo">
+<img src="img/logo/Logo_1--26.png" alt="Client 26 Logo">
+<img src="img/logo/Logo_1--27.png" alt="Client 27 Logo">
+<img src="img/logo/Logo_1--28.png" alt="Client 28 Logo">
+<img src="img/logo/Logo_1--29.png" alt="Client 29 Logo">
+<img src="img/logo/Logo_1--30.png" alt="Client 30 Logo">
+<img src="img/logo/Logo_1--31.png" alt="Client 31 Logo">
+<img src="img/logo/Logo_1--32.png" alt="Client 32 Logo">
+<img src="img/logo/Logo_1--33.png" alt="Client 33 Logo">
+<img src="img/logo/Logo_1--34.png" alt="Client 34 Logo">
+<img src="img/logo/Logo_1--35.png" alt="Client 35 Logo">
+<img src="img/logo/Logo_1--36.png" alt="Client 36 Logo">
+<img src="img/logo/Logo_1--37.png" alt="Client 37 Logo">
+<img src="img/logo/Logo_1--38.png" alt="Client 38 Logo">
+<img src="img/logo/Logo_1--39.png" alt="Client 39 Logo">
+<img src="img/logo/Logo_1--40.png" alt="Client 40 Logo">
+<img src="img/logo/Logo_1--41.png" alt="Client 41 Logo">
+<img src="img/logo/Logo_1--42.png" alt="Client 42 Logo">
+<img src="img/logo/Logo_1--43.png" alt="Client 43 Logo">
+<img src="img/logo/Logo_1--44.png" alt="Client 44 Logo">
+<img src="img/logo/Logo_1--45.png" alt="Client 45 Logo">
+<img src="img/logo/Logo_1--46.png" alt="Client 46 Logo">
+<img src="img/logo/Logo_1--47.png" alt="Client 47 Logo">
+<img src="img/logo/Logo_1--48.png" alt="Client 48 Logo">
+<img src="img/logo/Logo_1--49.png" alt="Client 49 Logo">
+<img src="img/logo/Logo_1--50.png" alt="Client 50 Logo">
+<img src="img/logo/Logo_1--51.png" alt="Client 51 Logo">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add a small JavaScript to ensure animations start after page load
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
