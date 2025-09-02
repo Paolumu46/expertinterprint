@@ -190,6 +190,7 @@
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -373,6 +374,31 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ======================== */
+        /* Works Gallery (new)      */
+        /* ======================== */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding-bottom: .5rem;
+        }
+        .carousel::-webkit-scrollbar { height: 8px; }
+        .carousel::-webkit-scrollbar-thumb { background: var(--gradient-main); border-radius: 4px; }
+        .slide { flex: 0 0 85%; scroll-snap-align: start; }
+        @media (min-width: 768px) { .slide { flex-basis: 48%; } }
+        @media (min-width: 1024px) { .slide { flex-basis: 32%; } }
+        .work-figure { border: 1px solid rgba(0,0,0,.06); box-shadow: 0 10px 25px rgba(0,0,0,.06); }
+        .work-figure img { width: 100%; height: 16rem; object-fit: cover; display: block; }
+        .work-nav-btn { width: 44px; height: 44px; }
+            /* Hero Slideshow (new) */
+        .hero-slide { position:absolute; inset:0; opacity:0; transition: opacity 1.1s ease; }
+        .hero-slide img { width:100%; height:100%; object-fit:cover; display:block; }
+        .hero-slide.active { opacity: 1; }
+        @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -391,6 +417,7 @@
                 <div class="hidden md:flex space-x-8 slide-in-right">
                     <a href="#home" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">หน้าหลัก</a>
                     <a href="#services" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">บริการ</a>
+                    <a href="#works" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ผลงาน</a>
                     <a href="#about" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">เกี่ยวกับเรา</a>
                     <a href="#contact" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ติดต่อ</a>
                 </div>
@@ -403,8 +430,23 @@
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <!-- Animated Background -->
-        <div class="absolute inset-0 gradient-animate opacity-90"></div>
+        <!-- Slideshow Background (4 images, replace URLs with your product photos) -->
+        <div id="heroSlideshow" class="absolute inset-0">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 1" loading="eager">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 2" loading="lazy">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1520975922284-37a43c02c60b?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 3" loading="lazy">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 4" loading="lazy">
+            </div>
+        </div>
+        <!-- Color tint overlays to keep text readable -->
+        <div class="absolute inset-0 gradient-animate opacity-40"></div>
         <div class="absolute inset-0 bg-black opacity-20"></div>
 
         <!-- Floating Elements -->
@@ -423,17 +465,17 @@
                     </span>
                 </h1>
                 <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
-                    🚀 งานพิมพ์ที่เหนือกว่าด้วยเทคโนโลジีล้ำสมัย ประหยัดเวลาและค่าใช้จ่าย 
+                    🚀 งานพิมพ์ที่เหนือกว่าด้วยเทคโนโลยีล้ำสมัย ประหยัดเวลาและค่าใช้จ่าย 
                     <br>พร้อมสร้างความประทับใจทุกครั้งที่ใช้บริการ ✨
                 </p>
                 <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-16">
-                    <button class="btn-modern gradient-orange text-white px-10 py-5 rounded-full text-xl font-bold shadow-2xl pulse-glow group">
+                    <a href="#contact" class="btn-modern gradient-orange text-white px-10 py-5 rounded-full text-xl font-bold shadow-2xl pulse-glow group">
                         <i class="fas fa-file-alt mr-3 group-hover:rotate-12 transition-transform duration-300"></i>
                         รับใบเสนอราคาฟรี
-                    </button>
-                    <button class="btn-modern glass text-white px-10 py-5 rounded-full text-xl font-bold border-2 border-white border-opacity-30 hover:bg-white hover:text-gray-800">
-                        <i class="fas fa-play mr-3"></i>ดูผลงาน
-                    </button>
+                    </a>
+                    <a href="#works" class="btn-modern glass text-white px-10 py-5 rounded-full text-xl font-bold border-2 border-white border-opacity-30 hover:bg-white hover:text-gray-800">
+                        <i class="fas fa-images mr-3"></i>ดูผลงาน
+                    </a>
                 </div>
                 
                 <!-- Stats Preview -->
@@ -589,7 +631,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600 mb-8 leading-relaxed">
-                        📦 เพิ่มมูลค่าสินค้าด้วยกล่องและบรรจุภัณฑ์ดีไザน์พิเศษ ผลิตได้ตั้งแต่ 100 ใบขึ้นไป งานสวย แข็งแรง โดดเด่น
+                        📦 เพิ่มมูลค่าสินค้าด้วยกล่องและบรรจุภัณฑ์ดีไซน์พิเศษ ผลิตได้ตั้งแต่ 100 ใบขึ้นไป งานสวย แข็งแรง โดดเด่น
                     </p>
                     <div class="grid grid-cols-1 gap-4">
                         <div class="flex items-center p-4 bg-yellow-50 rounded-xl hover:bg-yellow-100 transition-colors duration-300">
@@ -613,11 +655,81 @@
                 <div class="glass-dark rounded-3xl p-12 max-w-4xl mx-auto">
                     <h3 class="text-3xl font-bold text-white mb-6">🚀 พร้อมเริ่มโปรเจคของคุณแล้วหรือยัง?</h3>
                     <p class="text-xl text-gray-300 mb-8">ปรึกษาฟรี! ทีมผู้เชี่ยวชาญพร้อมให้คำแนะนำและออกแบบให้คุณ</p>
-                    <button class="btn-modern gradient-orange text-white px-12 py-4 rounded-full text-xl font-bold pulse-glow">
+                    <a href="#contact" class="btn-modern gradient-orange text-white px-12 py-4 rounded-full text-xl font-bold pulse-glow">
                         <i class="fas fa-phone mr-3"></i>ปรึกษาฟรีทันที
-                    </button>
+                    </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Works / Gallery Section (NEW) -->
+    <section id="works" class="py-24 bg-gray-50 relative overflow-hidden">
+        <!-- soft blobs background -->
+        <div class="absolute inset-0 opacity-30 pointer-events-none">
+            <div class="absolute -top-10 -left-10 w-72 h-72 gradient-orange rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-10 -right-10 w-96 h-96 gradient-blue rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-10 reveal">
+                <div class="inline-flex items-center bg-indigo-100 text-indigo-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-images mr-2"></i>ตัวอย่างผลงาน
+                </div>
+                <h2 class="text-5xl md:text-6xl font-black text-gradient mb-4">แกลเลอรีงานพิมพ์</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">เลื่อนดูผลงานจริงแบบสไลด์แนวนอน (รองรับลากนิ้ว, ปุ่มซ้าย/ขวา และปุ่มคีย์บอร์ด ← →)</p>
+            </div>
+
+            <div class="relative reveal">
+                <!-- Prev/Next -->
+                <button id="workPrev" class="work-nav-btn glass absolute -left-3 md:-left-6 top-1/2 transform -translate-y-1/2 rounded-full flex items-center justify-center hover:scale-105 transition z-10">
+                    <i class="fas fa-chevron-left text-white"></i>
+                </button>
+                <button id="workNext" class="work-nav-btn glass absolute -right-3 md:-right-6 top-1/2 transform -translate-y-1/2 rounded-full flex items-center justify-center hover:scale-105 transition z-10">
+                    <i class="fas fa-chevron-right text-white"></i>
+                </button>
+
+                <!-- Carousel -->
+                <div id="workStrip" class="carousel px-1">
+                    <!-- slide 1 -->
+                    <div class="slide">
+                        <figure class="work-figure bg-white rounded-3xl overflow-hidden card-3d">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop" alt="โบรชัวร์พิมพ์สีคุณภาพสูง" class="">
+                            <figcaption class="p-4 text-sm text-gray-600">โบรชัวร์ – อาร์ตการ์ด 190g, พิมพ์ 4 สี</figcaption>
+                        </figure>
+                    </div>
+                    <!-- slide 2 -->
+                    <div class="slide">
+                        <figure class="work-figure bg-white rounded-3xl overflow-hidden card-3d">
+                            <img src="https://images.unsplash.com/photo-1588612029080-6b8da03a0b7b?q=80&w=1600&auto=format&fit=crop" alt="สติ๊กเกอร์สินค้า PVC กันน้ำ">
+                            <figcaption class="p-4 text-sm text-gray-600">สติ๊กเกอร์ – PVC Gloss กันน้ำ, ไดคัทตามทรง</figcaption>
+                        </figure>
+                    </div>
+                    <!-- slide 3 -->
+                    <div class="slide">
+                        <figure class="work-figure bg-white rounded-3xl overflow-hidden card-3d">
+                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b?q=80&w=1600&auto=format&fit=crop" alt="กล่องบรรจุภัณฑ์พรีเมียม">
+                            <figcaption class="p-4 text-sm text-gray-600">แพคเกจจิ้ง – เคลือบด้าน ปั๊มเคทอง</figcaption>
+                        </figure>
+                    </div>
+                    <!-- slide 4 -->
+                    <div class="slide">
+                        <figure class="work-figure bg-white rounded-3xl overflow-hidden card-3d">
+                            <img src="https://images.unsplash.com/photo-1592839716646-e05c053a383d?q=80&w=1600&auto=format&fit=crop" alt="นามบัตรเคลือบด้าน">
+                            <figcaption class="p-4 text-sm text-gray-600">นามบัตร – 350g เคลือบ Soft Touch</figcaption>
+                        </figure>
+                    </div>
+                    <!-- slide 5 -->
+                    <div class="slide">
+                        <figure class="work-figure bg-white rounded-3xl overflow-hidden card-3d">
+                            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop" alt="โปสเตอร์พิมพ์ใหญ่สีสด">
+                            <figcaption class="p-4 text-sm text-gray-600">โปสเตอร์ – หน้ากว้าง สีสดทนแดด</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-6 text-sm text-gray-500">* เปลี่ยนลิงก์รูปเป็นงานจริงของคุณได้ทันที (แนะนำความกว้าง 1200–1600px)</div>
         </div>
     </section>
 
@@ -799,9 +911,9 @@
                         </div>
                     </div>
 
-                    <button class="btn-modern gradient-main text-white px-10 py-4 rounded-full text-lg font-bold">
+                    <a href="#contact" class="btn-modern gradient-main text-white px-10 py-4 rounded-full text-lg font-bold">
                         <i class="fas fa-phone mr-3"></i>ติดต่อเราเลย
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Vision Card -->
@@ -1000,9 +1112,9 @@
                         <div class="glass-dark rounded-3xl p-8">
                             <h3 class="text-2xl font-bold text-white mb-4">🚀 พร้อมเริ่มโปรเจคแล้ว?</h3>
                             <p class="text-white opacity-90 mb-6">ติดต่อเราเลยวันนี้!</p>
-                            <button class="btn-modern gradient-orange text-white px-8 py-3 rounded-full text-lg font-bold pulse-glow">
+                            <a href="#contact" class="btn-modern gradient-orange text-white px-8 py-3 rounded-full text-lg font-bold pulse-glow">
                                 <i class="fas fa-phone mr-2"></i>โทรปรึกษาเลย
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1034,35 +1146,23 @@
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // allow buttons without hash to work normally
+                if (!href || href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
         // Reveal animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, observerOptions);
-
-        // Observe all reveal elements
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // Navbar background change on scroll
         const navbar = document.querySelector('nav');
@@ -1098,7 +1198,6 @@
                 }
             });
         }, { threshold: 0.5 });
-
         counters.forEach(counter => counterObserver.observe(counter));
 
         // Parallax effect for hero section
@@ -1113,15 +1212,12 @@
 
         // Add loading animation to buttons
         document.querySelectorAll('.btn-modern').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(e) {
+                // ignore gallery nav buttons (not .btn-modern)
                 const originalText = this.innerHTML;
                 this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>กำลังประมวลผล<span class="loading-dots"></span>';
                 this.disabled = true;
-                
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.disabled = false;
-                }, 2000);
+                setTimeout(() => { this.innerHTML = originalText; this.disabled = false; }, 2000);
             });
         });
 
@@ -1135,10 +1231,8 @@
                 const centerY = rect.height / 2;
                 const rotateX = (y - centerY) / 10;
                 const rotateY = (centerX - x) / 10;
-                
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
             });
-            
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
             });
@@ -1152,7 +1246,7 @@
             }, 2000);
         }
 
-        // Add click ripple effect to buttons
+        // Ripple effect on click (all buttons)
         document.querySelectorAll('button, .btn-modern').forEach(button => {
             button.addEventListener('click', function(e) {
                 const ripple = document.createElement('span');
@@ -1160,44 +1254,55 @@
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.5);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s linear;
-                    pointer-events: none;
-                `;
-                
+                ripple.style.cssText = `position:absolute;width:${size}px;height:${size}px;left:${x}px;top:${y}px;background:rgba(255,255,255,.5);border-radius:50%;transform:scale(0);animation:ripple .6s linear;pointer-events:none;`;
                 this.style.position = 'relative';
                 this.style.overflow = 'hidden';
                 this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+                setTimeout(() => ripple.remove(), 600);
             });
         });
-
-        // Add ripple animation
         const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
+        style.textContent = `@keyframes ripple { to { transform: scale(4); opacity: 0; } }`;
         document.head.appendChild(style);
 
-        console.log('🚀 Expert Interprint - Modern Website Loaded Successfully! ✨');
+        // ==============================
+        // Works gallery slider controls
+        // ==============================
+        const strip = document.getElementById('workStrip');
+        const prevBtn = document.getElementById('workPrev');
+        const nextBtn = document.getElementById('workNext');
+        function slideBy(delta) {
+            if (!strip) return;
+            const step = Math.min(strip.clientWidth * 0.9, 900);
+            strip.scrollBy({ left: delta * step, behavior: 'smooth' });
+        }
+        prevBtn?.addEventListener('click', () => slideBy(-1));
+        nextBtn?.addEventListener('click', () => slideBy(1));
+        // Mouse wheel vertical -> horizontal
+        strip?.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                e.preventDefault();
+                strip.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+        // Keyboard arrows when hover
+        function keyNav(e){ if(e.key==='ArrowLeft') slideBy(-1); if(e.key==='ArrowRight') slideBy(1); }
+        strip?.addEventListener('mouseenter', ()=> window.addEventListener('keydown', keyNav));
+        strip?.addEventListener('mouseleave', ()=> window.removeEventListener('keydown', keyNav));
+
+        // ======================
+        // Hero slideshow rotator
+        // ======================
+        (function(){
+            const slides = Array.from(document.querySelectorAll('#heroSlideshow .hero-slide'));
+            if (!slides.length) return;
+            let i = 0;
+            const show = (idx)=> slides.forEach((s, j)=> s.classList.toggle('active', j===idx));
+            show(0);
+            setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, 5000); // 5s per slide
+        })();
+
+        console.log('🚀 Expert Interprint – Landing + Works Gallery + Hero Slideshow Loaded');
     </script>
 </body>
 </html>
-    
