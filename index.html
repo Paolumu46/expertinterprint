@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert Interprint - บริการพิมพ์คุณภาพสูง ครบวงจร</title>
-    
+
     <!-- Meta SEO -->
-    <meta name="description" content="Expert Interprint บริการพิมพ์คุณภาพสูง โบรชัวร์ นามบัตร สติ๊กเกอร์ แพคเกจจิ้ง ครบวงจร บริการรวดเร็ว ราคาเหมาะสม ทีมงานมืออาชีพ">
+    <meta name="description"
+        content="Expert Interprint บริการพิมพ์คุณภาพสูง โบรชัวร์ นามบัตร สติ๊กเกอร์ แพคเกจจิ้ง ครบวงจร บริการรวดเร็ว ราคาเหมาะสม ทีมงานมืออาชีพ">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://expertinterprint.pages.dev/">
 
     <!-- CSS & Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
-        * { font-family: 'Kanit', sans-serif; }
+        * {
+            font-family: 'Kanit', sans-serif;
+        }
 
         :root {
             --primary-orange: #FF6B35;
@@ -28,123 +33,599 @@
             --gradient-main: linear-gradient(135deg, #FF6B35 0%, #FF8A65 25%, #3B82F6 75%, #1E40AF 100%);
         }
 
-        body { overflow-x: hidden; scroll-behavior: smooth; }
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
         /* Glass */
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .glass-dark { background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
         /* Gradients & text */
-        .gradient-main { background: var(--gradient-main); }
-        .gradient-orange { background: var(--gradient-1); }
-        .gradient-blue { background: var(--gradient-2); }
-        .text-gradient { background: var(--gradient-main); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-main {
+            background: var(--gradient-main);
+        }
+
+        .gradient-orange {
+            background: var(--gradient-1);
+        }
+
+        .gradient-blue {
+            background: var(--gradient-2);
+        }
+
+        .text-gradient {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         /* Animations */
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); } 50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.6); } }
-        @keyframes slide-up { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slide-in-left { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes slide-in-right { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes spin-slow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-        @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes bounce-subtle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @keyframes float {
 
-        .float { animation: float 6s ease-in-out infinite; }
-        .float-delay { animation: float 6s ease-in-out infinite; animation-delay: 2s; }
-        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-        .slide-up { animation: slide-up 0.8s ease-out forwards; }
-        .slide-in-left { animation: slide-in-left 0.8s ease-out forwards; }
-        .slide-in-right { animation: slide-in-right 0.8s ease-out forwards; }
-        .spin-slow { animation: spin-slow 20s linear infinite; }
-        .gradient-animate { background: linear-gradient(-45deg, #FF6B35, #FF8A65, #3B82F6, #1E40AF); background-size: 400% 400%; animation: gradient-shift 5s ease infinite; }
-        .bounce-subtle { animation: bounce-subtle 2s ease-in-out infinite; }
-        .scale-in { animation: scaleIn 0.5s ease-out forwards; }
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(255, 107, 53, 0.6);
+            }
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes bounce-subtle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-delay {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .slide-up {
+            animation: slide-up 0.8s ease-out forwards;
+        }
+
+        .slide-in-left {
+            animation: slide-in-left 0.8s ease-out forwards;
+        }
+
+        .slide-in-right {
+            animation: slide-in-right 0.8s ease-out forwards;
+        }
+
+        .spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        .gradient-animate {
+            background: linear-gradient(-45deg, #FF6B35, #FF8A65, #3B82F6, #1E40AF);
+            background-size: 400% 400%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        .bounce-subtle {
+            animation: bounce-subtle 2s ease-in-out infinite;
+        }
+
+        .scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
 
         /* Interactive Cards */
-        .card-3d { transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1); transform-style: preserve-3d; }
-        .card-3d:hover { transform: rotateY(5deg) rotateX(5deg) translateY(-10px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); }
-        .card-glow { position: relative; transition: all 0.3s ease; }
-        .card-glow::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: var(--gradient-main); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: destination-out; mask-composite: exclude; opacity: 0; transition: opacity 0.3s ease; }
-        .card-glow:hover::before { opacity: 1; }
+        .card-3d {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            transform-style: preserve-3d;
+        }
+
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-glow {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .card-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: var(--gradient-main);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-glow:hover::before {
+            opacity: 1;
+        }
 
         /* Small helpers */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: var(--gradient-main); border-radius: 4px; }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
 
-        .navbar-glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-        .btn-modern { position: relative; overflow: hidden; transition: all 0.3s ease; }
-        .btn-modern::before { content: ''; position: absolute; inset: 0; left: -100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent); transition: left 0.5s; }
-        .btn-modern:hover::before { left: 100%; }
-        .btn-modern:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4); }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
 
-        .icon-bounce { transition: transform 0.3s ease; }
-        .icon-bounce:hover { transform: scale(1.2) rotate(5deg); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-main);
+            border-radius: 4px;
+        }
 
-        .counter-animate { display: inline-block; transition: transform 0.3s ease; }
-        .counter-animate:hover { transform: scale(1.1); }
+        .navbar-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
 
-        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275); position: relative; overflow: hidden; }
-        .service-card::before { content: ''; position: absolute; inset: 0; background: var(--gradient-main); opacity: 0; transition: opacity 0.3s ease; z-index: -1; }
-        .service-card:hover::before { opacity: 0.1; }
-        .service-card:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); }
+        .btn-modern {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        }
 
-        .bg-decoration { position: absolute; pointer-events: none; opacity: 0.1; }
-        .bg-circle-1 { width: 300px; height: 300px; background: var(--gradient-1); border-radius: 50%; top: 10%; right: -150px; }
-        .bg-circle-2 { width: 200px; height: 200px; background: var(--gradient-2); border-radius: 50%; bottom: 20%; left: -100px; }
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            left: -100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s;
+        }
 
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .btn-modern:hover::before {
+            left: 100%;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+
+        .icon-bounce {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        }
+
+        .icon-bounce:hover {
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .icon-bounce {
+            transition: transform 0.3s ease;
+        }
+
+        .icon-bounce:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .counter-animate {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .counter-animate:hover {
+            transform: scale(1.1);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-main);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .bg-decoration {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .bg-circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            top: 10%;
+            right: -150px;
+        }
+
+        .bg-circle-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            bottom: 20%;
+            left: -100px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Works carousel */
-        .carousel { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 1rem; padding-bottom: 0.5rem; }
-        .carousel::-webkit-scrollbar { height: 8px; }
-        .carousel::-webkit-scrollbar-thumb { background: var(--gradient-main); border-radius: 4px; }
-        .slide { flex: 0 0 85%; scroll-snap-align: start; }
-        @media (min-width: 768px) { .slide { flex-basis: 48%; } }
-        @media (min-width: 1024px) { .slide { flex-basis: 32%; } }
-        .work-figure { border: 1px solid rgba(0, 0, 0, 0.06); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); cursor: pointer; }
-        .work-figure img { width: 100%; height: 16rem; object-fit: cover; display: block; }
-        .work-figure:hover { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb {
+            background: var(--gradient-main);
+            border-radius: 4px;
+        }
+
+        .slide {
+            flex: 0 0 85%;
+            scroll-snap-align: start;
+        }
+
+        @media (min-width: 768px) {
+            .slide {
+                flex-basis: 48%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .slide {
+                flex-basis: 32%;
+            }
+        }
+
+        .work-figure {
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+        }
+
+        .work-figure img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+            display: block;
+        }
+
+        .work-figure:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
 
         /* Hero slideshow */
-        .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease; }
-        .hero-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .hero-slide.active { opacity: 1; }
-        @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.1s ease;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-slide {
+                transition: none;
+            }
+        }
 
         /* Small pill */
-        .chip { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+        .chip {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
 
         /* Notification bell */
-        .notification-bell { position: relative; }
-        .notification-bell::after { content: ''; position: absolute; top: -5px; right: -5px; width: 10px; height: 10px; background: #ef4444; border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.8; } }
+        .notification-bell {
+            position: relative;
+        }
+
+        .notification-bell::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 10px;
+            height: 10px;
+            background: #ef4444;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
 
         /* Testimonial card */
-        .testimonial-card { position: relative; overflow: hidden; }
-        .testimonial-card::before { content: '"'; position: absolute; top: -20px; left: 20px; font-size: 8rem; opacity: 0.05; font-family: Georgia, serif; line-height: 1; }
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.05;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
 
         /* Trust badge */
-        .trust-badge { transition: all 0.3s ease; }
-        .trust-badge:hover { transform: translateY(-5px); }
+        .trust-badge {
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+        }
 
         /* Mobile menu */
-        .mobile-menu-enter { animation: slideIn 0.3s ease-out forwards; }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
+        .mobile-menu-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
         /* Hide scrollbar */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
         /* Sticky CTA */
-        .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; transform: translateY(100%); transition: transform 0.3s ease; }
-        .sticky-cta.visible { transform: translateY(0); }
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        /* Dark Mode Global Overrides */
+        html.dark body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        html.dark .bg-white {
+            background-color: var(--bg-surface);
+        }
+
+        html.dark .bg-gray-50 {
+            background-color: var(--bg-main);
+        }
+
+        html.dark .text-gray-700 {
+            color: #CBD5E1;
+        }
+
+        html.dark .text-gray-600 {
+            color: #94A3B8;
+        }
+
+        html.dark .text-gray-800 {
+            color: #F1F5F9;
+        }
+
+        html.dark .border-gray-100 {
+            border-color: var(--border);
+        }
+
+        html.dark .navbar-glass {
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        html.dark .glass {
+            background: rgba(30, 41, 59, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        html.dark .card-glow {
+            background-color: var(--bg-surface);
+        }
+
+        html.dark .service-card {
+            background-color: var(--bg-surface);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+
+<body class="bg-gray-50 dark:bg-slate-950 transition-colors duration-500">
     <!-- Decorations -->
     <div class="bg-decoration bg-circle-1 spin-slow"></div>
     <div class="bg-decoration bg-circle-2 float"></div>
@@ -154,45 +635,72 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center slide-in-left">
-                    <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint" class="h-10 md:h-12 mr-2 md:mr-3 hover:scale-110 transition-transform duration-300">
-                    <span class="text-xl md:text-2xl font-bold text-gradient">Expert Interprint</span>
+                    <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint"
+                        class="h-10 md:h-12 mr-2 md:mr-3 hover:scale-110 transition-transform duration-300">
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex space-x-6 xl:space-x-8 slide-in-right">
-                    <a href="#home" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">หน้าหลัก</a>
-                    <a href="#services" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">บริการ</a>
-                    <a href="#pricing" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ราคา</a>
-                    <a href="#premium" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">พรีเมี่ยม</a>
-                    <a href="#works" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ผลงาน</a>
-                    <a href="#testimonials" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">รีวิว</a>
-                    <a href="#about" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">เกี่ยวกับเรา</a>
-                    <a href="#contact" class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ติดต่อ</a>
+                    <a href="#home"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">หน้าหลัก</a>
+                    <a href="#services"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">บริการ</a>
+                    <a href="#pricing"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ราคา</a>
+                    <a href="#premium"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">พรีเมี่ยม</a>
+                    <a href="#works"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ผลงาน</a>
+                    <a href="#testimonials"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">รีวิว</a>
+                    <a href="#about"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">เกี่ยวกับเรา</a>
+                    <a href="#contact"
+                        class="relative text-gray-700 hover:text-orange-500 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-orange-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">ติดต่อ</a>
                 </div>
-                
-                <a href="tel:0816164691" class="btn-modern gradient-main text-white px-5 py-2 rounded-full font-semibold hidden md:flex items-center">
-                    <i class="fas fa-phone mr-2"></i>โทรเลย
-                </a>
-                
+
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle"
+                        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+                        aria-label="Toggle dark mode">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </button>
+
+                    <a href="tel:0816164691"
+                        class="btn-modern gradient-main text-white px-5 py-2 rounded-full font-semibold hidden md:flex items-center">
+                        <i class="fas fa-phone mr-2"></i>โทรเลย
+                    </a>
+                </div>
+
                 <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Toggle menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="lg:hidden hidden bg-white border-t shadow-lg">
             <div class="container mx-auto px-4 py-4 space-y-3">
-                <a href="#home" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">หน้าหลัก</a>
-                <a href="#services" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">บริการ</a>
-                <a href="#pricing" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">ราคา</a>
-                <a href="#premium" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">พรีเมี่ยม</a>
-                <a href="#works" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">ผลงาน</a>
-                <a href="#testimonials" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">รีวิว</a>
-                <a href="#about" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">เกี่ยวกับเรา</a>
-                <a href="#contact" class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">ติดต่อ</a>
-                <a href="tel:0816164691" class="block w-full text-center btn-modern gradient-main text-white px-6 py-3 rounded-full font-semibold mt-4">
+                <a href="#home"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">หน้าหลัก</a>
+                <a href="#services"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">บริการ</a>
+                <a href="#pricing"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">ราคา</a>
+                <a href="#premium"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">พรีเมี่ยม</a>
+                <a href="#works"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">ผลงาน</a>
+                <a href="#testimonials"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">รีวิว</a>
+                <a href="#about"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">เกี่ยวกับเรา</a>
+                <a href="#contact"
+                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors font-medium">ติดต่อ</a>
+                <a href="tel:0816164691"
+                    class="block w-full text-center btn-modern gradient-main text-white px-6 py-3 rounded-full font-semibold mt-4">
                     <i class="fas fa-phone mr-2"></i>โทรเลย: 081-616-4691
                 </a>
             </div>
@@ -203,9 +711,15 @@
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div id="heroSlideshow" class="absolute inset-0">
             <div class="hero-slide active"><img src="img/bg1.png" alt="ตัวอย่างงานพิมพ์ 1" loading="eager"></div>
-            <div class="hero-slide"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 2" loading="lazy"></div>
-            <div class="hero-slide"><img src="https://images.unsplash.com/photo-1520975922284-37a43c02c60b?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 3" loading="lazy"></div>
-            <div class="hero-slide"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1920&auto=format&fit=crop" alt="ตัวอย่างงานพิมพ์ 4" loading="lazy"></div>
+            <div class="hero-slide"><img
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop"
+                    alt="ตัวอย่างงานพิมพ์ 2" loading="lazy"></div>
+            <div class="hero-slide"><img
+                    src="https://images.unsplash.com/photo-1520975922284-37a43c02c60b?q=80&w=1920&auto=format&fit=crop"
+                    alt="ตัวอย่างงานพิมพ์ 3" loading="lazy"></div>
+            <div class="hero-slide"><img
+                    src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1920&auto=format&fit=crop"
+                    alt="ตัวอย่างงานพิมพ์ 4" loading="lazy"></div>
         </div>
         <div class="absolute inset-0 gradient-animate opacity-40"></div>
         <div class="absolute inset-0 bg-black opacity-20"></div>
@@ -216,37 +730,47 @@
 
         <div class="container mx-auto px-4 text-center text-white z-10 relative">
             <div class="slide-up">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-                    บริการพิมพ์คุณภาพสูง<br>
-                    <span class="text-yellow-300">ที่ตอบโจทย์ทุกความต้องการ</span>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tight">
+                    บริการพิมพ์<span class="text-gradient">คุณภาพสูง</span><br>
+                    <span class="text-yellow-300 drop-shadow-lg">แห่งปี 2026</span>
                 </h1>
-                <p class="text-lg md:text-xl lg:text-2xl mb-10 max-w-4xl mx-auto opacity-90 leading-relaxed">
-                    🚀 งานพิมพ์ที่เหนือกว่าด้วยเทคโนโลยีล้ำสมัย ประหยัดเวลาและค่าใช้จ่าย พร้อมสร้างความประทับใจทุกครั้ง ✨
+                <p
+                    class="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl mx-auto opacity-95 leading-relaxed font-light">
+                    🚀 นิยามใหม่ของงานพิมพ์ด้วยเทคโนโลยี <span
+                        class="font-bold underline decoration-orange-500 underline-offset-8">AI-Enhanced
+                        Precision</span>
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                    <a href="#contact" class="btn-modern gradient-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-lg md:text-xl font-bold shadow-2xl pulse-glow group w-full sm:w-auto">
-                        <i class="fas fa-file-alt mr-3 group-hover:rotate-12 transition-transform duration-300"></i>รับใบเสนอราคาฟรี
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                    <a href="#contact"
+                        class="btn-modern gradient-orange text-white px-10 md:px-12 py-5 md:py-6 rounded-full text-xl md:text-2xl font-bold shadow-2xl pulse-glow group w-full sm:w-auto">
+                        <i
+                            class="fas fa-rocket mr-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>เริ่มโปรเจคเลย
                     </a>
-                    <a href="#works" class="btn-modern glass text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-lg md:text-xl font-bold border-2 border-white border-opacity-30 hover:bg-white hover:text-gray-800 w-full sm:w-auto">
-                        <i class="fas fa-images mr-3"></i>ดูผลงาน
+                    <a href="#works"
+                        class="btn-modern glass text-white px-10 md:px-12 py-5 md:py-6 rounded-full text-xl md:text-2xl font-bold border-2 border-white border-opacity-30 hover:bg-white hover:text-gray-900 w-full sm:w-auto backdrop-blur-xl">
+                        <i class="fas fa-play-circle mr-3"></i>พาวิลเลียน
                     </a>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
                     <div class="glass rounded-2xl p-4 md:p-6 hover:scale-105 transition-transform duration-300">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">5,000+</div>
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">5,000+
+                        </div>
                         <p class="text-xs md:text-sm opacity-80">ลูกค้าที่ไว้วางใจ</p>
                     </div>
                     <div class="glass rounded-2xl p-4 md:p-6 hover:scale-105 transition-transform duration-300">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">50,000+</div>
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">50,000+
+                        </div>
                         <p class="text-xs md:text-sm opacity-80">งานที่เสร็จสมบูรณ์</p>
                     </div>
                     <div class="glass rounded-2xl p-4 md:p-6 hover:scale-105 transition-transform duration-300">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">15+</div>
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">15+
+                        </div>
                         <p class="text-xs md:text-sm opacity-80">ปีของประสบการณ์</p>
                     </div>
                     <div class="glass rounded-2xl p-4 md:p-6 hover:scale-105 transition-transform duration-300">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">99%</div>
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-black text-yellow-300 counter-animate">99%
+                        </div>
                         <p class="text-xs md:text-sm opacity-80">ความพึงพอใจ</p>
                     </div>
                 </div>
@@ -262,28 +786,32 @@
     <section class="py-12 bg-white relative overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div
+                    class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
                     <div class="w-16 h-16 gradient-main rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-award text-2xl text-white"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-800">ISO 9001</h3>
                     <p class="text-sm text-gray-500">มาตรฐานคุณภาพ</p>
                 </div>
-                <div class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div
+                    class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
                     <div class="w-16 h-16 gradient-main rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-shield-alt text-2xl text-white"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-800">รับประกัน</h3>
                     <p class="text-sm text-gray-500">คุณภาพงานพิมพ์</p>
                 </div>
-                <div class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div
+                    class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
                     <div class="w-16 h-16 gradient-main rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-truck text-2xl text-white"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-800">ส่งฟรี</h3>
                     <p class="text-sm text-gray-500">ในพื้นที่กรุงเทพ</p>
                 </div>
-                <div class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div
+                    class="trust-badge flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all duration-300">
                     <div class="w-16 h-16 gradient-main rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-headset text-2xl text-white"></i>
                     </div>
@@ -303,7 +831,8 @@
 
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16 reveal">
-                <div class="inline-flex items-center bg-orange-100 text-orange-600 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                <div
+                    class="inline-flex items-center bg-orange-100 text-orange-600 px-6 py-2 rounded-full text-sm font-semibold mb-6">
                     <i class="fas fa-star mr-2"></i>บริการยอดนิยม
                 </div>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-6">บริการพิมพ์ครบวงจร</h2>
@@ -312,195 +841,236 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                <!-- Digital Print -->
-                <div class="service-card card-glow bg-white rounded-3xl p-6 md:p-10 shadow-xl reveal">
-                    <div class="flex items-center mb-6 md:mb-8">
-                        <div class="w-16 h-16 md:w-20 md:h-20 gradient-orange rounded-2xl flex items-center justify-center mr-4 md:mr-6 icon-bounce">
-                            <i class="fas fa-print text-2xl md:text-3xl text-white"></i>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Bento Item 1: Digital Print -->
+                <div
+                    class="service-card group bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 reveal lg:col-span-2">
+                    <div class="flex flex-col h-full justify-between">
                         <div>
-                            <div class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-semibold mb-2 inline-block">POPULAR</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">งานพิมพ์ดิจิตอล</h3>
+                            <div class="flex items-center justify-between mb-8">
+                                <div
+                                    class="w-20 h-20 gradient-orange rounded-3xl flex items-center justify-center icon-bounce shadow-lg shadow-orange-500/20">
+                                    <i class="fas fa-print text-3xl text-white"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-black tracking-widest bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 px-4 py-2 rounded-full uppercase">
+                                    Hyper-Digital</div>
+                            </div>
+                            <h3 class="text-3xl font-black text-gray-800 dark:text-white mb-4">งานพิมพ์ดิจิตอล</h3>
+                            <p class="text-gray-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">⚡ รวดเร็ว
+                                ปริมาณน้อย-มาก ไม่ต้องใช้เพลท เหมาะสำหรับงานเร่งด่วน ด้วยระบบ AI Color Matching</p>
                         </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 md:mb-8 leading-relaxed">⚡ งานพิมพ์รวดเร็ว ปริมาณน้อย-มาก ไม่ต้องใช้เพลท เหมาะสำหรับงานเร่งด่วน</p>
-                    <div class="grid grid-cols-1 gap-3 md:gap-4">
-                        <div class="flex items-center p-3 md:p-4 bg-orange-50 hover:bg-orange-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-orange-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">นามบัตร ใบปลิว โบรชัวร์</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-orange-50 hover:bg-orange-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-orange-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">แผ่นพับ รายงาน</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-orange-50 hover:bg-orange-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-orange-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">ป้ายโปรโมชั่น สติ๊กเกอร์</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-center p-4 bg-orange-50 dark:bg-orange-500/5 rounded-2xl">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span class="font-bold text-gray-700 dark:text-slate-300">นามบัตร ใบปลิว โบรชัวร์</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-orange-50 dark:bg-orange-500/5 rounded-2xl">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span class="font-bold text-gray-700 dark:text-slate-300">แผ่นพับ รายงาน</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-orange-50 dark:bg-orange-500/5 rounded-2xl">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span class="font-bold text-gray-700 dark:text-slate-300">ป้ายโปรโมชั่น
+                                    สติ๊กเกอร์</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-orange-50 dark:bg-orange-500/5 rounded-2xl">
+                                <i class="fas fa-bolt text-orange-500 mr-3"></i>
+                                <span class="font-bold text-gray-700 dark:text-slate-300">Fast-Track Delivery</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Offset Print -->
-                <div class="service-card card-glow bg-white rounded-3xl p-6 md:p-10 shadow-xl reveal">
-                    <div class="flex items-center mb-6 md:mb-8">
-                        <div class="w-16 h-16 md:w-20 md:h-20 gradient-blue rounded-2xl flex items-center justify-center mr-4 md:mr-6 icon-bounce">
-                            <i class="fas fa-layer-group text-2xl md:text-3xl text-white"></i>
-                        </div>
-                        <div>
-                            <div class="text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-semibold mb-2 inline-block">PREMIUM</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">งานพิมพ์ออฟเซ็ท</h3>
-                        </div>
+                <!-- Bento Item 2: Offset Print -->
+                <div
+                    class="service-card group bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 reveal">
+                    <div
+                        class="w-16 h-16 gradient-blue rounded-3xl flex items-center justify-center mb-8 icon-bounce shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-layer-group text-2xl text-white"></i>
                     </div>
-                    <p class="text-gray-600 mb-6 md:mb-8 leading-relaxed">🎨 งานพิมพ์จำนวนมาก คุณภาพสูง สีคมชัด เหมาะกับหนังสือ แคตตาล็อก และสื่อโฆษณา</p>
-                    <div class="grid grid-cols-1 gap-3 md:gap-4">
-                        <div class="flex items-center p-3 md:p-4 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-blue-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">หนังสือ แคตตาล็อก</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-blue-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">โปสเตอร์ แผ่นพับ</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-blue-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">สื่อสิ่งพิมพ์โฆษณาทุกชนิด</span>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-4">งานพิมพ์ออฟเซ็ท</h3>
+                    <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6">🎨 งานจำนวนมาก คุณภาพสูง สีคมชัด
+                        เหมาะกับหนังสือ แคตตาล็อก และสื่อโฆษณา</p>
+                    <ul class="space-y-3 text-sm font-bold text-gray-500 dark:text-slate-500">
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-500"></i> หนังสือ
+                            แคตตาล็อก</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-500"></i> โปสเตอร์
+                            แผ่นพับ</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-500"></i>
+                            สื่อสิ่งพิมพ์โฆษณา</li>
+                    </ul>
                 </div>
 
-                <!-- Sticker -->
-                <div class="service-card card-glow bg-white rounded-3xl p-6 md:p-10 shadow-xl reveal">
-                    <div class="flex items-center mb-6 md:mb-8">
-                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 md:mr-6 icon-bounce">
-                            <i class="fas fa-tags text-2xl md:text-3xl text-white"></i>
-                        </div>
-                        <div>
-                            <div class="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full font-semibold mb-2 inline-block">SPECIAL</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">สติ๊กเกอร์และฉลาก</h3>
-                        </div>
+                <!-- Bento Item 3: Stickers -->
+                <div
+                    class="service-card group bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 icon-bounce shadow-lg shadow-green-500/20">
+                        <i class="fas fa-tags text-2xl text-white"></i>
                     </div>
-                    <p class="text-gray-600 mb-6 md:mb-8 leading-relaxed">🏷️ สร้างแบรนด์ให้โดดเด่น ด้วยฉลากและสติ๊กเกอร์คุณภาพ รองรับทุกวัสดุและรูปแบบงาน</p>
-                    <div class="grid grid-cols-1 gap-3 md:gap-4">
-                        <div class="flex items-center p-3 md:p-4 bg-green-50 hover:bg-green-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-green-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">สติ๊กเกอร์ PVC/PP</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-green-50 hover:bg-green-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-green-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">ฉลากกันน้ำ/กันปลอม</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-green-50 hover:bg-green-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-green-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">ฉลากสินค้าอาหาร เครื่องดื่ม</span>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-4">สติ๊กเกอร์และฉลาก</h3>
+                    <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6">🏷️ สร้างแบรนด์ให้โดดเด่น
+                        ด้วยฉลากคุณภาพ รองรับทุกวัสดุ และรูปแบบงาน</p>
+                    <ul class="space-y-3 text-sm font-bold text-gray-500 dark:text-slate-500">
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-500"></i> สติ๊กเกอร์
+                            PVC/PP</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-500"></i>
+                            ฉลากกันน้ำ/กันปลอม</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-500"></i>
+                            ฉลากสินค้าอาหาร</li>
+                    </ul>
                 </div>
 
-                <!-- Packaging -->
-                <div class="service-card card-glow bg-white rounded-3xl p-6 md:p-10 shadow-xl reveal">
-                    <div class="flex items-center mb-6 md:mb-8">
-                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mr-4 md:mr-6 icon-bounce">
-                            <i class="fas fa-box-open text-2xl md:text-3xl text-white"></i>
+                <!-- Bento Item 4: Packaging -->
+                <div
+                    class="service-card group bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 reveal lg:col-span-4">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl flex items-center justify-center icon-bounce shadow-lg shadow-yellow-500/20">
+                                <i class="fas fa-box-open text-3xl text-white"></i>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-xs bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full font-semibold mb-2 inline-block">HOT</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">แพคเกจจิ้ง & บรรจุภัณฑ์</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 md:mb-8 leading-relaxed">📦 เพิ่มมูลค่าสินค้าด้วยกล่องและบรรจุภัณฑ์ดีไซน์พิเศษ ผลิตได้ตั้งแต่ 100 ใบขึ้นไป</p>
-                    <div class="grid grid-cols-1 gap-3 md:gap-4">
-                        <div class="flex items-center p-3 md:p-4 bg-yellow-50 hover:bg-yellow-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-yellow-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">กล่องสินค้า กล่องอาหาร</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-yellow-50 hover:bg-yellow-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-yellow-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">ถุงกระดาษ ถุงช้อปปิ้ง</span>
-                        </div>
-                        <div class="flex items-center p-3 md:p-4 bg-yellow-50 hover:bg-yellow-100 rounded-xl transition-colors duration-300">
-                            <i class="fas fa-check-circle text-yellow-500 mr-3 md:mr-4 text-lg"></i><span class="font-medium text-sm md:text-base">บรรจุภัณฑ์ของขวัญ ของพรีเมียม</span>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-2">แพคเกจจิ้ง & บรรจุภัณฑ์
+                            </h3>
+                            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-4">📦
+                                เพิ่มมูลค่าสินค้าด้วยบรรจุภัณฑ์ดีไซน์พิเศษ ผลิตได้ตั้งแต่ 100 ใบขึ้นไป</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div class="bg-yellow-50 dark:bg-yellow-500/5 p-4 rounded-2xl text-center">
+                                    <span class="font-bold text-gray-700 dark:text-slate-300">กล่องสินค้า
+                                        กล่องอาหาร</span>
+                                </div>
+                                <div class="bg-yellow-50 dark:bg-yellow-500/5 p-4 rounded-2xl text-center">
+                                    <span class="font-bold text-gray-700 dark:text-slate-300">ถุงกระดาษ
+                                        ถุงช้อปปิ้ง</span>
+                                </div>
+                                <div class="bg-yellow-50 dark:bg-yellow-500/5 p-4 rounded-2xl text-center">
+                                    <span class="font-bold text-gray-700 dark:text-slate-300">บรรจุภัณฑ์ของขวัญ</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="text-center reveal">
-                <div class="glass-dark rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">🚀 พร้อมเริ่มโปรเจคของคุณแล้วหรือยัง?</h3>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8">ปรึกษาฟรี! ทีมผู้เชี่ยวชาญพร้อมให้คำแนะนำและออกแบบให้คุณ</p>
-                    <a href="#contact" class="btn-modern gradient-orange text-white px-10 md:px-12 py-4 rounded-full text-lg md:text-xl font-bold pulse-glow"><i class="fas fa-phone mr-3"></i>ปรึกษาฟรีทันที</a>
-                </div>
+        <div class="text-center reveal">
+            <div
+                class="glass-dark dark:bg-slate-900/50 rounded-[3rem] p-10 md:p-16 max-w-5xl mx-auto border border-white/10 shadow-3xl">
+                <h3 class="text-3xl md:text-5xl font-black text-white mb-8">� ยกระดับแบรนด์ของคุณสู่ปี 2026</h3>
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 opacity-80">เราไม่ใช่แค่โรงพิมพ์ แต่คือ
+                    "Experience Architect" ของงานพิมพ์คุณ</p>
+                <a href="#contact"
+                    class="btn-modern gradient-orange text-white px-12 md:px-16 py-5 md:py-6 rounded-full text-xl md:text-2xl font-bold shadow-2xl pulse-glow inline-flex items-center group">
+                    <span>ปรึกษาผู้เชี่ยวชาญฟรี</span>
+                    <i class="fas fa-arrow-right ml-4 group-hover:translate-x-2 transition-transform"></i>
+                </a>
             </div>
+        </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" class="py-20 md:py-24 bg-gray-50 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-[.12] pointer-events-none">
-            <div class="absolute -top-10 -left-10 w-72 h-72 gradient-orange rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-10 -right-10 w-96 h-96 gradient-blue rounded-full blur-3xl"></div>
-        </div>
-
+    <section id="pricing" class="py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-12 reveal">
-                <span class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold mb-4"><i class="fas fa-tags mr-2"></i>ราคาโดยคร่าว</span>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-3">ตารางราคาโดยคร่าว</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">ตัวเลขช่วงราคาเพื่อให้ลูกค้าเห็นภาพเร็ว — ราคาจริงขึ้นกับสเปคกระดาษ/การเคลือบ/จำนวน</p>
+            <div class="text-center mb-16 reveal">
+                <span
+                    class="inline-block bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-400 px-6 py-2 rounded-full text-sm font-black mb-6 uppercase tracking-widest"><i
+                        class="fas fa-tags mr-2"></i>Smart Pricing</span>
+                <h2 class="text-5xl md:text-7xl font-black text-gradient mb-6">ตารางราคา 2026</h2>
+                <p class="text-xl text-gray-600 dark:text-slate-400 max-w-3xl mx-auto font-light">ราคาคุ้มค่าด้วยระบบ
+                    Automation — ปรับเปลี่ยนได้ตามสเปคของคุณ</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="card-glow bg-white rounded-3xl p-5 md:p-7 shadow-xl reveal">
-                    <div class="flex items-center justify-between flex-wrap gap-2">
-                        <h3 class="text-xl md:text-2xl font-extrabold">โบรชัวร์ A4 / A5</h3>
-                        <span class="chip bg-green-100 text-green-700">Offset 4 สี</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Price Item 1: Brochure -->
+                <div
+                    class="group bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 hover:shadow-orange-500/10 reveal">
+                    <h3 class="text-2xl font-black mb-2 dark:text-white">โบรชัวร์ A4/A5</h3>
+                    <p class="text-gray-500 dark:text-slate-500 text-sm mb-8 italic">Offset 4 สี • อาร์ต 130g</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-slate-400 font-bold">1,000 ใบ</span>
+                            <span class="text-2xl font-black text-orange-500">2–5 ฿</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-slate-400 font-bold">2,000 ใบ</span>
+                            <span class="text-2xl font-black text-orange-500">1.5–3 ฿</span>
+                        </div>
                     </div>
-                    <p class="text-gray-600 mt-2">เหมาะกับแจกจำนวนมาก สีสวยคมชัด</p>
-                    <ul class="mt-5 space-y-2 text-gray-800">
-                        <li>1,000 ชิ้น: ~ <span class="font-bold">2–5 ฿/ใบ</span></li>
-                        <li>2,000 ชิ้น: ~ <span class="font-bold">1.5–3 ฿/ใบ</span></li>
+                    <ul class="space-y-3 mb-10 text-gray-500 dark:text-slate-500 text-sm">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> งานคมชัด สีสดใส</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> จัดส่งรวดเร็ว</li>
                     </ul>
-                    <div class="mt-5 text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">1,000 ใบ</span></div>
-                </article>
-
-                <article class="card-glow bg-white rounded-3xl p-5 md:p-7 shadow-xl reveal">
-                    <div class="flex items-center justify-between flex-wrap gap-2">
-                        <h3 class="text-xl md:text-2xl font-extrabold">โปสเตอร์ A3</h3>
-                        <span class="chip bg-blue-100 text-blue-700">Digital / Offset</span>
-                    </div>
-                    <p class="text-gray-600 mt-2">โปรโมชัน / อีเวนต์ / แคมเปญหน้าร้าน</p>
-                    <ul class="mt-5 space-y-2 text-gray-800">
-                        <li>1,000 ใบ: ~ <span class="font-bold">5,900–7,200 ฿</span> (รวม)</li>
-                        <li>2,000 ใบ: ~ <span class="font-bold">7,100–8,600 ฿</span> (รวม)</li>
-                    </ul>
-                    <div class="mt-5 text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">1,000 ใบ</span></div>
-                </article>
-
-                <article class="card-glow bg-white rounded-3xl p-5 md:p-7 shadow-xl reveal">
-                    <div class="flex items-center justify-between flex-wrap gap-2">
-                        <h3 class="text-xl md:text-2xl font-extrabold">ปฏิทินตั้งโต๊ะ 6×8″</h3>
-                        <span class="chip bg-purple-100 text-purple-700">8–14 แผ่น</span>
-                    </div>
-                    <p class="text-gray-600 mt-2">ของขวัญองค์กร / โปรโมตแบรนด์</p>
-                    <ul class="mt-5 space-y-2 text-gray-800">
-                        <li>1,000 เล่ม: ~ <span class="font-bold">25–59 ฿/เล่ม</span></li>
-                        <li>2,000 เล่ม: ~ <span class="font-bold">26–49 ฿/เล่ม</span></li>
-                    </ul>
-                    <div class="mt-5 text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">1,000 เล่ม</span></div>
-                </article>
-
-                <article class="card-glow bg-white rounded-3xl p-5 md:p-7 shadow-xl reveal">
-                    <div class="flex items-center justify-between flex-wrap gap-2">
-                        <h3 class="text-xl md:text-2xl font-extrabold">นามบัตร (มาตรฐาน)</h3>
-                        <span class="chip bg-yellow-100 text-yellow-800">350g / เคลือบได้</span>
-                    </div>
-                    <p class="text-gray-600 mt-2">งานเนี๊ยบ สีชัด ตัวเลือกเคลือบด้าน/เงา</p>
-                    <ul class="mt-5 space-y-2 text-gray-800">
-                        <li>1,000 ใบ: ~ <span class="font-bold">1.10–4.10 ฿/ใบ</span></li>
-                        <li>2,000 ใบ: <span class="font-bold">ถูกลง</span> ตามสเปคและโปรฯ</li>
-                    </ul>
-                    <div class="mt-5 text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">1,000 ใบ</span></div>
-                </article>
-            </div>
-
-            <div class="mt-10 bg-white rounded-3xl p-6 card-glow shadow-xl reveal">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                        <h3 class="text-xl font-bold">ต้องการราคาเป๊ะตามสเปค?</h3>
-                        <p class="text-gray-600">บอกขนาด/แกรม/เคลือบ/จำนวน ทีมงานจะสรุปใบเสนอราคาจริงให้ทันที</p>
-                    </div>
-                    <a href="#contact" class="btn-modern px-8 py-3 rounded-full text-white font-bold gradient-main whitespace-nowrap">ขอใบเสนอราคา</a>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-black group-hover:bg-orange-500 group-hover:text-white transition-all">ขอใบเสนอราคา</a>
                 </div>
-                <p class="text-xs text-gray-500 mt-3">*ตัวเลขเป็น "ช่วงราคาโดยคร่าว" เพื่อการอ้างอิงบนหน้าเว็บ อาจเปลี่ยนตามสเปคย่อยและโปรโมชั่น</p>
+
+                <!-- Price Item 2: Poster -->
+                <div
+                    class="group bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 hover:shadow-blue-500/10 reveal">
+                    <h3 class="text-2xl font-black mb-2 dark:text-white">โปสเตอร์ A3</h3>
+                    <p class="text-gray-500 dark:text-slate-500 text-sm mb-8 italic">พิมพ์ 1 หน้า • อาร์ต 130g</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-slate-400 font-bold">1,000 ใบ</span>
+                            <span class="text-xl font-black text-blue-600">5,900–7,200 ฿</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-slate-400 font-bold">2,000 ใบ</span>
+                            <span class="text-xl font-black text-blue-600">7,100–8,600 ฿</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-10 text-gray-500 dark:text-slate-500 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> เหมาะสำหรับงานโฆษณา</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> ขนาดมาตรฐาน A3</li>
+                    </ul>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-black group-hover:bg-blue-600 group-hover:text-white transition-all">ขอใบเสนอราคา</a>
+                </div>
+
+                <!-- Price Item 3: Calendar -->
+                <div
+                    class="group bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 hover:shadow-green-500/10 reveal">
+                    <h3 class="text-2xl font-black mb-2 dark:text-white">ปฏิทินตั้งโต๊ะ</h3>
+                    <p class="text-gray-500 dark:text-slate-500 text-sm mb-8 italic">ของขวัญปีใหม่พรีเมียม</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-slate-400 font-bold">1,000 เล่ม</span>
+                            <span class="text-xl font-black text-green-600">25–59 ฿</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 dark:text-slate-400 font-bold">2,000 เล่ม</span>
+                            <span class="text-xl font-black text-green-600">26–49 ฿</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-10 text-gray-500 dark:text-slate-500 text-sm">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> เข้าเล่มกระดูกงู</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> ฐานปฏิทินมาตรฐาน</li>
+                    </ul>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-black group-hover:bg-green-600 group-hover:text-white transition-all">ขอใบเสนอราคา</a>
+                </div>
+
+                <!-- Price Item 4: Namecard -->
+                <div
+                    class="group bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 shadow-2xl border border-gray-100 dark:border-slate-800 transition-all duration-500 hover:-translate-y-4 hover:shadow-purple-500/10 reveal">
+                    <h3 class="text-2xl font-black mb-2 dark:text-white">นามบัตร</h3>
+                    <p class="text-gray-500 dark:text-slate-500 text-sm mb-8 italic">ดิจิตอลพรีเมียม • 260-310g</p>
+                    <div class="mb-4">
+                        <span class="text-4xl font-black text-purple-600">1.10–4.10</span>
+                        <span class="text-gray-400 ml-1 italic">฿/ใบ</span>
+                    </div>
+                    <p class="text-gray-400 text-xs mb-8">*(จำนวนขั้นต่ำ 1,000 ใบ)*</p>
+                    <ul class="space-y-3 mb-10 text-gray-500 dark:text-slate-500 text-sm">
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> พิมพ์ 1-2 หน้า</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> เคลือบด้าน/เงา</li>
+                    </ul>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-black group-hover:bg-purple-600 group-hover:text-white transition-all">ขอใบเสนอราคา</a>
+                </div>
             </div>
         </div>
     </section>
@@ -514,9 +1084,12 @@
 
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-12 reveal">
-                <span class="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4"><i class="fas fa-gift mr-2"></i>เรทของพรีเมี่ยม</span>
+                <span
+                    class="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4"><i
+                        class="fas fa-gift mr-2"></i>เรทของพรีเมี่ยม</span>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-3">Premium Rate Card</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">ช่วงราคาอ้างอิงสำหรับสั่งทำของพรีเมี่ยม พร้อมสกรีนโลโก้ — ราคาจริงอาจเปลี่ยนตามสเปค/จำนวน/งานสกรีน</p>
+                <p class="text-gray-600 max-w-3xl mx-auto">ช่วงราคาอ้างอิงสำหรับสั่งทำของพรีเมี่ยม พร้อมสกรีนโลโก้ —
+                    ราคาจริงอาจเปลี่ยนตามสเปค/จำนวน/งานสกรีน</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -530,7 +1103,8 @@
                         <li>200 ด้าม: ~ <span class="font-bold">20 ฿/ด้าม</span></li>
                         <li>1,000 ด้าม: ~ <span class="font-bold">5 ฿/ด้าม</span></li>
                     </ul>
-                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">200–1,000 ด้าม</span></div>
+                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span
+                            class="font-semibold">200–1,000 ด้าม</span></div>
                 </article>
 
                 <article class="card-glow bg-gray-50 rounded-3xl p-5 md:p-7 shadow-xl reveal">
@@ -543,7 +1117,8 @@
                         <li>300 ชิ้น: ~ <span class="font-bold">55 ฿/ชิ้น</span></li>
                         <li>3,000 ชิ้น: ~ <span class="font-bold">17 ฿/ชิ้น</span></li>
                     </ul>
-                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">300 ชิ้น</span></div>
+                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">300
+                            ชิ้น</span></div>
                 </article>
 
                 <article class="card-glow bg-gray-50 rounded-3xl p-5 md:p-7 shadow-xl reveal">
@@ -556,7 +1131,8 @@
                         <li>100 คัน: ~ <span class="font-bold">95–120 ฿/คัน</span></li>
                         <li>500 คัน: ~ <span class="font-bold">75–90 ฿/คัน</span></li>
                     </ul>
-                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">100 คัน</span></div>
+                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">100
+                            คัน</span></div>
                 </article>
 
                 <article class="card-glow bg-gray-50 rounded-3xl p-5 md:p-7 shadow-xl reveal">
@@ -569,7 +1145,8 @@
                         <li>100 ชิ้น: ~ <span class="font-bold">65–85 ฿/ชิ้น</span></li>
                         <li>500 ชิ้น: ~ <span class="font-bold">55–70 ฿/ชิ้น</span></li>
                     </ul>
-                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">100 ชิ้น</span></div>
+                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">100
+                            ชิ้น</span></div>
                 </article>
 
                 <article class="card-glow bg-gray-50 rounded-3xl p-5 md:p-7 shadow-xl reveal">
@@ -582,7 +1159,8 @@
                         <li>300 ใบ: ~ <span class="font-bold">35–50 ฿/ใบ</span></li>
                         <li>1,000 ใบ: ~ <span class="font-bold">25–35 ฿/ใบ</span></li>
                     </ul>
-                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">300 ใบ</span></div>
+                    <div class="mt-5 text-xs md:text-sm text-gray-500">ขั้นต่ำแนะนำ: <span class="font-semibold">300
+                            ใบ</span></div>
                 </article>
             </div>
         </div>
@@ -592,11 +1170,13 @@
     <section id="works" class="py-20 md:py-24 bg-gray-50 relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-10 reveal">
-                <div class="inline-flex items-center bg-indigo-100 text-indigo-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                <div
+                    class="inline-flex items-center bg-indigo-100 text-indigo-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
                     <i class="fas fa-images mr-2"></i>ตัวอย่างผลงาน
                 </div>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-4">แกลเลอรีงานพิมพ์</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">เลื่อนดูผลงานจริงแบบสไลด์แนวนอน (ลากนิ้ว หรือใช้เมาส์เลื่อน)</p>
+                <p class="text-gray-600 max-w-3xl mx-auto">เลื่อนดูผลงานจริงแบบสไลด์แนวนอน (ลากนิ้ว หรือใช้เมาส์เลื่อน)
+                </p>
             </div>
 
             <div class="carousel px-1 hide-scrollbar snap-x">
@@ -680,87 +1260,76 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-20 md:py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" class="py-24 bg-white dark:bg-slate-950 relative overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 reveal">
-                <div class="inline-flex items-center bg-pink-100 text-pink-600 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                    <i class="fas fa-heart mr-2"></i>รีวิวจากลูกค้า
-                </div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-4">ลูกค้าพูดถึงเรา</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">ความประทับใจจากลูกค้าที่ไว้วางใจให้เราดูแลงานพิมพ์ของพวกเขา</p>
+            <div class="text-center mb-16 reveal">
+                <span
+                    class="inline-block bg-pink-100 dark:bg-pink-500/20 text-pink-600 dark:text-pink-400 px-6 py-2 rounded-full text-sm font-black mb-6 uppercase tracking-widest"><i
+                        class="fas fa-heart mr-2"></i>Real Experience</span>
+                <h2 class="text-5xl md:text-7xl font-black text-gradient mb-4">รีวิวจากลูกค้า</h2>
+                <p class="text-xl text-gray-600 dark:text-slate-400 font-light max-w-3xl mx-auto">
+                    เสียงตอบรับจากพาร์ทเนอร์ที่ไว้วางใจเราอย่างต่อเนื่อง</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="testimonial-card bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="คุณสมศักดิ์" class="w-12 h-12 rounded-full object-cover mr-3">
-                        <div>
-                            <h4 class="font-bold text-gray-800">คุณสมศักดิ์ จันทร์แก้ว</h4>
-                            <p class="text-sm text-gray-500">บริษัท ABC จำกัด</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-900 rounded-[3rem] p-10 shadow-2xl reveal group hover:-translate-y-4 transition-all duration-500 border border-gray-100 dark:border-slate-800">
+                    <div class="flex items-center mb-8">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="คุณสมศักดิ์"
+                            class="w-16 h-16 rounded-3xl object-cover ring-4 ring-orange-500/20">
+                        <div class="ml-4">
+                            <h4 class="font-black text-xl text-gray-800 dark:text-white">คุณสมศักดิ์ จันทร์แก้ว</h4>
+                            <p class="text-sm font-bold text-orange-500">บริษัท ABC จำกัด</p>
                         </div>
                     </div>
-                    <div class="flex mb-3">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed">บริการยอดเยี่ยม! งานพิมพ์คุณภาพสูง ส่งตรงเวลา ทีมงานเป็นกันเองมาก จะกลับมาใช้บริการอีกแน่นอน</p>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg leading-relaxed italic">
+                        "พิมพ์งานเร็วมาก สีสวยตรงตามไฟล์งาน ประทับใจการบริการครับ"</p>
                 </div>
 
-                <div class="testimonial-card bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="คุณนภา" class="w-12 h-12 rounded-full object-cover mr-3">
-                        <div>
-                            <h4 class="font-bold text-gray-800">คุณนภา วงศ์ไชย</h4>
-                            <p class="text-sm text-gray-500">ร้านอาหารพร้อมเพลิน</p>
+                <!-- Testimonial 2 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-900 rounded-[3rem] p-10 shadow-2xl reveal group hover:-translate-y-4 transition-all duration-500 border border-gray-100 dark:border-slate-800">
+                    <div class="flex items-center mb-8">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="คุณนภา"
+                            class="w-16 h-16 rounded-3xl object-cover ring-4 ring-blue-500/20">
+                        <div class="ml-4">
+                            <h4 class="font-black text-xl text-gray-800 dark:text-white">คุณนภา วงศ์ไชย</h4>
+                            <p class="text-sm font-bold text-blue-500">ร้านอาหารพร้อมเพลิน</p>
                         </div>
                     </div>
-                    <div class="flex mb-3">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed">สั่งทำนามบัตรและเมนูอาหาร งานออกมาสวยมาก สีสันสดใส ราคาเหมาะสม แนะนำเลยค่ะ</p>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg leading-relaxed italic">
+                        "สั่งทำโบรชัวร์และนามบัตร คุณภาพดีมาก ราคาเป็นกันเอง แนะนำเลยค่ะ"</p>
                 </div>
 
-                <div class="testimonial-card bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="คุณวิทยา" class="w-12 h-12 rounded-full object-cover mr-3">
-                        <div>
-                            <h4 class="font-bold text-gray-800">คุณวิทยา พาณิชย์</h4>
-                            <p class="text-sm text-gray-500">บริษัท XYZ Trading</p>
+                <!-- Testimonial 3 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-900 rounded-[3rem] p-10 shadow-2xl reveal group hover:-translate-y-4 transition-all duration-500 border border-gray-100 dark:border-slate-800">
+                    <div class="flex items-center mb-8">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="คุณวิทยา"
+                            class="w-16 h-16 rounded-3xl object-cover ring-4 ring-green-500/20">
+                        <div class="ml-4">
+                            <h4 class="font-black text-xl text-gray-800 dark:text-white">คุณวิทยา พาณิชย์</h4>
+                            <p class="text-sm font-bold text-green-500">บริษัท XYZ Trading</p>
                         </div>
                     </div>
-                    <div class="flex mb-3">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed">พิมพ์แคตตาล็อก 5,000 เล่ม งานเสร็จเร็วกว่ากำหนด คุณภาพดีเยี่ยม ราคายุติธรรม ประทับใจมากครับ</p>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg leading-relaxed italic">
+                        "งานด่วนก็ได้ตามกำหนด สปีดการทำงานเร็วมาก ทีมงานให้คำแนะนำดี"</p>
                 </div>
 
-                <div class="testimonial-card bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="คุณมาลี" class="w-12 h-12 rounded-full object-cover mr-3">
-                        <div>
-                            <h4 class="font-bold text-gray-800">คุณมาลี สุขสันต์</h4>
-                            <p class="text-sm text-gray-500">ร้านของขวัญ Happy Gift</p>
+                <!-- Testimonial 4 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-900 rounded-[3rem] p-10 shadow-2xl reveal group hover:-translate-y-4 transition-all duration-500 border border-gray-100 dark:border-slate-800">
+                    <div class="flex items-center mb-8">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="คุณมาลี"
+                            class="w-16 h-16 rounded-3xl object-cover ring-4 ring-purple-500/20">
+                        <div class="ml-4">
+                            <h4 class="font-black text-xl text-gray-800 dark:text-white">คุณมาลี สุขสันต์</h4>
+                            <p class="text-sm font-bold text-purple-500">ร้านของขวัญ Happy Gift</p>
                         </div>
                     </div>
-                    <div class="flex mb-3">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed">สั่งทำกล่องของขวัญและถุงกระดาษ งานสวย เครื่องพิมพ์คุณภาพดี บริการหลังการขายดีมาก</p>
+                    <p class="text-gray-600 dark:text-slate-400 text-lg leading-relaxed italic">
+                        "สติ๊กเกอร์และฉลากสินค้าสวยงาม กันน้ำได้จริง ช่วยให้สินค้าดูพรีเมียมขึ้นมาก"</p>
                 </div>
             </div>
         </div>
@@ -771,10 +1340,19 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div class="reveal">
-                    <div class="inline-flex items-center bg-orange-100 text-orange-600 px-6 py-2 rounded-full text-sm font-semibold mb-6"><i class="fas fa-info-circle mr-2"></i>เกี่ยวกับเรา</div>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-6 md:mb-8">Expert Interprint</h2>
-                    <p class="text-lg md:text-xl text-gray-600 mb-6 leading-relaxed">🏆 Expert Interprint เป็นผู้นำด้านงานพิมพ์คุณภาพที่เชื่อถือได้มานานกว่า <strong>15 ปี</strong> เรามุ่งมั่นให้บริการที่ดีที่สุด ด้วยเทคโนโลยีที่ทันสมัยและความใส่ใจในทุกรายละเอียด</p>
-                    <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">💎 ด้วยทีมงานมืออาชีพและเครื่องจักรที่ทันสมัย เราพร้อมที่จะทำให้ไอเดียของคุณกลายเป็นความจริง ไม่ว่าจะเป็นงานพิมพ์ขนาดเล็กหรือใหญ่ เราให้ความสำคัญกับคุณภาพและความพอใจของลูกค้าเป็นอันดับแรก</p>
+                    <div
+                        class="inline-flex items-center bg-orange-100 text-orange-600 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-info-circle mr-2"></i>เกี่ยวกับเรา
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-6 md:mb-8">Expert Interprint
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 mb-6 leading-relaxed">🏆 Expert Interprint
+                        เป็นผู้นำด้านงานพิมพ์คุณภาพที่เชื่อถือได้มานานกว่า <strong>15 ปี</strong>
+                        เรามุ่งมั่นให้บริการที่ดีที่สุด ด้วยเทคโนโลยีที่ทันสมัยและความใส่ใจในทุกรายละเอียด</p>
+                    <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">💎
+                        ด้วยทีมงานมืออาชีพและเครื่องจักรที่ทันสมัย เราพร้อมที่จะทำให้ไอเดียของคุณกลายเป็นความจริง
+                        ไม่ว่าจะเป็นงานพิมพ์ขนาดเล็กหรือใหญ่ เราให้ความสำคัญกับคุณภาพและความพอใจของลูกค้าเป็นอันดับแรก
+                    </p>
                     <div class="grid grid-cols-2 gap-6 md:gap-8 mb-8">
                         <div class="text-center p-4 md:p-6 bg-orange-50 rounded-2xl">
                             <div class="text-3xl md:text-4xl font-black text-orange-500 mb-2 counter-animate">15+</div>
@@ -785,17 +1363,47 @@
                             <p class="text-gray-600 font-semibold text-sm md:text-base">ลูกค้าที่ไว้วางใจ</p>
                         </div>
                     </div>
-                    <a href="#contact" class="btn-modern gradient-main text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-bold"><i class="fas fa-phone mr-3"></i>ติดต่อเราเลย</a>
+                    <a href="#contact"
+                        class="btn-modern gradient-main text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-bold"><i
+                            class="fas fa-phone mr-3"></i>ติดต่อเราเลย</a>
                 </div>
 
                 <div class="reveal">
                     <div class="card-3d gradient-animate rounded-3xl p-6 md:p-12 text-white shadow-2xl">
                         <h3 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">🎯 วิสัยทัศน์ของเรา</h3>
                         <div class="space-y-4 md:space-y-6">
-                            <div class="flex items-start hover:scale-105 transition-transform duration-300"><div class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-sm"></i></div><p class="text-base md:text-lg leading-relaxed">มุ่งมั่นเป็นผู้นำด้านงานพิมพ์คุณภาพสูงในภูมิภาค</p></div>
-                            <div class="flex items-start hover:scale-105 transition-transform duration-300"><div class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-sm"></i></div><p class="text-base md:text-lg leading-relaxed">ใช้เทคโนโลยีล้ำสมัยในการให้บริการอย่างต่อเนื่อง</p></div>
-                            <div class="flex items-start hover:scale-105 transition-transform duration-300"><div class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-sm"></i></div><p class="text-base md:text-lg leading-relaxed">ให้ความสำคัญกับความพอใจของลูกค้าเป็นอันดับแรก</p></div>
-                            <div class="flex items-start hover:scale-105 transition-transform duration-300"><div class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-sm"></i></div><p class="text-base md:text-lg leading-relaxed">พัฒนาและปรับปรุงคุณภาพอย่างไม่หยุดยั้ง</p></div>
+                            <div class="flex items-start hover:scale-105 transition-transform duration-300">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <p class="text-base md:text-lg leading-relaxed">
+                                    มุ่งมั่นเป็นผู้นำด้านงานพิมพ์คุณภาพสูงในภูมิภาค</p>
+                            </div>
+                            <div class="flex items-start hover:scale-105 transition-transform duration-300">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <p class="text-base md:text-lg leading-relaxed">
+                                    ใช้เทคโนโลยีล้ำสมัยในการให้บริการอย่างต่อเนื่อง</p>
+                            </div>
+                            <div class="flex items-start hover:scale-105 transition-transform duration-300">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <p class="text-base md:text-lg leading-relaxed">
+                                    ให้ความสำคัญกับความพอใจของลูกค้าเป็นอันดับแรก</p>
+                            </div>
+                            <div class="flex items-start hover:scale-105 transition-transform duration-300">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <p class="text-base md:text-lg leading-relaxed">พัฒนาและปรับปรุงคุณภาพอย่างไม่หยุดยั้ง
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -807,72 +1415,113 @@
     <section id="contact" class="py-20 md:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 reveal">
-                <div class="inline-flex items-center bg-green-100 text-green-600 px-6 py-2 rounded-full text-sm font-semibold mb-6"><i class="fas fa-phone mr-2"></i>ติดต่อเรา</div>
+                <div
+                    class="inline-flex items-center bg-green-100 text-green-600 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-phone mr-2"></i>ติดต่อเรา
+                </div>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-gradient mb-6 md:mb-8">ติดต่อเรา</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">📞 พร้อมให้คำปรึกษาและใบเสนอราคาฟรี ติดต่อเราได้ตลอด 24 ชั่วโมง ทีมงานผู้เชี่ยวชาญพร้อมให้บริการคุณ! ✨</p>
+                <p class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">📞
+                    พร้อมให้คำปรึกษาและใบเสนอราคาฟรี ติดต่อเราได้ตลอด 24 ชั่วโมง ทีมงานผู้เชี่ยวชาญพร้อมให้บริการคุณ! ✨
+                </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div class="space-y-6 reveal">
-                    <div class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
+                    <div
+                        class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
                         <div class="flex items-start">
-                            <div class="w-14 h-14 md:w-16 md:h-16 gradient-orange rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce"><i class="fas fa-map-marker-alt text-xl md:text-2xl text-white"></i></div>
+                            <div
+                                class="w-14 h-14 md:w-16 md:h-16 gradient-orange rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce">
+                                <i class="fas fa-map-marker-alt text-xl md:text-2xl text-white"></i>
+                            </div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">📍 ที่อยู่</h3>
                                 <div class="text-gray-600 leading-relaxed">
                                     <p>5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง</p>
                                     <p>ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ</p>
                                     <p class="mb-3">สมุทรปราการ 10270</p>
-                                    <a href="https://maps.app.goo.gl/vXavTL6BXbTDmPQc9" target="_blank" class="inline-flex items-center text-blue-600 hover:text-orange-500 transition-colors duration-300 font-semibold"><i class="fas fa-external-link-alt mr-2"></i>ดูแผนที่บน Google Map</a>
+                                    <a href="https://maps.app.goo.gl/vXavTL6BXbTDmPQc9" target="_blank"
+                                        class="inline-flex items-center text-blue-600 hover:text-orange-500 transition-colors duration-300 font-semibold"><i
+                                            class="fas fa-external-link-alt mr-2"></i>ดูแผนที่บน Google Map</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
+                    <div
+                        class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
                         <div class="flex items-start">
-                            <div class="w-14 h-14 md:w-16 md:h-16 gradient-blue rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce notification-bell"><i class="fas fa-phone-alt text-xl md:text-2xl text-white"></i></div>
+                            <div
+                                class="w-14 h-14 md:w-16 md:h-16 gradient-blue rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce notification-bell">
+                                <i class="fas fa-phone-alt text-xl md:text-2xl text-white"></i>
+                            </div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">📞 โทรศัพท์</h3>
                                 <div class="space-y-2">
-                                    <a href="tel:0816164691" class="block text-base md:text-lg text-gray-600 hover:text-orange-500 transition-colors duration-300 font-medium"><i class="fas fa-mobile-alt mr-2"></i>081-616-4691</a>
-                                    <a href="tel:023991146" class="block text-base md:text-lg text-gray-600 hover:text-orange-500 transition-colors duration-300 font-medium"><i class="fas fa-phone mr-2"></i>02-399-1146</a>
+                                    <a href="tel:0816164691"
+                                        class="block text-base md:text-lg text-gray-600 hover:text-orange-500 transition-colors duration-300 font-medium"><i
+                                            class="fas fa-mobile-alt mr-2"></i>081-616-4691</a>
+                                    <a href="tel:023991146"
+                                        class="block text-base md:text-lg text-gray-600 hover:text-orange-500 transition-colors duration-300 font-medium"><i
+                                            class="fas fa-phone mr-2"></i>02-399-1146</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
+                    <div
+                        class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
                         <div class="flex items-start">
-                            <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce"><i class="fas fa-envelope text-xl md:text-2xl text-white"></i></div>
+                            <div
+                                class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce">
+                                <i class="fas fa-envelope text-xl md:text-2xl text-white"></i>
+                            </div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">📧 อีเมล</h3>
-                                <a href="mailto:expertinterprint@gmail.com" class="text-base md:text-lg text-gray-600 hover:text-orange-500 transition-colors duration-300 font-medium"><i class="fas fa-at mr-2"></i>expertinterprint@gmail.com</a>
+                                <a href="mailto:expertinterprint@gmail.com"
+                                    class="text-base md:text-lg text-gray-600 hover:text-orange-500 transition-colors duration-300 font-medium"><i
+                                        class="fas fa-at mr-2"></i>expertinterprint@gmail.com</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
+                    <div
+                        class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
                         <div class="flex items-start">
-                            <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce"><i class="fab fa-line text-xl md:text-2xl text-white"></i></div>
+                            <div
+                                class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce">
+                                <i class="fab fa-line text-xl md:text-2xl text-white"></i>
+                            </div>
                             <div class="flex-1">
                                 <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">💬 Line / Facebook</h3>
                                 <div class="space-y-2">
-                                    <a href="https://line.me/ti/p/~expertinterprint" target="_blank" class="block text-base md:text-lg text-gray-600 hover:text-green-500 transition-colors duration-300 font-medium"><i class="fab fa-line mr-2"></i>Line ID: @expertinterprint</a>
-                                    <a href="https://facebook.com/expertinterprint" target="_blank" class="block text-base md:text-lg text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium"><i class="fab fa-facebook mr-2"></i>facebook.com/expertinterprint</a>
+                                    <a href="https://line.me/ti/p/~expertinterprint" target="_blank"
+                                        class="block text-base md:text-lg text-gray-600 hover:text-green-500 transition-colors duration-300 font-medium"><i
+                                            class="fab fa-line mr-2"></i>Line ID: @expertinterprint</a>
+                                    <a href="https://facebook.com/expertinterprint" target="_blank"
+                                        class="block text-base md:text-lg text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium"><i
+                                            class="fab fa-facebook mr-2"></i>facebook.com/expertinterprint</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
+                    <div
+                        class="card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:scale-[1.02] transition-all duration-300">
                         <div class="flex items-start">
-                            <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce"><i class="fas fa-clock text-xl md:text-2xl text-white"></i></div>
+                            <div
+                                class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 icon-bounce">
+                                <i class="fas fa-clock text-xl md:text-2xl text-white"></i>
+                            </div>
                             <div>
                                 <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">🕒 เวลาทำการ</h3>
                                 <div class="space-y-2">
-                                    <p class="text-base md:text-lg text-gray-600"><i class="fas fa-calendar-week mr-2 text-green-500"></i>จันทร์ - ศุกร์: <span class="font-semibold">09:00 - 18:00</span></p>
-                                    <p class="text-base md:text-lg text-gray-600"><i class="fas fa-calendar-times mr-2 text-red-500"></i>เสาร์ - อาทิตย์: <span class="font-semibold text-red-500">หยุดทำการ</span></p>
+                                    <p class="text-base md:text-lg text-gray-600"><i
+                                            class="fas fa-calendar-week mr-2 text-green-500"></i>จันทร์ - ศุกร์: <span
+                                            class="font-semibold">09:00 - 18:00</span></p>
+                                    <p class="text-base md:text-lg text-gray-600"><i
+                                            class="fas fa-calendar-times mr-2 text-red-500"></i>เสาร์ - อาทิตย์: <span
+                                            class="font-semibold text-red-500">หยุดทำการ</span></p>
                                 </div>
                             </div>
                         </div>
@@ -880,23 +1529,30 @@
                 </div>
 
                 <!-- Social & Logo -->
-                <div class="flex flex-col items-center justify-center space-y-8 md:space-y-12 reveal">
+                <div class="flex flex-col items-center justify-center space-y-12 reveal">
                     <div class="text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8">🌟 ติดตามเราได้ที่</h3>
-                        <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-8">
-                            <a href="https://facebook.com/expertinterprint" target="_blank" class="w-16 h-16 md:w-20 md:h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white hover:bg-blue-700 shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-6"><i class="fab fa-facebook text-2xl md:text-3xl"></i></a>
-                            <a href="https://line.me/ti/p/~expertinterprint" target="_blank" class="w-16 h-16 md:w-20 md:h-20 bg-green-500 rounded-2xl flex items-center justify-center text-white hover:bg-green-600 shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-6"><i class="fab fa-line text-2xl md:text-3xl"></i></a>
-                            <a href="#" class="w-16 h-16 md:w-20 md:h-20 bg-pink-500 rounded-2xl flex items-center justify-center text-white hover:bg-pink-600 shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-6"><i class="fab fa-instagram text-2xl md:text-3xl"></i></a>
-                            <a href="#" class="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-2xl flex items-center justify-center text-white hover:bg-red-700 shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-6"><i class="fab fa-youtube text-2xl md:text-3xl"></i></a>
+                        <h3 class="text-3xl font-black text-gray-800 dark:text-white mb-8">🌟 ติดตามเราได้ที่</h3>
+                        <div class="flex flex-wrap justify-center gap-6">
+                            <a href="https://facebook.com/expertinterprint" target="_blank"
+                                class="w-20 h-20 bg-blue-600 rounded-[1.5rem] flex items-center justify-center text-white hover:bg-blue-700 shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-6 shadow-blue-500/20"><i
+                                    class="fab fa-facebook-f text-3xl"></i></a>
+                            <a href="https://line.me/ti/p/~expertinterprint" target="_blank"
+                                class="w-20 h-20 bg-[#00B900] rounded-[1.5rem] flex items-center justify-center text-white hover:bg-[#00a000] shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-6 shadow-green-500/20"><i
+                                    class="fab fa-line text-3xl"></i></a>
+                            <a href="#"
+                                class="w-20 h-20 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-[1.5rem] flex items-center justify-center text-white shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-6 shadow-pink-500/20"><i
+                                    class="fab fa-instagram text-3xl"></i></a>
                         </div>
                     </div>
 
                     <div class="text-center">
                         <div class="card-3d bg-white rounded-3xl p-6 md:p-8 shadow-2xl">
-                            <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint" class="mx-auto w-36 md:w-48 rounded-2xl shadow-lg hover:scale-110 transition-transform duration-300">
+                            <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint"
+                                class="mx-auto w-36 md:w-48 rounded-2xl shadow-lg hover:scale-110 transition-transform duration-300">
                             <div class="mt-4 md:mt-6 text-center">
                                 <h4 class="text-xl md:text-2xl font-bold text-gradient">Expert Interprint</h4>
-                                <p class="text-gray-600 mt-2 text-sm md:text-base">🏆 บริการพิมพ์คุณภาพสูงมานานกว่า 15 ปี</p>
+                                <p class="text-gray-600 mt-2 text-sm md:text-base">🏆 บริการพิมพ์คุณภาพสูงมานานกว่า 15
+                                    ปี</p>
                             </div>
                         </div>
                     </div>
@@ -905,7 +1561,9 @@
                         <div class="glass-dark rounded-3xl p-6 md:p-8">
                             <h3 class="text-xl md:text-2xl font-bold text-white mb-4">🚀 พร้อมเริ่มโปรเจคแล้ว?</h3>
                             <p class="text-white opacity-90 mb-6">ติดต่อเราเลยวันนี้!</p>
-                            <a href="tel:0816164691" class="btn-modern gradient-orange text-white px-6 md:px-8 py-3 rounded-full text-base md:text-lg font-bold pulse-glow inline-flex items-center"><i class="fas fa-phone mr-2"></i>โทรปรึกษาเลย</a>
+                            <a href="tel:0816164691"
+                                class="btn-modern gradient-orange text-white px-6 md:px-8 py-3 rounded-full text-base md:text-lg font-bold pulse-glow inline-flex items-center"><i
+                                    class="fas fa-phone mr-2"></i>โทรปรึกษาเลย</a>
                         </div>
                     </div>
                 </div>
@@ -918,12 +1576,14 @@
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="mb-8">
-                <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint" class="mx-auto w-28 md:w-32 rounded-xl opacity-90 mb-4">
+                <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint"
+                    class="mx-auto w-28 md:w-32 rounded-xl opacity-90 mb-4">
                 <h3 class="text-xl md:text-2xl font-bold mb-2">Expert Interprint</h3>
                 <p class="opacity-80">บริการพิมพ์คุณภาพสูง ครบวงจร</p>
             </div>
             <div class="border-t border-white border-opacity-20 pt-8">
-                <p class="opacity-80 text-sm md:text-base">© 2025 Expert Interprint. All rights reserved. | Made with <i class="fas fa-heart text-red-400 mx-1"></i> for quality printing</p>
+                <p class="opacity-80 text-sm md:text-base">© 2025 Expert Interprint. All rights reserved. | Made with <i
+                        class="fas fa-heart text-red-400 mx-1"></i> for quality printing</p>
             </div>
         </div>
     </footer>
@@ -931,34 +1591,47 @@
     <!-- Floating Action Buttons -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         <!-- WhatsApp Button -->
-        <a href="https://wa.me/66816164691?text=สนใจสอบถามงานพิมพ์ครับ/ค่ะ" target="_blank" class="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-2xl flex items-center justify-center ring-4 ring-green-500/20 bounce-subtle hover:scale-110 transition-transform" aria-label="แชท WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
+        <a href="https://wa.me/66816164691?text=สนใจสอบถามงานพิมพ์ครับ/ค่ะ" target="_blank"
+            class="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-2xl flex items-center justify-center ring-4 ring-green-500/20 bounce-subtle hover:scale-110 transition-transform"
+            aria-label="แชท WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
         <!-- LINE Button -->
-        <button id="lineFab" class="w-14 h-14 rounded-full bg-[#00B900] hover:bg-[#00a000] text-white shadow-2xl flex items-center justify-center ring-4 ring-green-500/20 bounce-subtle hover:scale-110 transition-transform" aria-label="แอดไลน์คุยงาน"><i class="fab fa-line text-2xl"></i></button>
+        <button id="lineFab"
+            class="w-14 h-14 rounded-full bg-[#00B900] hover:bg-[#00a000] text-white shadow-2xl flex items-center justify-center ring-4 ring-green-500/20 bounce-subtle hover:scale-110 transition-transform"
+            aria-label="แอดไลน์คุยงาน"><i class="fab fa-line text-2xl"></i></button>
     </div>
 
     <!-- LINE Modal -->
     <div id="lineModal" class="fixed inset-0 z-50 hidden">
         <div class="absolute inset-0 bg-black bg-opacity-60"></div>
         <div class="relative mx-auto max-w-md w-[92%] md:w-full mt-24 bg-white rounded-3xl p-6 shadow-2xl scale-in">
-            <button id="lineClose" class="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-black text-white grid place-content-center shadow-lg" aria-label="ปิด"><i class="fas fa-times"></i></button>
+            <button id="lineClose"
+                class="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-black text-white grid place-content-center shadow-lg"
+                aria-label="ปิด"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-bold text-center">แอดไลน์คุยงานด่วน</h3>
             <p class="text-center text-slate-500 text-sm mt-1">สแกน QR หรือกดปุ่มเพื่อเปิด LINE</p>
             <div class="mt-4 bg-gray-50 rounded-2xl p-4">
-                <img class="mx-auto w-64 h-64 object-contain" alt="QR Line Expert Interprint" src="https://chart.googleapis.com/chart?cht=qr&chs=320x320&chld=M|0&chl=https%3A%2F%2Fline.me%2Fti%2Fp%2F~expertinterprint" />
+                <img class="mx-auto w-64 h-64 object-contain" alt="QR Line Expert Interprint"
+                    src="https://chart.googleapis.com/chart?cht=qr&chs=320x320&chld=M|0&chl=https%3A%2F%2Fline.me%2Fti%2Fp%2F~expertinterprint" />
             </div>
             <div class="mt-4 flex items-center justify-center gap-3">
                 <span class="px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm">@expertinterprint</span>
-                <button id="copyLineId" class="text-xs px-3 py-1 rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-colors">คัดลอก</button>
+                <button id="copyLineId"
+                    class="text-xs px-3 py-1 rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-colors">คัดลอก</button>
             </div>
-            <a href="https://line.me/ti/p/~expertinterprint" target="_blank" class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-[#00B900] hover:bg-[#00a000] text-white font-bold px-4 py-3 rounded-xl shadow transition-colors"><i class="fab fa-line"></i> เปิด LINE และแอดเพื่อน</a>
+            <a href="https://line.me/ti/p/~expertinterprint" target="_blank"
+                class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-[#00B900] hover:bg-[#00a000] text-white font-bold px-4 py-3 rounded-xl shadow transition-colors"><i
+                    class="fab fa-line"></i> เปิด LINE และแอดเพื่อน</a>
         </div>
     </div>
 
     <!-- Sticky CTA (Mobile) -->
     <div id="stickyCta" class="lg:hidden sticky-cta bg-white shadow-2xl border-t p-4">
         <div class="flex gap-3">
-            <a href="tel:0816164691" class="flex-1 btn-modern gradient-main text-white py-3 rounded-full font-bold text-center"><i class="fas fa-phone mr-2"></i>โทรเลย</a>
-            <button id="stickyLineBtn" class="flex-1 btn-modern bg-[#00B900] text-white py-3 rounded-full font-bold"><i class="fab fa-line mr-2"></i>แอดไลน์</button>
+            <a href="tel:0816164691"
+                class="flex-1 btn-modern gradient-main text-white py-3 rounded-full font-bold text-center"><i
+                    class="fas fa-phone mr-2"></i>โทรเลย</a>
+            <button id="stickyLineBtn" class="flex-1 btn-modern bg-[#00B900] text-white py-3 rounded-full font-bold"><i
+                    class="fab fa-line mr-2"></i>แอดไลน์</button>
         </div>
     </div>
 
@@ -987,11 +1660,11 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.classList.add('shadow-lg');
+                navbar.classList.add('shadow-2xl', 'py-4');
+                navbar.classList.remove('py-6');
             } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('shadow-2xl', 'py-4');
+                navbar.classList.add('py-6');
             }
         });
 
@@ -1020,7 +1693,7 @@
         });
 
         // Hero slideshow
-        (function() {
+        (function () {
             const slides = [...document.querySelectorAll('#heroSlideshow .hero-slide')];
             if (!slides.length) return;
             let i = 0;
@@ -1033,7 +1706,7 @@
         })();
 
         // LINE modal
-        (function() {
+        (function () {
             const fab = document.getElementById('lineFab');
             const modal = document.getElementById('lineModal');
             const closeBtn = document.getElementById('lineClose');
@@ -1063,7 +1736,7 @@
         })();
 
         // Sticky CTA visibility
-        (function() {
+        (function () {
             const stickyCta = document.getElementById('stickyCta');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 600) {
@@ -1089,7 +1762,28 @@
             });
         });
 
-        console.log('🚀 Expert Interprint — Enhanced Version');
+        // Dark Mode Logic
+        (function () {
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+
+            // Check for saved theme or system preference
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                html.classList.add('dark');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+            });
+        })();
+
+        console.log('🚀 Expert Interprint — 2026 Modern Edition');
     </script>
 </body>
+
 </html>

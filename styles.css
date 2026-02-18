@@ -1,21 +1,44 @@
-/* ฟอนต์หลัก */
+/* 2026 Modern Design System */
+:root {
+    /* Light Mode Tokens */
+    --primary: #FF6B35;
+    --primary-alt: #FF8A65;
+    --secondary: #1E40AF;
+    --secondary-alt: #3B82F6;
+    --bg-main: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --border: rgba(15, 23, 42, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --gradient-main: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --radius-full: 9999px;
+    --radius-xl: 1.5rem;
+}
+
+html.dark {
+    /* Dark Mode Tokens */
+    --bg-main: #020617;
+    --bg-surface: #0F172A;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border: rgba(248, 250, 252, 0.1);
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
-}
-
-/* พื้นหลังแบบ gradient */
-.gradient-bg {
-    background: linear-gradient(45deg, #3490dc, #6574cd);
-}
-
-/* เอฟเฟกต์ overlay สำหรับรูปภาพพื้นหลัง */
-.gradient-overlay {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-}
-
-/* เงาสำหรับข้อความ */
-.text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-color: var(--bg-main);
+    color: var(--text-main);
 }
 
 /* เอฟเฟกต์ hover แบบขยาย */
