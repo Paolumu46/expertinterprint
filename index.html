@@ -10,7 +10,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -85,6 +85,44 @@
     @media (prefers-reduced-motion: reduce) {
       *,*::before,*::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; }
     }
+
+    /* Language switcher */
+    html[lang="en"] body { font-family: 'Inter', 'Kanit', sans-serif; }
+    html[lang="zh-CN"] body { font-family: 'Noto Sans SC', 'Kanit', sans-serif; }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.045);
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .lang-btn {
+      min-width: 34px;
+      height: 32px;
+      padding: 0 8px;
+      border-radius: 8px;
+      color: #a9b5c7;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      transition: .2s ease;
+    }
+    .lang-btn:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .lang-btn.active {
+      background: #f8fafc;
+      color: #07111f;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    }
+    @media (max-width: 420px) {
+      .lang-switcher { padding: 3px; }
+      .lang-btn { min-width: 29px; height: 30px; padding: 0 6px; font-size: 10px; }
+    }
+
   </style>
 </head>
 <body>
@@ -106,6 +144,11 @@
       </div>
 
       <div class="flex items-center gap-3">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn active" data-lang="th" aria-label="ภาษาไทย">TH</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-label="中文">中文</button>
+        </div>
         <a href="tel:0816164691" class="hidden sm:inline-flex btn-primary rounded-xl px-5 py-3 text-sm font-semibold items-center gap-2">
           <i class="fa-solid fa-phone"></i> 081-616-4691
         </a>
@@ -425,6 +468,94 @@
       });
     }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+    // Multilingual: TH / EN / Simplified Chinese
+    const i18nTranslations = {
+      en: {"บริการ":"Services","กลุ่มธุรกิจ":"Industries","ทำไมต้องเรา":"Why Us","ผลงาน":"Portfolio","ขั้นตอนทำงาน":"Process","ติดต่อ":"Contact","โรงพิมพ์และ":"Printing &","สำหรับธุรกิจที่ต้องการงานจบจริง":"for businesses that need reliable execution","ดูแลงานพิมพ์องค์กรตั้งแต่ Digital และ Offset ไปจนถึง Sticker & Label, Packaging และของพรีเมียม พร้อมประสานงานโครงการและจัดส่งตามแผนงานของทีม Marketing / Procurement":"End-to-end corporate printing—from Digital and Offset to Sticker & Label, Packaging and premium gifts—with project coordination and delivery aligned to your Marketing / Procurement plan.","ขอใบเสนอราคาโครงการ":"Request a Project Quote","คุยงานทาง LINE":"Chat on LINE","รับงานองค์กรและงานโครงการ":"Corporate & project-based work","รองรับหลายประเภทงานในเจ้าเดียว":"Multiple print categories from one supplier","ให้คำแนะนำสเปกก่อนผลิต":"Specification advice before production","บริการสำหรับองค์กร":"Services for Business","ลดจำนวน Supplier และให้งานพิมพ์หลายประเภทจบในทีมเดียว":"Reduce supplier complexity with one production team","เหมาะสำหรับฝ่ายจัดซื้อ ฝ่ายการตลาด Brand, Trade Marketing, HR, Event และทีมที่ต้องบริหารงานหลายรายการพร้อมกัน":"Built for Procurement, Marketing, Brand, Trade Marketing, HR, Event teams and anyone managing multiple production items at once.","โบรชัวร์ แคตตาล็อก คู่มือ โปสเตอร์ แผ่นพับ นามบัตร และสื่อส่งเสริมการขายสำหรับงานจำนวนน้อยถึงงานผลิตจำนวนมาก":"Brochures, catalogues, manuals, posters, leaflets, business cards and promotional materials—from short runs to high-volume production.","เหมาะกับ: Marketing Kit • POSM • Corporate Print":"Best for: Marketing Kit • POSM • Corporate Print","สติ๊กเกอร์สินค้า ฉลาก PVC/PP งานไดคัท ฉลากกันน้ำ และงานเฉพาะสเปกสำหรับสินค้าและบรรจุภัณฑ์":"Product stickers, PVC/PP labels, die-cut labels, waterproof labels and custom specifications for products and packaging.","เหมาะกับ: FMCG • Food • Cosmetic • Industrial":"Best for: FMCG • Food • Cosmetic • Industrial","กล่องสินค้า กล่องอาหาร ถุงกระดาษ และแพ็กเกจจิ้งสำหรับแคมเปญ โดยช่วยแนะนำวัสดุและรูปแบบให้เหมาะกับการผลิต":"Product boxes, food packaging, paper bags and campaign packaging, with material and structural guidance for efficient production.","เหมาะกับ: Product Launch • Gift Set • Retail":"Best for: Product Launch • Gift Set • Retail","ของพรีเมียมพร้อมโลโก้สำหรับลูกค้า พนักงาน อีเวนต์ และเทศกาล เช่น ปากกา ร่ม กระบอกน้ำ ถุงผ้า และชุดของขวัญ":"Branded premium items for customers, employees, events and seasonal campaigns, including pens, umbrellas, bottles, tote bags and gift sets.","เหมาะกับ: HR • Event • Loyalty • New Year":"Best for: HR • Event • Loyalty • New Year","รองรับการจัดชุดงานหลายรายการ แยกตามสาขา/หน่วยงาน และวางแผนการส่งมอบตามโปรเจกต์":"Kitting of multiple items by branch or department, with delivery planning based on your project schedule.","เหมาะกับ: Retail Chain • Franchise • Nationwide Campaign":"Best for: Retail Chain • Franchise • Nationwide Campaign","ช่วยเลือกวิธีพิมพ์ วัสดุ จำนวนผลิต และทางเลือกสเปก เพื่อให้งบประมาณ เวลา และคุณภาพสมดุลกันก่อนออกใบเสนอราคา":"We help select printing methods, materials, quantities and specification options to balance budget, lead time and quality before quotation.","เหมาะกับ: Procurement • Marketing • Agency":"Best for: Procurement • Marketing • Agency","กลุ่มธุรกิจที่เราเหมาะจะเป็น Partner":"Industries We Support","รองรับงานที่ต้องการความต่อเนื่อง ความสม่ำเสมอ และการประสานงานหลายฝ่าย":"Built for projects that require continuity, consistency and coordination across multiple teams.","ทดลองตลาด ปรับสเปก และขยายจำนวนผลิตเมื่อยอดเติบโต":"Test the market, refine specifications and scale production as demand grows.","ทำไมลูกค้าองค์กรควรคุยกับเรา":"Why Businesses Work With Us","เป้าหมายไม่ใช่แค่ “พิมพ์ได้” แต่ต้องทำให้ทีมคุณบริหารงานง่ายขึ้น":"It is not just about printing—it is about making production easier for your team.","Expert Interprint มีประสบการณ์งานพิมพ์มากกว่า 15 ปี และให้บริการหลายหมวดงาน จึงเหมาะกับองค์กรที่ต้องการลดงานประสานหลาย Supplier และต้องการผู้ดูแลโครงการที่เข้าใจงานผลิต":"With more than 15 years of printing experience across multiple categories, Expert Interprint is suited to organizations looking to reduce supplier coordination and work with a production-aware project partner.","หลายหมวดงานในช่องทางประสานงานเดียว":"Multiple production categories through one point of contact","ช่วยปรับวัสดุ/จำนวน/เทคนิคให้เหมาะกับงบ":"Adjust materials, quantities and techniques to fit your budget","วางแผนงานตาม Deadline และลำดับส่งมอบ":"Plan production around deadlines and delivery priorities","รองรับการวางแผนจัดส่งตามโครงการ":"Delivery planning to match project requirements","สิ่งที่ส่งมาเพื่อประเมินราคาได้ทันที":"What to send for a faster quotation","ประเภทงาน / ขนาด / จำนวน":"Product type / size / quantity","วัสดุหรือสเปกที่ต้องการ (ถ้ามี)":"Preferred material or specification (if any)","ไฟล์ Artwork หรือภาพตัวอย่าง":"Artwork file or reference image","กำหนดส่งและสถานที่จัดส่ง":"Required delivery date and location","งบประมาณเป้าหมาย (ถ้ามี) เพื่อเสนอทางเลือกได้เร็วขึ้น":"Target budget (if any), so we can recommend suitable options faster","ส่งรายละเอียดขอราคา":"Send Quote Details","ตัวอย่างผลงาน":"Portfolio","คุณภาพงานที่ลูกค้าเห็นและสัมผัสได้จริง":"Print quality you can see and feel","ตัวอย่างจากแกลเลอรีเดิมของบริษัท เพื่อให้ลูกค้าเห็นประเภทงานก่อนส่งสเปกขอราคา":"A selection from our existing gallery so you can review production types before sending specifications for quotation.","เริ่มจาก Brief จนถึงส่งมอบ":"From brief to delivery","ออกแบบ flow ให้เหมาะกับงานองค์กรและลดการคุยวนหลายรอบ":"A workflow designed for corporate projects to reduce unnecessary back-and-forth.","รับ Brief":"Receive Brief","ส่งสเปก จำนวน ไฟล์ และกำหนดส่งเพื่อประเมินความเหมาะสม":"Send specifications, quantity, files and deadline for an initial production assessment.","เสนอราคา & ทางเลือก":"Quotation & Options","แนะนำวัสดุ วิธีพิมพ์ และทางเลือกตามคุณภาพ/งบประมาณ":"We recommend materials, printing methods and options based on quality and budget.","อนุมัติผลิต":"Production Approval","ตรวจรายละเอียดก่อนผลิต และประสานงานตามแผนโครงการ":"Confirm details before production and coordinate according to the project plan.","ส่งมอบ":"Delivery","จัดส่งตามสถานที่และเงื่อนไขที่ตกลง พร้อมดูแลงานต่อเนื่อง":"Deliver according to the agreed location and conditions, with continued project support.","มากกว่า 15 ปีของประสบการณ์งานพิมพ์":"More than 15 years of printing experience","เรามุ่งเน้นคุณภาพ การประสานงาน และความยืดหยุ่นในการผลิต เพื่อให้งานของลูกค้าธุรกิจเดินต่อได้ตามแผน":"We focus on quality, coordination and production flexibility so our business clients can keep projects moving as planned.","เหมาะกับงาน B2B":"Built for B2B","รองรับการทำงานร่วมกับ Marketing / Procurement / Agency":"Works smoothly with Marketing / Procurement / Agency teams","หลายหมวดงาน":"Multiple Categories","Print, Label, Packaging และ Premium ในที่เดียว":"Print, Label, Packaging and Premium in one place","คุยสเปกก่อนผลิต":"Specification Review","ลดความคลาดเคลื่อนและช่วยเลือกทางเลือกที่เหมาะสม":"Reduce errors and select the most suitable production option","พร้อมเป็น Production Partner":"Ready to be your Production Partner","รองรับทั้งงานครั้งเดียวและงานต่อเนื่องขององค์กร":"Support for both one-off projects and ongoing corporate production","เริ่มคุยโปรเจกต์":"Start a Project","ส่ง Brief มาได้เลย เราช่วยดูสเปกก่อนออกใบเสนอราคา":"Send us your brief—we will review the specifications before quoting.","เหมาะสำหรับงานองค์กร งาน Campaign งานหลายรายการ และผู้ที่กำลังหา Supplier สำรองหรือ Production Partner ระยะยาว":"Ideal for corporate projects, campaigns, multi-item production, and teams looking for a backup supplier or long-term production partner.","โทรศัพท์":"Phone","ที่อยู่":"Address","5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง":"5/185 Moo 2, Soi Bearing 58, Bearing Road","ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ":"Samrong Nuea, Mueang Samut Prakan","สมุทรปราการ 10270":"Samut Prakan 10270, Thailand","เปิด Google Maps":"Open Google Maps","เวลาทำการ":"Business Hours","จันทร์–ศุกร์ 09:00–18:00 น.":"Monday–Friday 09:00–18:00"},
+      zh: {"บริการ":"服务","กลุ่มธุรกิจ":"行业","ทำไมต้องเรา":"为什么选择我们","ผลงาน":"案例","ขั้นตอนทำงาน":"合作流程","ติดต่อ":"联系我们","โรงพิมพ์และ":"印刷服务与","สำหรับธุรกิจที่ต้องการงานจบจริง":"为需要可靠落地执行的企业服务","ดูแลงานพิมพ์องค์กรตั้งแต่ Digital และ Offset ไปจนถึง Sticker & Label, Packaging และของพรีเมียม พร้อมประสานงานโครงการและจัดส่งตามแผนงานของทีม Marketing / Procurement":"提供一站式企业印刷服务，涵盖数码印刷、胶印、贴纸与标签、包装及企业礼品，并可配合市场与采购团队进行项目协调和交付安排。","ขอใบเสนอราคาโครงการ":"获取项目报价","คุยงานทาง LINE":"通过 LINE 洽谈","รับงานองค์กรและงานโครงการ":"承接企业及项目型订单","รองรับหลายประเภทงานในเจ้าเดียว":"多类印刷项目一站式完成","ให้คำแนะนำสเปกก่อนผลิต":"生产前提供规格建议","บริการสำหรับองค์กร":"企业服务","ลดจำนวน Supplier และให้งานพิมพ์หลายประเภทจบในทีมเดียว":"减少供应商数量，让多类印刷项目由一个团队完成","เหมาะสำหรับฝ่ายจัดซื้อ ฝ่ายการตลาด Brand, Trade Marketing, HR, Event และทีมที่ต้องบริหารงานหลายรายการพร้อมกัน":"适合采购、市场、品牌、渠道营销、人力资源、活动团队，以及需要同时管理多项制作任务的企业团队。","โบรชัวร์ แคตตาล็อก คู่มือ โปสเตอร์ แผ่นพับ นามบัตร และสื่อส่งเสริมการขายสำหรับงานจำนวนน้อยถึงงานผลิตจำนวนมาก":"宣传册、目录、手册、海报、折页、名片及促销物料，支持小批量到大批量生产。","เหมาะกับ: Marketing Kit • POSM • Corporate Print":"适合：Marketing Kit • POSM • Corporate Print","สติ๊กเกอร์สินค้า ฉลาก PVC/PP งานไดคัท ฉลากกันน้ำ และงานเฉพาะสเปกสำหรับสินค้าและบรรจุภัณฑ์":"产品贴纸、PVC/PP 标签、模切标签、防水标签，以及适用于产品和包装的定制规格。","เหมาะกับ: FMCG • Food • Cosmetic • Industrial":"适合：FMCG • 食品 • 化妆品 • 工业","กล่องสินค้า กล่องอาหาร ถุงกระดาษ และแพ็กเกจจิ้งสำหรับแคมเปญ โดยช่วยแนะนำวัสดุและรูปแบบให้เหมาะกับการผลิต":"产品盒、食品包装、纸袋及活动包装，并提供材料与结构建议，使方案更适合实际生产。","เหมาะกับ: Product Launch • Gift Set • Retail":"适合：新品上市 • 礼盒 • 零售","ของพรีเมียมพร้อมโลโก้สำหรับลูกค้า พนักงาน อีเวนต์ และเทศกาล เช่น ปากกา ร่ม กระบอกน้ำ ถุงผ้า และชุดของขวัญ":"为客户、员工、活动及节庆提供定制 LOGO 企业礼品，包括笔、雨伞、水瓶、布袋和礼品套装等。","เหมาะกับ: HR • Event • Loyalty • New Year":"适合：HR • 活动 • 客户忠诚计划 • 新年礼赠","รองรับการจัดชุดงานหลายรายการ แยกตามสาขา/หน่วยงาน และวางแผนการส่งมอบตามโปรเจกต์":"支持多种物料组合打包，可按分店或部门分类，并根据项目计划安排交付。","เหมาะกับ: Retail Chain • Franchise • Nationwide Campaign":"适合：连锁零售 • 加盟体系 • 全国性活动","ช่วยเลือกวิธีพิมพ์ วัสดุ จำนวนผลิต และทางเลือกสเปก เพื่อให้งบประมาณ เวลา และคุณภาพสมดุลกันก่อนออกใบเสนอราคา":"协助选择印刷方式、材料、数量及规格方案，在报价前平衡预算、交期与品质。","เหมาะกับ: Procurement • Marketing • Agency":"适合：采购 • 市场 • 广告/活动代理公司","กลุ่มธุรกิจที่เราเหมาะจะเป็น Partner":"适合合作的行业","รองรับงานที่ต้องการความต่อเนื่อง ความสม่ำเสมอ และการประสานงานหลายฝ่าย":"适合需要持续供应、品质一致和多部门协作的项目。","ทดลองตลาด ปรับสเปก และขยายจำนวนผลิตเมื่อยอดเติบโต":"支持市场测试、规格优化，并随着需求增长扩大生产数量。","ทำไมลูกค้าองค์กรควรคุยกับเรา":"企业为什么选择我们","เป้าหมายไม่ใช่แค่ “พิมพ์ได้” แต่ต้องทำให้ทีมคุณบริหารงานง่ายขึ้น":"目标不只是“能印”，而是让您的团队更轻松地管理生产项目。","Expert Interprint มีประสบการณ์งานพิมพ์มากกว่า 15 ปี และให้บริการหลายหมวดงาน จึงเหมาะกับองค์กรที่ต้องการลดงานประสานหลาย Supplier และต้องการผู้ดูแลโครงการที่เข้าใจงานผลิต":"Expert Interprint 拥有超过 15 年的印刷经验，覆盖多种生产类别，适合希望减少多供应商沟通成本，并寻找懂生产的项目合作伙伴的企业。","หลายหมวดงานในช่องทางประสานงานเดียว":"多类生产项目由单一窗口统一沟通","ช่วยปรับวัสดุ/จำนวน/เทคนิคให้เหมาะกับงบ":"根据预算调整材料、数量和制作工艺","วางแผนงานตาม Deadline และลำดับส่งมอบ":"根据截止日期和交付优先级规划生产","รองรับการวางแผนจัดส่งตามโครงการ":"支持按项目需求规划配送","สิ่งที่ส่งมาเพื่อประเมินราคาได้ทันที":"快速报价所需资料","ประเภทงาน / ขนาด / จำนวน":"产品类型 / 尺寸 / 数量","วัสดุหรือสเปกที่ต้องการ (ถ้ามี)":"所需材料或规格（如有）","ไฟล์ Artwork หรือภาพตัวอย่าง":"设计文件或参考图片","กำหนดส่งและสถานที่จัดส่ง":"要求交期及配送地点","งบประมาณเป้าหมาย (ถ้ามี) เพื่อเสนอทางเลือกได้เร็วขึ้น":"目标预算（如有），方便我们更快提供合适方案","ส่งรายละเอียดขอราคา":"发送报价需求","ตัวอย่างผลงาน":"案例展示","คุณภาพงานที่ลูกค้าเห็นและสัมผัสได้จริง":"看得见、摸得到的印刷品质","ตัวอย่างจากแกลเลอรีเดิมของบริษัท เพื่อให้ลูกค้าเห็นประเภทงานก่อนส่งสเปกขอราคา":"精选公司现有案例，让客户在提交报价规格前先了解我们的生产类型。","เริ่มจาก Brief จนถึงส่งมอบ":"从需求简报到交付","ออกแบบ flow ให้เหมาะกับงานองค์กรและลดการคุยวนหลายรอบ":"专为企业项目设计的流程，减少不必要的反复沟通。","รับ Brief":"接收需求","ส่งสเปก จำนวน ไฟล์ และกำหนดส่งเพื่อประเมินความเหมาะสม":"提供规格、数量、文件和交期，以便进行初步生产评估。","เสนอราคา & ทางเลือก":"报价与方案","แนะนำวัสดุ วิธีพิมพ์ และทางเลือกตามคุณภาพ/งบประมาณ":"根据品质和预算建议材料、印刷方式及替代方案。","อนุมัติผลิต":"确认生产","ตรวจรายละเอียดก่อนผลิต และประสานงานตามแผนโครงการ":"生产前确认细节，并按照项目计划进行协调。","ส่งมอบ":"交付","จัดส่งตามสถานที่และเงื่อนไขที่ตกลง พร้อมดูแลงานต่อเนื่อง":"按照约定地点和条件配送，并持续提供项目支持。","มากกว่า 15 ปีของประสบการณ์งานพิมพ์":"超过 15 年印刷经验","เรามุ่งเน้นคุณภาพ การประสานงาน และความยืดหยุ่นในการผลิต เพื่อให้งานของลูกค้าธุรกิจเดินต่อได้ตามแผน":"我们重视品质、沟通协调和生产灵活性，让企业客户的项目能够按计划推进。","เหมาะกับงาน B2B":"专注 B2B","รองรับการทำงานร่วมกับ Marketing / Procurement / Agency":"可配合市场 / 采购 / 代理公司团队工作","หลายหมวดงาน":"多类服务","Print, Label, Packaging และ Premium ในที่เดียว":"印刷、标签、包装及企业礼品一站式完成","คุยสเปกก่อนผลิต":"生产前确认规格","ลดความคลาดเคลื่อนและช่วยเลือกทางเลือกที่เหมาะสม":"减少误差，并协助选择更合适的生产方案","พร้อมเป็น Production Partner":"成为您的生产合作伙伴","รองรับทั้งงานครั้งเดียวและงานต่อเนื่องขององค์กร":"支持一次性项目及长期持续的企业订单","เริ่มคุยโปรเจกต์":"开始项目洽谈","ส่ง Brief มาได้เลย เราช่วยดูสเปกก่อนออกใบเสนอราคา":"直接发送需求简报，我们会在报价前协助审核规格。","เหมาะสำหรับงานองค์กร งาน Campaign งานหลายรายการ และผู้ที่กำลังหา Supplier สำรองหรือ Production Partner ระยะยาว":"适合企业项目、营销活动、多品项制作，以及正在寻找备用供应商或长期生产合作伙伴的团队。","โทรศัพท์":"电话","ที่อยู่":"地址","5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง":"5/185 Moo 2, Soi Bearing 58, Bearing Road","ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ":"Samrong Nuea, Mueang Samut Prakan","สมุทรปราการ 10270":"泰国北榄府 10270","เปิด Google Maps":"打开 Google Maps","เวลาทำการ":"营业时间","จันทร์–ศุกร์ 09:00–18:00 น.":"周一至周五 09:00–18:00","B2B PRINTING • PACKAGING • PREMIUM • PRODUCTION SUPPORT":"企业印刷 • 包装 • 礼品 • 生产支持","Production Partner":"生产合作伙伴","One-stop production":"一站式生产","Print • Label • Packaging • Premium":"印刷 • 标签 • 包装 • 企业礼品","Digital Print":"数码印刷","Offset Print":"胶印","Sticker & Label":"贴纸与标签","Packaging":"包装","Premium Gifts":"企业礼品","Digital & Offset Printing":"数码印刷与胶印","Corporate Premium":"企业定制礼品","Kitting & Multi-location Support":"套装打包与多地点配送支持","Project Consultation":"项目咨询","FMCG / Consumer":"快消品 / 消费品","Label, Packaging, POSM, Promotion Materials":"标签、包装、POSM、促销物料","Retail / Franchise":"零售 / 加盟","Poster, Menu, Sticker, Branch Kits, Promotion Set":"海报、菜单、贴纸、分店物料包、促销套装","Factory / Industrial":"工厂 / 工业","Manual, Label, Safety Print, Internal Communication":"手册、标签、安全印刷、内部沟通物料","Hotel / Property":"酒店 / 房地产","Sales Kit, Brochure, Signage, Premium, Event Materials":"销售资料、宣传册、标识、礼品、活动物料","Food & Restaurant":"食品 / 餐饮","Menu, Packaging, Label, Table Tent, Promotion Print":"菜单、包装、标签、桌牌、促销印刷品","Agency / Event":"广告代理 / 活动","Production Partner, POSM, Premium, Rush Project Support":"生产合作、POSM、礼品、紧急项目支持","Corporate / HR":"企业 / 人力资源","Corporate Print, Employee Kit, Premium & Event Materials":"企业印刷、员工套装、礼品及活动物料","Brand & SME Growth":"品牌 / 中小企业成长","One-stop Supplier":"一站式供应商","Flexible Specification":"灵活规格","Project Coordination":"项目协调","Delivery Support":"配送支持","For procurement & marketing":"面向采购与市场团队","Printing • Label • Packaging • Premium":"印刷 • 标签 • 包装 • 企业礼品","Expert Interprint. All rights reserved.":"Expert Interprint. 保留所有权利。"}
+    };
+    const i18nMeta = {"th":{"title":"Expert Interprint | โรงพิมพ์และ Production Partner สำหรับองค์กร","description":"Expert Interprint รับผลิตงานพิมพ์สำหรับองค์กร ครบทั้ง Digital, Offset, Sticker & Label, Packaging และ Premium พร้อมดูแลงานโครงการและจัดส่งหลายจุด","menuAria":"เปิดเมนู","lineAria":"ติดต่อผ่าน LINE","heroAlt":"ตัวอย่างงานพิมพ์ Expert Interprint","workAlt":"ตัวอย่างงานพิมพ์","mailSubject":"ขอใบเสนอราคางานพิมพ์องค์กร"},"en":{"title":"Expert Interprint | Printing & Production Partner for Business","description":"Expert Interprint provides corporate printing services including Digital, Offset, Sticker & Label, Packaging and Premium Gifts, with project coordination and multi-location delivery support.","menuAria":"Open menu","lineAria":"Contact us on LINE","heroAlt":"Expert Interprint printing portfolio","workAlt":"Printing portfolio sample","mailSubject":"Corporate Printing Quotation Request"},"zh":{"title":"Expert Interprint | 企业印刷与生产合作伙伴","description":"Expert Interprint 提供企业印刷服务，涵盖数码印刷、胶印、贴纸与标签、包装及企业礼品，并支持项目协调与多地点配送。","menuAria":"打开菜单","lineAria":"通过 LINE 联系我们","heroAlt":"Expert Interprint 印刷案例","workAlt":"印刷案例","mailSubject":"企业印刷报价申请"}};
+
+    const i18nTextNodes = [];
+    const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || ['SCRIPT','STYLE','NOSCRIPT'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+
+    let i18nNode;
+    while ((i18nNode = textWalker.nextNode())) {
+      i18nTextNodes.push({
+        node: i18nNode,
+        original: i18nNode.nodeValue,
+        key: i18nNode.nodeValue.trim()
+      });
+    }
+
+    function preserveWhitespace(original, translated) {
+      const leading = original.match(/^\s*/)?.[0] || '';
+      const trailing = original.match(/\s*$/)?.[0] || '';
+      return leading + translated + trailing;
+    }
+
+    function setLanguage(lang) {
+      if (!['th','en','zh'].includes(lang)) lang = 'th';
+      const dict = lang === 'th' ? null : i18nTranslations[lang];
+
+      i18nTextNodes.forEach(item => {
+        if (lang === 'th') {
+          item.node.nodeValue = item.original;
+        } else if (dict[item.key]) {
+          item.node.nodeValue = preserveWhitespace(item.original, dict[item.key]);
+        } else {
+          item.node.nodeValue = item.original;
+        }
+      });
+
+      const meta = i18nMeta[lang];
+      document.title = meta.title;
+      const description = document.querySelector('meta[name="description"]');
+      if (description) description.setAttribute('content', meta.description);
+
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+
+      const menuButton = document.getElementById('menuBtn');
+      if (menuButton) menuButton.setAttribute('aria-label', meta.menuAria);
+
+      const lineButton = document.querySelector('a[aria-label="ติดต่อผ่าน LINE"], a[aria-label="Contact us on LINE"], a[aria-label="通过 LINE 联系我们"]');
+      if (lineButton) lineButton.setAttribute('aria-label', meta.lineAria);
+
+      const heroImg = document.querySelector('header#home img[alt]');
+      if (heroImg) heroImg.setAttribute('alt', meta.heroAlt);
+
+      document.querySelectorAll('#works .work-card img').forEach((img, index) => {
+        img.setAttribute('alt', `${meta.workAlt} ${index + 1}`);
+      });
+
+      document.querySelectorAll('a[href^="mailto:expertinterprint@gmail.com"]').forEach(link => {
+        link.href = `mailto:expertinterprint@gmail.com?subject=${encodeURIComponent(meta.mailSubject)}`;
+      });
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const active = btn.dataset.lang === lang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      try { localStorage.setItem('expertinterprint-language', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    let savedLanguage = 'th';
+    try { savedLanguage = localStorage.getItem('expertinterprint-language') || 'th'; } catch (e) {}
+    setLanguage(savedLanguage);
+
   </script>
 </body>
 </html>
