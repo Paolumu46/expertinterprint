@@ -70,66 +70,104 @@
     .work-card img { width:100%; height:270px; object-fit:cover; display:block; transition:transform .5s ease; }
     .work-card:hover img { transform:scale(1.045); }
 
-    /* Client logo wall */
-    .client-logo-wall {
-      display:grid;
-      grid-template-rows:repeat(3,76px);
-      grid-auto-flow:column;
-      grid-auto-columns:128px;
-      gap:.75rem;
-      overflow-x:auto;
-      overscroll-behavior-inline:contain;
-      scroll-snap-type:x proximity;
-      padding:.25rem .25rem 1rem;
-      scrollbar-width:thin;
-      scrollbar-color:rgba(255,255,255,.2) transparent;
-    }
-    .client-logo-wall::-webkit-scrollbar { height:6px; }
-    .client-logo-wall::-webkit-scrollbar-track { background:transparent; }
-    .client-logo-wall::-webkit-scrollbar-thumb { background:rgba(255,255,255,.18); border-radius:999px; }
-
-    .client-logo-card {
-      height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 14px;
-      border-radius:16px;
-      background:rgba(255,255,255,.97);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 8px 24px rgba(0,0,0,.12);
-      scroll-snap-align:start;
-      transition:transform .22s ease, box-shadow .22s ease;
-    }
-    .client-logo-card:hover {
-      transform:translateY(-2px);
-      box-shadow:0 12px 30px rgba(0,0,0,.20);
-    }
-    .client-logo-card img {
-      display:block;
-      width:100%;
-      height:100%;
-      max-width:108px;
-      max-height:50px;
-      object-fit:contain;
-    }
-
-    @media (min-width:768px) {
-      .client-logo-wall {
-        grid-template-rows:none;
-        grid-auto-flow:row;
-        grid-auto-columns:auto;
-        grid-template-columns:repeat(7,minmax(0,1fr));
-        overflow:visible;
-        padding:0;
-      }
-    }
-    @media (min-width:1024px) {
-      .client-logo-wall { grid-template-columns:repeat(9,minmax(0,1fr)); }
-    }
+    /* Logo marquee - styles defined above */
 
     .reveal { opacity:0; transform:translateY(22px); transition:.65s ease; }
     .reveal.show { opacity:1; transform:none; }
+
+    /* Logo Marquee - Single Row */
+    .logo-marquee-wrapper {
+      overflow: hidden;
+      width: 100%;
+      cursor: grab;
+      mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    }
+    .logo-marquee-wrapper:active {
+      cursor: grabbing;
+    }
+    .logo-marquee {
+      overflow: hidden;
+      width: 100%;
+    }
+    .logo-marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: marquee-scroll 120s linear infinite;
+      transition: transform 0.1s ease-out;
+    }
+    .logo-marquee:hover .logo-marquee-track {
+      animation-play-state: paused;
+    }
+    .logo-marquee-track.dragging {
+      animation: none !important;
+    }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .logo-marquee-item {
+      flex-shrink: 0;
+      width: 120px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .logo-marquee-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .logo-marquee-item img {
+      max-width: 100%;
+      max-height: 40px;
+      object-fit: contain;
+    }
+
+    /* Stats counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .count-animated {
+      animation: countUp 0.6s ease forwards;
+    }
+
+    /* Testimonial card hover */
+    .card:hover .fa-star {
+      animation: starPop 0.3s ease;
+    }
+    @keyframes starPop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Trust badge pulse */
+    .trust-badge {
+      position: relative;
+      overflow: hidden;
+    }
+    .trust-badge::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .trust-badge:hover::before {
+      opacity: 1;
+    }
 
     .mobile-menu { display:none; }
     .mobile-menu.open { display:block; }
@@ -276,6 +314,50 @@
       </div>
     </div>
   </header>
+
+  <!-- Stats Section -->
+  <section class="py-16 md:py-20">
+    <div class="container-wide">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 border border-orange-500/20">
+          <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="15" data-suffix="+">0</span></div>
+          <div class="text-sm md:text-base text-slate-300">ปีประสบการณ์</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-400/10 to-teal-500/5 border border-teal-400/20">
+          <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="500" data-suffix="+">0</span></div>
+          <div class="text-sm md:text-base text-slate-300">ลูกค้าองค์กร</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-400/10 to-blue-500/5 border border-blue-400/20">
+          <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="5000" data-suffix="+">0</span></div>
+          <div class="text-sm md:text-base text-slate-300">โครงการสำเร็จ</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-pink-400/10 to-pink-500/5 border border-pink-400/20">
+          <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="90" data-suffix="%">0</span></div>
+          <div class="text-sm md:text-base text-slate-300">ลูกค้ากลับมาใช้ซ้ำ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="pb-8">
+    <div class="container-wide">
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10">
+          <i class="fa-solid fa-shield-halved text-teal-400"></i>
+          <span class="text-sm font-medium">รับประกันคุณภาพงาน</span>
+        </div>
+        <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10">
+          <i class="fa-solid fa-clock text-orange-400"></i>
+          <span class="text-sm font-medium">ส่งตรงเวลาทุกครั้ง</span>
+        </div>
+        <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10">
+          <i class="fa-solid fa-headset text-pink-400"></i>
+          <span class="text-sm font-medium">ดูแลหลังการขาย</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Capability strip -->
   <section class="pb-8">
@@ -430,6 +512,72 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="py-24">
+    <div class="container-wide">
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <span class="eyebrow inline-flex rounded-full px-4 py-2 text-sm mb-4">เสียงจากลูกค้า</span>
+        <h2 class="section-title text-3xl md:text-5xl mb-4">ลูกค้าองค์กรไว้วางใจเราอย่างไร</h2>
+        <p class="muted text-lg">ความเห็นจริงจากทีม Marketing, Procurement และ Brand ที่ใช้บริการของเรา</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card rounded-3xl p-7 reveal">
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+          </div>
+          <p class="muted leading-relaxed mb-5">"เปลี่ยนจากต้องคุย 5-6 Supplier เหลือเจ้าเดียวจบ ทีมดูแลดีมาก ส่งงานตรงเวลาทุกครั้ง"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white font-bold text-sm">M</div>
+            <div>
+              <div class="font-semibold text-sm">Marketing Manager</div>
+              <div class="text-xs text-slate-400">บริษัท FMCG ชั้นนำ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3xl p-7 reveal">
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+          </div>
+          <p class="muted leading-relaxed mb-5">"จัดส่งตามสาขาทั่วประเทศได้ตามแผน ไม่ต้องมานั่ง follow เอง ประหยัดเวลาทีม Procurement ไปได้เยอะ"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm">P</div>
+            <div>
+              <div class="font-semibold text-sm">Procurement Lead</div>
+              <div class="text-xs text-slate-400">บริษัท Retail Chain</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3xl p-7 reveal">
+          <div class="flex items-center gap-1 mb-4">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+          </div>
+          <p class="muted leading-relaxed mb-5">"ช่วยแนะนำวัสดุและสเปกให้เหมาะกับงบ ไม่ต้องมานั่งเลือกเอง ได้งานคุณภาพดีในราคาที่เหมาะสม"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-violet-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+            <div>
+              <div class="font-semibold text-sm">Brand Manager</div>
+              <div class="text-xs text-slate-400">บริษัท Consumer Goods</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Clients / Past collaborations -->
   <section id="clients" class="py-20 md:py-24 border-b border-white/5">
@@ -441,62 +589,121 @@
           ตัวอย่างลูกค้าและองค์กรที่ Expert Interprint เคยมีโอกาสให้บริการด้านงานพิมพ์ บรรจุภัณฑ์ และงานสนับสนุนการผลิต
         </p>
       </div>
+    </div>
 
-      <div class="client-logo-wall" aria-label="Client logos">
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--01.png" alt="Client logo 01" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--02.png" alt="Client logo 02" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--03.png" alt="Client logo 03" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--04.png" alt="Client logo 04" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--05.png" alt="Client logo 05" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--06.png" alt="Client logo 06" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--07.png" alt="Client logo 07" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--08.png" alt="Client logo 08" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--09.png" alt="Client logo 09" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--10.png" alt="Client logo 10" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--11.png" alt="Client logo 11" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--12.png" alt="Client logo 12" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--13.png" alt="Client logo 13" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--14.png" alt="Client logo 14" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--15.png" alt="Client logo 15" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--16.png" alt="Client logo 16" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--17.png" alt="Client logo 17" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--18.png" alt="Client logo 18" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--19.png" alt="Client logo 19" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--20.png" alt="Client logo 20" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--21.png" alt="Client logo 21" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--22.png" alt="Client logo 22" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--23.png" alt="Client logo 23" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--24.png" alt="Client logo 24" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--25.png" alt="Client logo 25" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--26.png" alt="Client logo 26" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--27.png" alt="Client logo 27" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--28.png" alt="Client logo 28" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--29.png" alt="Client logo 29" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--30.png" alt="Client logo 30" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--31.png" alt="Client logo 31" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--32.png" alt="Client logo 32" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--33.png" alt="Client logo 33" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--34.png" alt="Client logo 34" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--35.png" alt="Client logo 35" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--36.png" alt="Client logo 36" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--37.png" alt="Client logo 37" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--38.png" alt="Client logo 38" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--39.png" alt="Client logo 39" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--40.png" alt="Client logo 40" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--41.png" alt="Client logo 41" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--42.png" alt="Client logo 42" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--43.png" alt="Client logo 43" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--44.png" alt="Client logo 44" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--45.png" alt="Client logo 45" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--46.png" alt="Client logo 46" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--47.png" alt="Client logo 47" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--48.png" alt="Client logo 48" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--49.png" alt="Client logo 49" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--50.png" alt="Client logo 50" loading="lazy" decoding="async" /></div>
-        <div class="client-logo-card reveal"><img src="./img/logo/Logo_1--51.png" alt="Client logo 51" loading="lazy" decoding="async" /></div>
+    <!-- Logo Marquee - Single Row with Drag -->
+    <div class="logo-marquee-wrapper" id="logoMarquee">
+      <div class="logo-marquee">
+        <div class="logo-marquee-track" id="logoTrack">
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--01.png" alt="Client 01" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--02.png" alt="Client 02" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--03.png" alt="Client 03" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--04.png" alt="Client 04" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--05.png" alt="Client 05" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--06.png" alt="Client 06" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--07.png" alt="Client 07" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--08.png" alt="Client 08" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--09.png" alt="Client 09" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--10.png" alt="Client 10" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--11.png" alt="Client 11" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--12.png" alt="Client 12" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--13.png" alt="Client 13" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--14.png" alt="Client 14" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--15.png" alt="Client 15" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--16.png" alt="Client 16" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--17.png" alt="Client 17" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--18.png" alt="Client 18" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--19.png" alt="Client 19" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--20.png" alt="Client 20" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--21.png" alt="Client 21" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--22.png" alt="Client 22" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--23.png" alt="Client 23" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--24.png" alt="Client 24" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--25.png" alt="Client 25" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--26.png" alt="Client 26" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--27.png" alt="Client 27" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--28.png" alt="Client 28" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--29.png" alt="Client 29" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--30.png" alt="Client 30" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--31.png" alt="Client 31" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--32.png" alt="Client 32" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--33.png" alt="Client 33" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--34.png" alt="Client 34" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--35.png" alt="Client 35" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--36.png" alt="Client 36" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--37.png" alt="Client 37" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--38.png" alt="Client 38" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--39.png" alt="Client 39" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--40.png" alt="Client 40" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--41.png" alt="Client 41" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--42.png" alt="Client 42" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--43.png" alt="Client 43" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--44.png" alt="Client 44" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--45.png" alt="Client 45" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--46.png" alt="Client 46" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--47.png" alt="Client 47" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--48.png" alt="Client 48" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--49.png" alt="Client 49" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--50.png" alt="Client 50" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--51.png" alt="Client 51" loading="lazy" /></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--01.png" alt="Client 01" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--02.png" alt="Client 02" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--03.png" alt="Client 03" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--04.png" alt="Client 04" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--05.png" alt="Client 05" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--06.png" alt="Client 06" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--07.png" alt="Client 07" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--08.png" alt="Client 08" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--09.png" alt="Client 09" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--10.png" alt="Client 10" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--11.png" alt="Client 11" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--12.png" alt="Client 12" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--13.png" alt="Client 13" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--14.png" alt="Client 14" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--15.png" alt="Client 15" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--16.png" alt="Client 16" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--17.png" alt="Client 17" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--18.png" alt="Client 18" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--19.png" alt="Client 19" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--20.png" alt="Client 20" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--21.png" alt="Client 21" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--22.png" alt="Client 22" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--23.png" alt="Client 23" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--24.png" alt="Client 24" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--25.png" alt="Client 25" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--26.png" alt="Client 26" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--27.png" alt="Client 27" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--28.png" alt="Client 28" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--29.png" alt="Client 29" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--30.png" alt="Client 30" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--31.png" alt="Client 31" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--32.png" alt="Client 32" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--33.png" alt="Client 33" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--34.png" alt="Client 34" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--35.png" alt="Client 35" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--36.png" alt="Client 36" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--37.png" alt="Client 37" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--38.png" alt="Client 38" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--39.png" alt="Client 39" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--40.png" alt="Client 40" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--41.png" alt="Client 41" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--42.png" alt="Client 42" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--43.png" alt="Client 43" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--44.png" alt="Client 44" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--45.png" alt="Client 45" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--46.png" alt="Client 46" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--47.png" alt="Client 47" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--48.png" alt="Client 48" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--49.png" alt="Client 49" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--50.png" alt="Client 50" loading="lazy" /></div>
+          <div class="logo-marquee-item"><img src="./img/logo/Logo_1--51.png" alt="Client 51" loading="lazy" /></div>
+        </div>
       </div>
+    </div>
 
-      <p class="muted text-xs md:text-sm text-center max-w-3xl mx-auto mt-7 reveal">
+    <div class="container-wide">
+      <p class="muted text-xs md:text-sm text-center max-w-3xl mx-auto mt-8 reveal">
         โลโก้และเครื่องหมายการค้าเป็นทรัพย์สินของเจ้าของแต่ละราย และใช้เพื่อแสดงประสบการณ์การทำงานเท่านั้น
       </p>
     </div>
@@ -563,13 +770,64 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 py-10">
-    <div class="container-wide flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-      <div>
-        <div class="font-semibold">Expert Interprint</div>
-        <div class="muted text-sm">Printing • Label • Packaging • Premium</div>
+  <footer class="border-t border-white/10 py-12">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div>
+          <img src="https://expertinterprint.pages.dev/img/logo_Expert.png" alt="Expert Interprint" class="h-10 mb-4" />
+          <p class="muted text-sm leading-relaxed">โรงพิมพ์และ Production Partner สำหรับองค์กร ดูแลงานพิมพ์ครบวงจร</p>
+          <div class="flex gap-3 mt-4">
+            <a href="https://lin.ee/Sne2XTo" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#06C755] hover:bg-[#05b04c] flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-line text-white text-lg"></i>
+            </a>
+            <a href="tel:0816164691" class="w-9 h-9 rounded-lg bg-orange-500 hover:bg-orange-600 flex items-center justify-center transition-colors">
+              <i class="fa-solid fa-phone text-white text-sm"></i>
+            </a>
+            <a href="mailto:expertinterprint@gmail.com" class="w-9 h-9 rounded-lg bg-blue-500 hover:bg-blue-600 flex items-center justify-center transition-colors">
+              <i class="fa-solid fa-envelope text-white text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-white">บริการ</h4>
+          <ul class="space-y-2 text-sm muted">
+            <li><a href="#services" class="hover:text-white transition-colors">Digital & Offset Printing</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Sticker & Label</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Packaging</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Corporate Premium</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Project Consultation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-white">ข้อมูลบริษัท</h4>
+          <ul class="space-y-2 text-sm muted">
+            <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-teal-400 mt-0.5"></i><span>5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง สมุทรปราการ 10270</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-orange-400"></i><a href="tel:0816164691" class="hover:text-white transition-colors">081-616-4691</a></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-400"></i><a href="mailto:expertinterprint@gmail.com" class="hover:text-white transition-colors">expertinterprint@gmail.com</a></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-pink-400"></i><span>จันทร์–ศุกร์ 09:00–18:00 น.</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-white">ติดต่อเรา</h4>
+          <a href="https://lin.ee/Sne2XTo" target="_blank" rel="noopener" class="btn-primary rounded-xl px-5 py-3 font-semibold inline-flex items-center gap-2 text-sm">
+            <i class="fa-brands fa-line"></i> คุยงานทาง LINE
+          </a>
+          <p class="muted text-xs mt-4">พร้อมให้คำปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
+        </div>
       </div>
-      <div class="muted text-sm">© <span id="year"></span> Expert Interprint. All rights reserved.</div>
+
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div class="muted text-sm">© <span id="year"></span> Expert Interprint. All rights reserved.</div>
+        <div class="flex gap-4 text-sm muted">
+          <a href="#home" class="hover:text-white transition-colors">หน้าแรก</a>
+          <a href="#services" class="hover:text-white transition-colors">บริการ</a>
+          <a href="#works" class="hover:text-white transition-colors">ผลงาน</a>
+          <a href="#contact" class="hover:text-white transition-colors">ติดต่อ</a>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -700,6 +958,179 @@
     let savedLanguage = 'th';
     try { savedLanguage = localStorage.getItem('expertinterprint-language') || 'th'; } catch (e) {}
     setLanguage(savedLanguage);
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.count);
+        const suffix = counter.dataset.suffix || '';
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Easing function
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeOut * target);
+          
+          counter.textContent = current.toLocaleString() + suffix;
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toLocaleString() + suffix;
+            counter.classList.add('count-animated');
+          }
+        }
+        
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    // Trigger counter animation when stats section is visible
+    const statsSection = document.querySelector('[data-count]');
+    if (statsSection) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      statsObserver.observe(statsSection.closest('section'));
+    }
+
+    // Logo Marquee Drag Functionality
+    const logoTrack = document.getElementById('logoTrack');
+    const logoWrapper = document.getElementById('logoMarquee');
+    if (logoTrack && logoWrapper) {
+      let isDragging = false;
+      let startX;
+      let scrollLeft;
+      let velocity = 0;
+      let lastX = 0;
+      let lastTime = 0;
+      let animationId;
+      
+      // Get the transform value
+      function getTranslateX() {
+        const style = window.getComputedStyle(logoTrack);
+        const matrix = style.transform || style.webkitTransform;
+        if (matrix && matrix !== 'none') {
+          const values = matrix.split('(')[1].split(')')[0].split(',');
+          return parseFloat(values[4]) || 0;
+        }
+        return 0;
+      }
+      
+      // Set transform
+      function setTranslateX(x) {
+        logoTrack.style.transform = `translateX(${x}px)`;
+      }
+      
+      // Mouse/Touch down
+      function handleDragStart(e) {
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+        scrollLeft = getTranslateX();
+        lastX = startX;
+        lastTime = Date.now();
+        velocity = 0;
+        logoTrack.classList.add('dragging');
+        logoTrack.style.animationPlayState = 'paused';
+      }
+      
+      // Mouse/Touch move
+      function handleDragMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+        const walk = x - startX;
+        const now = Date.now();
+        const dt = now - lastTime;
+        if (dt > 0) {
+          velocity = (x - lastX) / dt;
+        }
+        lastX = x;
+        lastTime = now;
+        setTranslateX(scrollLeft + walk);
+      }
+      
+      // Mouse/Touch up
+      function handleDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        logoTrack.classList.remove('dragging');
+        
+        // Apply momentum/inertia
+        const momentum = velocity * 150;
+        let currentX = getTranslateX();
+        let targetX = currentX + momentum;
+        
+        // Get track width for wrapping
+        const trackWidth = logoTrack.scrollWidth / 2;
+        
+        // Wrap around
+        if (targetX < -trackWidth) {
+          targetX += trackWidth;
+        } else if (targetX > 0) {
+          targetX -= trackWidth;
+        }
+        
+        // Animate to target with smooth deceleration
+        const startTime = performance.now();
+        const duration = 800;
+        
+        function animateMomentum(time) {
+          const elapsed = time - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const newX = currentX + (targetX - currentX) * ease;
+          setTranslateX(newX);
+          
+          if (progress < 1) {
+            animationId = requestAnimationFrame(animateMomentum);
+          } else {
+            // Resume auto-scroll after momentum ends
+            setTimeout(() => {
+              logoTrack.style.animationPlayState = 'running';
+              // Reset transform to let CSS animation take over
+              logoTrack.style.transform = '';
+            }, 100);
+          }
+        }
+        
+        if (Math.abs(velocity) > 0.1) {
+          cancelAnimationFrame(animationId);
+          animationId = requestAnimationFrame(animateMomentum);
+        } else {
+          // No significant velocity, just resume
+          setTimeout(() => {
+            logoTrack.style.animationPlayState = 'running';
+            logoTrack.style.transform = '';
+          }, 100);
+        }
+      }
+      
+      // Mouse events
+      logoWrapper.addEventListener('mousedown', handleDragStart);
+      logoWrapper.addEventListener('mousemove', handleDragMove);
+      logoWrapper.addEventListener('mouseup', handleDragEnd);
+      logoWrapper.addEventListener('mouseleave', handleDragEnd);
+      
+      // Touch events
+      logoWrapper.addEventListener('touchstart', handleDragStart, { passive: true });
+      logoWrapper.addEventListener('touchmove', handleDragMove, { passive: false });
+      logoWrapper.addEventListener('touchend', handleDragEnd);
+      
+      // Prevent link dragging
+      logoWrapper.addEventListener('dragstart', (e) => e.preventDefault());
+    }
 
   </script>
 </body>
