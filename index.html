@@ -42,7 +42,7 @@
       font-family: 'Kanit', sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 88% 12%, rgba(45,212,191,.10), transparent 26%),
+        radial-gradient(circle at 88% 12%, rgba(96,165,250,.10), transparent 26%),
         radial-gradient(circle at 12% 4%, rgba(255,107,53,.12), transparent 28%),
         var(--bg);
       overflow-x: hidden;
@@ -55,12 +55,12 @@
     .eyebrow { color: #ffd4c3; background: rgba(255,107,53,.10); border: 1px solid rgba(255,107,53,.22); }
     .section-title { font-weight: 800; letter-spacing: -.02em; line-height: 1.12; }
     .muted { color: var(--muted); }
-    .text-gradient { background: linear-gradient(90deg,#fff 0%,#dce8f8 55%,#8bded0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .text-gradient { background: linear-gradient(90deg,#fff 0%,#dce8f8 55%,#a9c9ed 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
     .btn-primary { background: linear-gradient(135deg,var(--orange),var(--orange-2)); color:#fff; box-shadow: 0 12px 35px rgba(255,107,53,.20); transition:.25s ease; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 45px rgba(255,107,53,.30); }
     .btn-secondary { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.04); color:#fff; transition:.25s ease; }
-    .btn-secondary:hover { border-color:rgba(45,212,191,.55); background:rgba(45,212,191,.08); color:#b9fff2; }
+    .btn-secondary:hover { border-color:rgba(96,165,250,.55); background:rgba(96,165,250,.08); color:#c9dfff; }
 
     .nav-link { color:#c6d0df; transition:.2s ease; }
     .nav-link:hover { color:#fff; }
@@ -74,7 +74,7 @@
 
     .metric { position:relative; overflow:hidden; }
     .metric:before { content:""; position:absolute; left:0; top:0; width:100%; height:2px; background:linear-gradient(90deg,var(--orange),var(--teal)); }
-    .icon-box { width:48px; height:48px; display:grid; place-items:center; border-radius:14px; background:linear-gradient(145deg,rgba(255,107,53,.18),rgba(45,212,191,.08)); border:1px solid rgba(255,255,255,.09); }
+    .icon-box { width:48px; height:48px; display:grid; place-items:center; border-radius:14px; background:linear-gradient(145deg,rgba(255,107,53,.18),rgba(96,165,250,.08)); border:1px solid rgba(255,255,255,.09); }
 
     .work-card { overflow:hidden; border-radius:22px; border:1px solid var(--line); background:rgba(255,255,255,.035); }
     .work-card img { width:100%; height:270px; object-fit:cover; display:block; transition:transform .5s ease; }
@@ -230,6 +230,8 @@
 
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
   </style>
+  <link rel="stylesheet" href="/assets/css/brand.css" />
+  <link rel="stylesheet" href="/assets/css/portfolio.css" />
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
@@ -280,7 +282,7 @@
   <!-- Hero -->
   <header id="home" class="relative pt-36 md:pt-44 pb-20 md:pb-28 overflow-hidden">
     <div class="hero-grid absolute inset-0 pointer-events-none"></div>
-    <div class="absolute -top-10 -right-24 w-[420px] h-[420px] rounded-full bg-teal-400/10 blur-3xl"></div>
+    <div class="absolute -top-10 -right-24 w-[420px] h-[420px] rounded-full bg-blue-400/10 blur-3xl"></div>
     <div class="absolute top-32 -left-24 w-[380px] h-[380px] rounded-full bg-orange-500/10 blur-3xl"></div>
 
     <div class="container-wide relative">
@@ -308,9 +310,9 @@
           </div>
 
           <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
-            <span><i class="fa-solid fa-check text-teal-400 mr-2"></i>รับงานองค์กรและงานโครงการ</span>
-            <span><i class="fa-solid fa-check text-teal-400 mr-2"></i>รองรับหลายประเภทงานในเจ้าเดียว</span>
-            <span><i class="fa-solid fa-check text-teal-400 mr-2"></i>ให้คำแนะนำสเปกก่อนผลิต</span>
+            <span><i class="fa-solid fa-check text-blue-400 mr-2"></i>รับงานองค์กรและงานโครงการ</span>
+            <span><i class="fa-solid fa-check text-blue-400 mr-2"></i>รองรับหลายประเภทงานในเจ้าเดียว</span>
+            <span><i class="fa-solid fa-check text-blue-400 mr-2"></i>ให้คำแนะนำสเปกก่อนผลิต</span>
           </div>
         </div>
 
@@ -319,7 +321,7 @@
             <img src="/img/bg1.png" alt="ตัวอย่างงานพิมพ์ Expert Interprint" class="w-full h-[360px] md:h-[470px] object-cover rounded-[22px]" />
           </div>
           <div class="absolute -bottom-5 -left-4 md:-left-8 glass rounded-2xl px-5 py-4 max-w-[270px]">
-            <div class="text-xs uppercase tracking-[.18em] text-teal-300 mb-1">One-stop production</div>
+            <div class="text-xs uppercase tracking-[.18em] text-blue-300 mb-1">One-stop production</div>
             <div class="font-semibold">Print • Label • Packaging • Premium</div>
           </div>
         </div>
@@ -335,7 +337,7 @@
           <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="15" data-suffix="+">0</span></div>
           <div class="text-sm md:text-base text-slate-300">ปีประสบการณ์</div>
         </div>
-        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-400/10 to-teal-500/5 border border-teal-400/20">
+        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-400/10 to-blue-500/5 border border-blue-400/20">
           <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="500" data-suffix="+">0</span></div>
           <div class="text-sm md:text-base text-slate-300">ลูกค้าองค์กร</div>
         </div>
@@ -343,7 +345,7 @@
           <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="5000" data-suffix="+">0</span></div>
           <div class="text-sm md:text-base text-slate-300">โครงการสำเร็จ</div>
         </div>
-        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-pink-400/10 to-pink-500/5 border border-pink-400/20">
+        <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-orange-400/10 to-orange-500/5 border border-orange-400/20">
           <div class="text-4xl md:text-5xl font-extrabold text-gradient mb-2"><span data-count="90" data-suffix="%">0</span></div>
           <div class="text-sm md:text-base text-slate-300">ลูกค้ากลับมาใช้ซ้ำ</div>
         </div>
@@ -356,7 +358,7 @@
     <div class="container-wide">
       <div class="flex flex-wrap justify-center gap-4 md:gap-6">
         <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10">
-          <i class="fa-solid fa-shield-halved text-teal-400"></i>
+          <i class="fa-solid fa-shield-halved text-blue-400"></i>
           <span class="text-sm font-medium">รับประกันคุณภาพงาน</span>
         </div>
         <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10">
@@ -364,7 +366,7 @@
           <span class="text-sm font-medium">ส่งตรงเวลาทุกครั้ง</span>
         </div>
         <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10">
-          <i class="fa-solid fa-headset text-pink-400"></i>
+          <i class="fa-solid fa-headset text-orange-400"></i>
           <span class="text-sm font-medium">ดูแลหลังการขาย</span>
         </div>
       </div>
@@ -376,9 +378,9 @@
     <div class="container-wide grid grid-cols-2 md:grid-cols-5 gap-3">
       <div class="metric card rounded-2xl p-5 text-center"><i class="fa-solid fa-bolt text-orange-400 mb-2"></i><div class="font-semibold">Digital Print</div></div>
       <div class="metric card rounded-2xl p-5 text-center"><i class="fa-solid fa-layer-group text-blue-400 mb-2"></i><div class="font-semibold">Offset Print</div></div>
-      <div class="metric card rounded-2xl p-5 text-center"><i class="fa-solid fa-tags text-teal-400 mb-2"></i><div class="font-semibold">Sticker & Label</div></div>
-      <div class="metric card rounded-2xl p-5 text-center"><i class="fa-solid fa-box-open text-amber-400 mb-2"></i><div class="font-semibold">Packaging</div></div>
-      <div class="metric card rounded-2xl p-5 text-center col-span-2 md:col-span-1"><i class="fa-solid fa-gift text-pink-400 mb-2"></i><div class="font-semibold">Premium Gifts</div></div>
+      <div class="metric card rounded-2xl p-5 text-center"><i class="fa-solid fa-tags text-blue-400 mb-2"></i><div class="font-semibold">Sticker & Label</div></div>
+      <div class="metric card rounded-2xl p-5 text-center"><i class="fa-solid fa-box-open text-orange-400 mb-2"></i><div class="font-semibold">Packaging</div></div>
+      <div class="metric card rounded-2xl p-5 text-center col-span-2 md:col-span-1"><i class="fa-solid fa-gift text-orange-400 mb-2"></i><div class="font-semibold">Premium Gifts</div></div>
     </div>
   </section>
 
@@ -400,21 +402,21 @@
         </article>
 
         <article class="card rounded-3xl p-7 reveal">
-          <div class="icon-box mb-5"><i class="fa-solid fa-tag text-teal-400"></i></div>
+          <div class="icon-box mb-5"><i class="fa-solid fa-tag text-blue-400"></i></div>
           <h3 class="text-xl font-bold mb-3">Sticker & Label</h3>
           <p class="muted leading-relaxed mb-5">สติ๊กเกอร์สินค้า ฉลาก PVC/PP งานไดคัท ฉลากกันน้ำ และงานเฉพาะสเปกสำหรับสินค้าและบรรจุภัณฑ์</p>
           <div class="text-sm text-slate-300">เหมาะกับ: FMCG • Food • Cosmetic • Industrial</div>
         </article>
 
         <article class="card rounded-3xl p-7 reveal">
-          <div class="icon-box mb-5"><i class="fa-solid fa-box text-amber-400"></i></div>
+          <div class="icon-box mb-5"><i class="fa-solid fa-box text-orange-400"></i></div>
           <h3 class="text-xl font-bold mb-3">Packaging</h3>
           <p class="muted leading-relaxed mb-5">กล่องสินค้า กล่องอาหาร ถุงกระดาษ และแพ็กเกจจิ้งสำหรับแคมเปญ โดยช่วยแนะนำวัสดุและรูปแบบให้เหมาะกับการผลิต</p>
           <div class="text-sm text-slate-300">เหมาะกับ: Product Launch • Gift Set • Retail</div>
         </article>
 
         <article class="card rounded-3xl p-7 reveal">
-          <div class="icon-box mb-5"><i class="fa-solid fa-gift text-pink-400"></i></div>
+          <div class="icon-box mb-5"><i class="fa-solid fa-gift text-orange-400"></i></div>
           <h3 class="text-xl font-bold mb-3">Corporate Premium</h3>
           <p class="muted leading-relaxed mb-5">ของพรีเมียมพร้อมโลโก้สำหรับลูกค้า พนักงาน อีเวนต์ และเทศกาล เช่น ปากกา ร่ม กระบอกน้ำ ถุงผ้า และชุดของขวัญ</p>
           <div class="text-sm text-slate-300">เหมาะกับ: HR • Event • Loyalty • New Year</div>
@@ -428,7 +430,7 @@
         </article>
 
         <article class="card rounded-3xl p-7 reveal">
-          <div class="icon-box mb-5"><i class="fa-solid fa-comments text-violet-400"></i></div>
+          <div class="icon-box mb-5"><i class="fa-solid fa-comments text-blue-400"></i></div>
           <h3 class="text-xl font-bold mb-3">Project Consultation</h3>
           <p class="muted leading-relaxed mb-5">ช่วยเลือกวิธีพิมพ์ วัสดุ จำนวนผลิต และทางเลือกสเปก เพื่อให้งบประมาณ เวลา และคุณภาพสมดุลกันก่อนออกใบเสนอราคา</p>
           <div class="text-sm text-slate-300">เหมาะกับ: Procurement • Marketing • Agency</div>
@@ -455,12 +457,12 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-basket-shopping text-orange-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">FMCG / Consumer</h3><p class="muted text-sm">Label, Packaging, POSM, Promotion Materials</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-store text-teal-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Retail / Franchise</h3><p class="muted text-sm">Poster, Menu, Sticker, Branch Kits, Promotion Set</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-store text-blue-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Retail / Franchise</h3><p class="muted text-sm">Poster, Menu, Sticker, Branch Kits, Promotion Set</p></div>
         <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-industry text-blue-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Factory / Industrial</h3><p class="muted text-sm">Manual, Label, Safety Print, Internal Communication</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-hotel text-amber-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Hotel / Property</h3><p class="muted text-sm">Sales Kit, Brochure, Signage, Premium, Event Materials</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-hotel text-orange-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Hotel / Property</h3><p class="muted text-sm">Sales Kit, Brochure, Signage, Premium, Event Materials</p></div>
         <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-utensils text-rose-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Food & Restaurant</h3><p class="muted text-sm">Menu, Packaging, Label, Table Tent, Promotion Print</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-wand-magic-sparkles text-violet-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Agency / Event</h3><p class="muted text-sm">Production Partner, POSM, Premium, Rush Project Support</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-briefcase text-cyan-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Corporate / HR</h3><p class="muted text-sm">Corporate Print, Employee Kit, Premium & Event Materials</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Agency / Event</h3><p class="muted text-sm">Production Partner, POSM, Premium, Rush Project Support</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-briefcase text-blue-400 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Corporate / HR</h3><p class="muted text-sm">Corporate Print, Employee Kit, Premium & Event Materials</p></div>
         <div class="card rounded-2xl p-6 reveal"><i class="fa-solid fa-rocket text-yellow-300 text-xl mb-4"></i><h3 class="font-bold text-lg mb-2">Brand & SME Growth</h3><p class="muted text-sm">ทดลองตลาด ปรับสเปก และขยายจำนวนผลิตเมื่อยอดเติบโต</p></div>
       </div>
     </div>
@@ -475,16 +477,16 @@
         <p class="muted text-lg leading-relaxed mb-8">Expert Interprint มีประสบการณ์งานพิมพ์มากกว่า 15 ปี และให้บริการหลายหมวดงาน จึงเหมาะกับองค์กรที่ต้องการลดงานประสานหลาย Supplier และต้องการผู้ดูแลโครงการที่เข้าใจงานผลิต</p>
 
         <div class="grid sm:grid-cols-2 gap-4">
-          <div class="card rounded-2xl p-5"><div class="font-bold mb-2"><i class="fa-solid fa-circle-check text-teal-400 mr-2"></i>One-stop Supplier</div><p class="muted text-sm">หลายหมวดงานในช่องทางประสานงานเดียว</p></div>
+          <div class="card rounded-2xl p-5"><div class="font-bold mb-2"><i class="fa-solid fa-circle-check text-blue-400 mr-2"></i>One-stop Supplier</div><p class="muted text-sm">หลายหมวดงานในช่องทางประสานงานเดียว</p></div>
           <div class="card rounded-2xl p-5"><div class="font-bold mb-2"><i class="fa-solid fa-sliders text-orange-400 mr-2"></i>Flexible Specification</div><p class="muted text-sm">ช่วยปรับวัสดุ/จำนวน/เทคนิคให้เหมาะกับงบ</p></div>
           <div class="card rounded-2xl p-5"><div class="font-bold mb-2"><i class="fa-solid fa-clock text-blue-400 mr-2"></i>Project Coordination</div><p class="muted text-sm">วางแผนงานตาม Deadline และลำดับส่งมอบ</p></div>
-          <div class="card rounded-2xl p-5"><div class="font-bold mb-2"><i class="fa-solid fa-truck-fast text-amber-400 mr-2"></i>Delivery Support</div><p class="muted text-sm">รองรับการวางแผนจัดส่งตามโครงการ</p></div>
+          <div class="card rounded-2xl p-5"><div class="font-bold mb-2"><i class="fa-solid fa-truck-fast text-orange-400 mr-2"></i>Delivery Support</div><p class="muted text-sm">รองรับการวางแผนจัดส่งตามโครงการ</p></div>
         </div>
       </div>
 
       <div class="reveal">
         <div class="glass rounded-[30px] p-8 md:p-10">
-          <div class="text-sm text-teal-300 tracking-[.16em] uppercase mb-3">For procurement & marketing</div>
+          <div class="text-sm text-blue-300 tracking-[.16em] uppercase mb-3">For procurement & marketing</div>
           <h3 class="text-2xl md:text-3xl font-bold mb-6">สิ่งที่ส่งมาเพื่อประเมินราคาได้ทันที</h3>
           <div class="space-y-4 text-slate-300">
             <div class="flex gap-3"><span class="w-7 h-7 rounded-full bg-orange-500/15 text-orange-300 grid place-items-center shrink-0">1</span><span>ประเภทงาน / ขนาด / จำนวน</span></div>
@@ -501,35 +503,130 @@
     </div>
   </section>
 
-  <!-- Works -->
-  <section id="works" class="py-24 bg-white/[.025] border-y border-white/5">
+  <!-- Works: selected photographs of completed pieces and product photography -->
+  <section id="works" class="portfolio-section" aria-labelledby="portfolio-heading">
     <div class="container-wide">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10 reveal">
-        <div class="max-w-2xl">
-          <span class="eyebrow inline-flex rounded-full px-4 py-2 text-sm mb-4">ตัวอย่างผลงาน</span>
-          <h2 class="section-title text-3xl md:text-5xl">คุณภาพงานที่ลูกค้าเห็นและสัมผัสได้จริง</h2>
+      <div class="portfolio-intro">
+        <div>
+          <span class="portfolio-eyebrow"><span aria-hidden="true"></span> SELECTED WORK / EXPERT INTERPRINT</span>
+          <h2 id="portfolio-heading">จากไอเดีย สู่ชิ้นงานจริง</h2>
         </div>
-        <p class="muted md:text-right max-w-md">ตัวอย่างจากแกลเลอรีเดิมของบริษัท เพื่อให้ลูกค้าเห็นประเภทงานก่อนส่งสเปกขอราคา</p>
+        <div class="portfolio-intro-note">
+          <p>สัมผัสรายละเอียดผ่านผลงานของเรา ทั้งสิ่งพิมพ์ บรรจุภัณฑ์ และสื่อจัดแสดงสำหรับแบรนด์ของคุณ</p>
+          <span class="portfolio-hint">เลือกหมวดที่สนใจ แล้วกดภาพเพื่อดูรายละเอียด</span>
+        </div>
       </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <figure class="work-card reveal"><img src="/img/mock/4.jpg" alt="ตัวอย่างงานพิมพ์ 1" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/5.jpg" alt="ตัวอย่างงานพิมพ์ 2" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/6.jpg" alt="ตัวอย่างงานพิมพ์ 3" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/9.jpg" alt="ตัวอย่างงานพิมพ์ 4" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/10.jpg" alt="ตัวอย่างงานพิมพ์ 5" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/14.jpg" alt="ตัวอย่างงานพิมพ์ 6" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/4.png" alt="ตัวอย่างงานพิมพ์ 7" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/12.jpg" alt="ตัวอย่างงานพิมพ์ 8" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/18.jpg" alt="ตัวอย่างงานพิมพ์ 9" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/mock/17.jpg" alt="ตัวอย่างงานพิมพ์ 10" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/bg/show/1.jpg" alt="ตัวอย่างงานพิมพ์ 11" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/bg/show/20.jpg" alt="ตัวอย่างงานพิมพ์ 12" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/bg/show/36.jpg" alt="ตัวอย่างงานพิมพ์ 13" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/bg/show/26.jpg" alt="ตัวอย่างงานพิมพ์ 14" loading="lazy" /></figure>
-        <figure class="work-card reveal"><img src="/img/bg/show/41.jpg" alt="ตัวอย่างงานพิมพ์ 15" loading="lazy" /></figure>
+      <div class="portfolio-toolbar">
+        <div class="portfolio-filters" role="group" aria-label="Portfolio categories">
+          <button type="button" data-filter="all" aria-pressed="true" aria-controls="portfolio-grid">ทั้งหมด</button>
+          <button type="button" data-filter="print" aria-pressed="false" aria-controls="portfolio-grid">หนังสือและสิ่งพิมพ์</button>
+          <button type="button" data-filter="display" aria-pressed="false" aria-controls="portfolio-grid">บูธและสื่อจัดแสดง</button>
+          <button type="button" data-filter="premium" aria-pressed="false" aria-controls="portfolio-grid">บรรจุภัณฑ์และของพรีเมียม</button>
+        </div>
+        <span class="portfolio-count" role="status" aria-live="polite"><span id="portfolio-count">15</span> <span>ผลงาน</span></span>
+      </div>
+      <div id="portfolio-grid" class="portfolio-grid">
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="ชุดบูธและแบ็กดรอป" data-alt-th="ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์ Pacific Healthcare" data-alt-en="Backdrop &amp; event counter — Backdrop and promotional counter" data-alt-zh="Pacific Healthcare 展示背景与接待台 — 展示背景与接待台" data-full="/img/portfolio/event-backdrop.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/event-backdrop-thumb.webp" width="1352" height="1212" alt="ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์ Pacific Healthcare" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Event display</span><span class="portfolio-title">ชุดบูธและแบ็กดรอป</span><span class="portfolio-detail">ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="premium">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="ถุงกระดาษพร้อมโลโก้" data-alt-th="ถุงกระดาษสีน้ำตาลพิมพ์โลโก้" data-alt-en="Branded paper bags — Brand and event packaging" data-alt-zh="品牌纸袋 — 品牌与活动包装" data-full="/img/portfolio/branded-paper-bag.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/branded-paper-bag-thumb.webp" width="1200" height="1600" alt="ถุงกระดาษสีน้ำตาลพิมพ์โลโก้" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Branded paper bags</span><span class="portfolio-title">ถุงกระดาษพร้อมโลโก้</span><span class="portfolio-detail">บรรจุภัณฑ์สำหรับแบรนด์และงานอีเวนต์</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="print">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="หนังสือและสิ่งพิมพ์เข้าเล่ม" data-alt-th="หนังสือ Public วางแสดงบนชั้น" data-alt-en="Books &amp; publications — Print for reading and display" data-alt-zh="书籍与出版物 — 阅读与展示印刷品" data-full="/img/portfolio/public-book.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/public-book-thumb.webp" width="1200" height="1600" alt="หนังสือ Public วางแสดงบนชั้น" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Books & publications</span><span class="portfolio-title">หนังสือและสิ่งพิมพ์เข้าเล่ม</span><span class="portfolio-detail">งานพิมพ์สำหรับอ่านและจัดแสดง</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="ป้ายไดคัทตั้งพื้น" data-alt-th="ป้ายไดคัทรูปขวดเครื่องดื่มพร้อมฐานตั้ง" data-alt-en="Die-cut floor display — Custom shapes for point-of-sale displays" data-alt-zh="异形落地展示牌 — 用于销售点展示的定制造型" data-full="/img/portfolio/beverage-diecut.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/beverage-diecut-thumb.webp" width="1108" height="1477" alt="ป้ายไดคัทรูปขวดเครื่องดื่มพร้อมฐานตั้ง" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Die-cut display</span><span class="portfolio-title">ป้ายไดคัทตั้งพื้น</span><span class="portfolio-detail">ชิ้นงานรูปทรงพิเศษสำหรับจุดขาย</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="แบ็กดรอปผ้าพร้อมโครง" data-alt-th="แบ็กดรอปผ้า Invisalign Go สีดำพร้อมโครงตั้ง" data-alt-en="Fabric exhibition backdrop — A display background for booths and events" data-alt-zh="布艺展览背景 — 用于展台与活动的展示背景" data-full="/img/portfolio/fabric-backdrop.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/fabric-backdrop-thumb.webp" width="1280" height="1280" alt="แบ็กดรอปผ้า Invisalign Go สีดำพร้อมโครงตั้ง" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Fabric backdrop</span><span class="portfolio-title">แบ็กดรอปผ้าพร้อมโครง</span><span class="portfolio-detail">พื้นหลังจัดแสดงสำหรับบูธและพื้นที่กิจกรรม</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="โรลอัพตั้งโต๊ะ" data-alt-th="โรลอัพตั้งโต๊ะ Centrum พร้อมฐานอะลูมิเนียม" data-alt-en="Desktop roll-up banner — Compact promotional display" data-alt-zh="桌面易拉宝 — 小型推广展示" data-full="/img/portfolio/desktop-rollup.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/desktop-rollup-thumb.webp" width="890" height="1187" alt="โรลอัพตั้งโต๊ะ Centrum พร้อมฐานอะลูมิเนียม" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Desktop roll-up</span><span class="portfolio-title">โรลอัพตั้งโต๊ะ</span><span class="portfolio-detail">สื่อประชาสัมพันธ์ขนาดกะทัดรัด</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="เคาน์เตอร์ประชาสัมพันธ์" data-alt-th="เคาน์เตอร์ประชาสัมพันธ์ Invisalign และ iTero" data-alt-en="Promotional counter — Display for promotional spaces" data-alt-zh="推广接待台 — 推广空间展示制作" data-full="/img/portfolio/display-counter.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/display-counter-thumb.webp" width="1477" height="1108" alt="เคาน์เตอร์ประชาสัมพันธ์ Invisalign และ iTero" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Promotional counters</span><span class="portfolio-title">เคาน์เตอร์ประชาสัมพันธ์</span><span class="portfolio-detail">งานจัดแสดงสำหรับพื้นที่ประชาสัมพันธ์</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="print">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="ปกประกาศนียบัตรผ้าไหม" data-alt-th="ปกประกาศนียบัตรผ้าไหมสีน้ำเงินพร้อมตราสัญลักษณ์" data-alt-en="Silk certificate folders — Silk covers with an emblem" data-alt-zh="丝绸证书封套 — 带徽标的丝绸封套" data-full="/img/portfolio/certificate-folder.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/certificate-folder-thumb.webp" width="1108" height="1477" alt="ปกประกาศนียบัตรผ้าไหมสีน้ำเงินพร้อมตราสัญลักษณ์" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Certificate folders</span><span class="portfolio-title">ปกประกาศนียบัตรผ้าไหม</span><span class="portfolio-detail">ปกผ้าไหมพร้อมตราสัญลักษณ์</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="print">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="ปฏิทินตั้งโต๊ะ" data-alt-th="ปฏิทินตั้งโต๊ะเข้าเล่มห่วงบนพื้นหลังสีเขียว" data-alt-en="Desk calendar — Spiral-bound desktop print" data-alt-zh="台历 — 螺旋装订台式印刷品" data-full="/img/portfolio/desk-calendar.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/desk-calendar-thumb.webp" width="1600" height="1143" alt="ปฏิทินตั้งโต๊ะเข้าเล่มห่วงบนพื้นหลังสีเขียว" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Desk calendars</span><span class="portfolio-title">ปฏิทินตั้งโต๊ะ</span><span class="portfolio-detail">งานพิมพ์เข้าเล่มห่วงสำหรับตั้งโต๊ะ</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="โรลอัพสำหรับองค์กร" data-alt-th="โรลอัพ Abbott สีฟ้าในชุดสื่อองค์กร" data-alt-en="Corporate roll-up banner — Printed banner with a freestanding base" data-alt-zh="企业易拉宝 — 配有独立底座的印刷展示横幅" data-full="/img/portfolio/corporate-rollup.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/corporate-rollup-thumb.webp" width="1108" height="1477" alt="โรลอัพ Abbott สีฟ้าในชุดสื่อองค์กร" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Corporate roll-up</span><span class="portfolio-title">โรลอัพสำหรับองค์กร</span><span class="portfolio-detail">งานพิมพ์พร้อมฐานตั้งสำหรับประชาสัมพันธ์</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="premium">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="พัดประชาสัมพันธ์ไดคัท" data-alt-th="พัดประชาสัมพันธ์รูปทรงไดคัทพร้อมด้ามจับ" data-alt-en="Die-cut promotional fans — Items for events and campaigns" data-alt-zh="异形推广手扇 — 活动与推广用品" data-full="/img/portfolio/promotional-fans.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/promotional-fans-thumb.webp" width="1200" height="1600" alt="พัดประชาสัมพันธ์รูปทรงไดคัทพร้อมด้ามจับ" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Promotional items</span><span class="portfolio-title">พัดประชาสัมพันธ์ไดคัท</span><span class="portfolio-detail">ชิ้นงานสำหรับกิจกรรมและแคมเปญ</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="บูธประชาสัมพันธ์พร้อมป้าย" data-alt-th="บูธประชาสัมพันธ์ Ensure สีเขียวพร้อมป้ายด้านบน" data-alt-en="Branded promotional booth — Coordinated counter and header display" data-alt-zh="品牌推广展台 — 配套接待台与顶部展示牌" data-full="/img/portfolio/promotional-booth.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/promotional-booth-thumb.webp" width="1108" height="1477" alt="บูธประชาสัมพันธ์ Ensure สีเขียวพร้อมป้ายด้านบน" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Promotional booth</span><span class="portfolio-title">บูธประชาสัมพันธ์พร้อมป้าย</span><span class="portfolio-detail">เคาน์เตอร์และป้ายในชุดงานเดียวกัน</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="print">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="ปฏิทินสำหรับแคมเปญ" data-alt-th="ปฏิทินตั้งโต๊ะสีน้ำเงินพร้อมงานพิมพ์ประกอบ" data-alt-en="Campaign calendar — Print for year-round brand communication" data-alt-zh="活动台历 — 全年品牌传播印刷品" data-full="/img/portfolio/campaign-calendar.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/campaign-calendar-thumb.webp" width="1600" height="1067" alt="ปฏิทินตั้งโต๊ะสีน้ำเงินพร้อมงานพิมพ์ประกอบ" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Campaign print</span><span class="portfolio-title">ปฏิทินสำหรับแคมเปญ</span><span class="portfolio-detail">สิ่งพิมพ์สำหรับสื่อสารแบรนด์ตลอดปี</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="display">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="โรลอัพสื่อสารแบรนด์" data-alt-th="โรลอัพสื่อสารแบรนด์สีเหลืองพร้อมภาพต้นไม้" data-alt-en="Brand communication roll-up — Vertical signage for promotional spaces" data-alt-zh="品牌传播易拉宝 — 用于推广空间的竖式展示牌" data-full="/img/portfolio/brand-rollup.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/brand-rollup-thumb.webp" width="900" height="1600" alt="โรลอัพสื่อสารแบรนด์สีเหลืองพร้อมภาพต้นไม้" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Brand display</span><span class="portfolio-title">โรลอัพสื่อสารแบรนด์</span><span class="portfolio-detail">สื่อแนวตั้งสำหรับพื้นที่ประชาสัมพันธ์</span></span>
+          </button>
+        </figure>
+        <figure class="portfolio-card" data-category="print">
+          <button type="button" class="portfolio-open" aria-haspopup="dialog" aria-label="การ์ดและสิ่งพิมพ์พิเศษ" data-alt-th="การ์ดสีน้ำเงินตั้งแสดงพร้อมรายละเอียดสีทอง" data-alt-en="Cards &amp; specialty print — Print for special occasions" data-alt-zh="卡片与特色印刷 — 特别场合印刷品" data-full="/img/portfolio/greeting-print.webp">
+            <span class="portfolio-image"><img src="/img/portfolio/greeting-print-thumb.webp" width="1200" height="1600" alt="การ์ดสีน้ำเงินตั้งแสดงพร้อมรายละเอียดสีทอง" loading="lazy" decoding="async" /><span class="portfolio-zoom" aria-hidden="true">↗</span></span>
+            <span class="portfolio-caption"><span class="portfolio-label">Specialty print</span><span class="portfolio-title">การ์ดและสิ่งพิมพ์พิเศษ</span><span class="portfolio-detail">งานพิมพ์สำหรับโอกาสพิเศษ</span></span>
+          </button>
+        </figure>
+      </div>
+      <div class="portfolio-outro">
+        <div><span class="portfolio-eyebrow">YOUR NEXT PROJECT</span><h3>มีงานที่อยากทำในแบบของคุณ?</h3><p>ส่งภาพตัวอย่าง ขนาด และจำนวนมาให้เรา ช่วยดูสเปกก่อนเริ่มผลิต</p></div>
+        <a href="#contact" class="portfolio-cta">คุยรายละเอียดงาน <span aria-hidden="true">↗</span></a>
       </div>
     </div>
+    <dialog id="portfolio-dialog" class="portfolio-dialog" aria-labelledby="portfolio-dialog-title">
+      <div class="portfolio-dialog-bar"><span id="portfolio-dialog-count"></span><button type="button" id="portfolio-close" aria-label="Close image">×</button></div>
+      <div class="portfolio-dialog-stage"><button type="button" id="portfolio-prev" aria-label="Previous image">←</button><img id="portfolio-dialog-image" alt="" /><button type="button" id="portfolio-next" aria-label="Next image">→</button></div>
+      <div class="portfolio-dialog-caption"><h3 id="portfolio-dialog-title"></h3><p id="portfolio-dialog-detail"></p></div>
+    </dialog>
   </section>
 
   <!-- Testimonials -->
@@ -544,15 +641,15 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card rounded-3xl p-7 reveal">
           <div class="flex items-center gap-1 mb-4">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
           </div>
           <p class="muted leading-relaxed mb-5">"เปลี่ยนจากต้องคุย 5-6 Supplier เหลือเจ้าเดียวจบ ทีมดูแลดีมาก ส่งงานตรงเวลาทุกครั้ง"</p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white font-bold text-sm">M</div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center text-white font-bold text-sm">M</div>
             <div>
               <div class="font-semibold text-sm">Marketing Manager</div>
               <div class="text-xs text-slate-400">บริษัท FMCG ชั้นนำ</div>
@@ -562,15 +659,15 @@
 
         <div class="card rounded-3xl p-7 reveal">
           <div class="flex items-center gap-1 mb-4">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
           </div>
           <p class="muted leading-relaxed mb-5">"จัดส่งตามสาขาทั่วประเทศได้ตามแผน ไม่ต้องมานั่ง follow เอง ประหยัดเวลาทีม Procurement ไปได้เยอะ"</p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm">P</div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm">P</div>
             <div>
               <div class="font-semibold text-sm">Procurement Lead</div>
               <div class="text-xs text-slate-400">บริษัท Retail Chain</div>
@@ -580,15 +677,15 @@
 
         <div class="card rounded-3xl p-7 reveal">
           <div class="flex items-center gap-1 mb-4">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
+            <i class="fa-solid fa-star text-orange-400"></i>
           </div>
           <p class="muted leading-relaxed mb-5">"ช่วยแนะนำวัสดุและสเปกให้เหมาะกับงบ ไม่ต้องมานั่งเลือกเอง ได้งานคุณภาพดีในราคาที่เหมาะสม"</p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-violet-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm">B</div>
             <div>
               <div class="font-semibold text-sm">Brand Manager</div>
               <div class="text-xs text-slate-400">บริษัท Consumer Goods</div>
@@ -748,7 +845,7 @@
   </section>
 
   <!-- About / Trust -->
-  <section class="py-20 bg-gradient-to-r from-orange-500/[.08] to-teal-400/[.06] border-y border-white/5">
+  <section class="py-20 bg-gradient-to-r from-orange-500/[.08] to-blue-400/[.06] border-y border-white/5">
     <div class="container-wide grid lg:grid-cols-[.85fr_1.15fr] gap-10 items-center">
       <div class="reveal">
         <img src="/img/logo_Expert.png" alt="Expert Interprint" class="w-48 md:w-56 mb-6" />
@@ -782,7 +879,7 @@
 
           <div class="grid gap-4 reveal">
             <div class="card rounded-2xl p-5 flex gap-4"><div class="icon-box shrink-0"><i class="fa-solid fa-phone text-orange-400"></i></div><div><div class="font-semibold mb-1">โทรศัพท์</div><a href="tel:0816164691" class="muted hover:text-white">081-616-4691</a><br/><a href="tel:023991146" class="muted hover:text-white"></a></div></div>
-            <div class="card rounded-2xl p-5 flex gap-4"><div class="icon-box shrink-0"><i class="fa-solid fa-location-dot text-teal-400"></i></div><div><div class="font-semibold mb-1">ที่อยู่</div><p class="muted text-sm leading-relaxed">5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง<br/>ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ<br/>สมุทรปราการ 10270</p><a href="https://maps.app.goo.gl/vXavTL6BXbTDmPQc9" target="_blank" rel="noopener" class="text-teal-300 text-sm hover:text-teal-200">เปิด Google Maps <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a></div></div>
+            <div class="card rounded-2xl p-5 flex gap-4"><div class="icon-box shrink-0"><i class="fa-solid fa-location-dot text-blue-400"></i></div><div><div class="font-semibold mb-1">ที่อยู่</div><p class="muted text-sm leading-relaxed">5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง<br/>ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ<br/>สมุทรปราการ 10270</p><a href="https://maps.app.goo.gl/vXavTL6BXbTDmPQc9" target="_blank" rel="noopener" class="text-blue-300 text-sm hover:text-blue-200">เปิด Google Maps <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a></div></div>
             <div class="card rounded-2xl p-5 flex gap-4"><div class="icon-box shrink-0"><i class="fa-solid fa-clock text-blue-400"></i></div><div><div class="font-semibold mb-1">เวลาทำการ</div><p class="muted text-sm">จันทร์–ศุกร์ 09:00–18:00 น.</p></div></div>
           </div>
         </div>
@@ -797,7 +894,7 @@
           <img src="/img/logo_Expert.png" alt="Expert Interprint" class="h-10 mb-4" />
           <p class="muted text-sm leading-relaxed">โรงพิมพ์และ Production Partner สำหรับองค์กร ดูแลงานพิมพ์ครบวงจร</p>
           <div class="flex gap-3 mt-4">
-            <a href="https://lin.ee/Sne2XTo" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#06C755] hover:bg-[#05b04c] flex items-center justify-center transition-colors">
+            <a href="https://lin.ee/Sne2XTo" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-orange-500 hover:bg-orange-600 flex items-center justify-center transition-colors">
               <i class="fa-brands fa-line text-white text-lg"></i>
             </a>
             <a href="tel:0816164691" class="w-9 h-9 rounded-lg bg-orange-500 hover:bg-orange-600 flex items-center justify-center transition-colors">
@@ -824,10 +921,10 @@
         <div>
           <h4 class="font-bold text-sm mb-4 text-white">ข้อมูลบริษัท</h4>
           <ul class="space-y-2 text-sm muted">
-            <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-teal-400 mt-0.5"></i><span>5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง สมุทรปราการ 10270</span></li>
+            <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-blue-400 mt-0.5"></i><span>5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง สมุทรปราการ 10270</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-orange-400"></i><a href="tel:0816164691" class="hover:text-white transition-colors">081-616-4691</a></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-400"></i><a href="mailto:expertinterprint@gmail.com" class="hover:text-white transition-colors">expertinterprint@gmail.com</a></li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-pink-400"></i><span>จันทร์–ศุกร์ 09:00–18:00 น.</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-orange-400"></i><span>จันทร์–ศุกร์ 09:00–18:00 น.</span></li>
           </ul>
         </div>
 
@@ -861,7 +958,7 @@
     </div>
     <!-- Add Friend Button -->
     <a href="https://line.me/ti/p/~expertinterprint" target="_blank" rel="noopener" 
-       class="group relative flex items-center gap-2 bg-[#06C755] hover:bg-[#05b04c] text-white rounded-full shadow-xl shadow-green-500/25 hover:shadow-2xl hover:shadow-green-500/40 transition-all duration-300 hover:-translate-y-1 pr-5 pl-4 py-3"
+       class="group relative flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 hover:-translate-y-1 pr-5 pl-4 py-3"
        aria-label="เพิ่มเพื่อน LINE OA"
        onmouseenter="document.getElementById('line-qr-popup').classList.remove('opacity-0','translate-y-2','pointer-events-none')"
        onmouseleave="document.getElementById('line-qr-popup').classList.add('opacity-0','translate-y-2','pointer-events-none')">
@@ -874,6 +971,7 @@
     </a>
   </div>
 
+  <script src="/assets/js/portfolio.js" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -897,6 +995,10 @@
 
     // Multilingual: TH / EN / Simplified Chinese
     const i18nTranslations = {"en": {"บริการ": "Services", "กลุ่มธุรกิจ": "Industries", "ทำไมต้องเรา": "Why Us", "ผลงาน": "Portfolio", "ขั้นตอนทำงาน": "Process", "ติดต่อ": "Contact", "โรงพิมพ์และ": "Printing &", "สำหรับธุรกิจที่ต้องการงานจบจริง": "for businesses that need reliable execution", "ดูแลงานพิมพ์องค์กรตั้งแต่ Digital และ Offset ไปจนถึง Sticker & Label, Packaging และของพรีเมียม พร้อมประสานงานโครงการและจัดส่งตามแผนงานของทีม Marketing / Procurement": "End-to-end corporate printing—from Digital and Offset to Sticker & Label, Packaging and premium gifts—with project coordination and delivery aligned to your Marketing / Procurement plan.", "ขอใบเสนอราคาโครงการ": "Request a Project Quote", "คุยงานทาง LINE": "Chat on LINE", "รับงานองค์กรและงานโครงการ": "Corporate & project-based work", "รองรับหลายประเภทงานในเจ้าเดียว": "Multiple print categories from one supplier", "ให้คำแนะนำสเปกก่อนผลิต": "Specification advice before production", "บริการสำหรับองค์กร": "Services for Business", "ลดจำนวน Supplier และให้งานพิมพ์หลายประเภทจบในทีมเดียว": "Reduce supplier complexity with one production team", "เหมาะสำหรับฝ่ายจัดซื้อ ฝ่ายการตลาด Brand, Trade Marketing, HR, Event และทีมที่ต้องบริหารงานหลายรายการพร้อมกัน": "Built for Procurement, Marketing, Brand, Trade Marketing, HR, Event teams and anyone managing multiple production items at once.", "โบรชัวร์ แคตตาล็อก คู่มือ โปสเตอร์ แผ่นพับ นามบัตร และสื่อส่งเสริมการขายสำหรับงานจำนวนน้อยถึงงานผลิตจำนวนมาก": "Brochures, catalogues, manuals, posters, leaflets, business cards and promotional materials—from short runs to high-volume production.", "เหมาะกับ: Marketing Kit • POSM • Corporate Print": "Best for: Marketing Kit • POSM • Corporate Print", "สติ๊กเกอร์สินค้า ฉลาก PVC/PP งานไดคัท ฉลากกันน้ำ และงานเฉพาะสเปกสำหรับสินค้าและบรรจุภัณฑ์": "Product stickers, PVC/PP labels, die-cut labels, waterproof labels and custom specifications for products and packaging.", "เหมาะกับ: FMCG • Food • Cosmetic • Industrial": "Best for: FMCG • Food • Cosmetic • Industrial", "กล่องสินค้า กล่องอาหาร ถุงกระดาษ และแพ็กเกจจิ้งสำหรับแคมเปญ โดยช่วยแนะนำวัสดุและรูปแบบให้เหมาะกับการผลิต": "Product boxes, food packaging, paper bags and campaign packaging, with material and structural guidance for efficient production.", "เหมาะกับ: Product Launch • Gift Set • Retail": "Best for: Product Launch • Gift Set • Retail", "ของพรีเมียมพร้อมโลโก้สำหรับลูกค้า พนักงาน อีเวนต์ และเทศกาล เช่น ปากกา ร่ม กระบอกน้ำ ถุงผ้า และชุดของขวัญ": "Branded premium items for customers, employees, events and seasonal campaigns, including pens, umbrellas, bottles, tote bags and gift sets.", "เหมาะกับ: HR • Event • Loyalty • New Year": "Best for: HR • Event • Loyalty • New Year", "รองรับการจัดชุดงานหลายรายการ แยกตามสาขา/หน่วยงาน และวางแผนการส่งมอบตามโปรเจกต์": "Kitting of multiple items by branch or department, with delivery planning based on your project schedule.", "เหมาะกับ: Retail Chain • Franchise • Nationwide Campaign": "Best for: Retail Chain • Franchise • Nationwide Campaign", "ช่วยเลือกวิธีพิมพ์ วัสดุ จำนวนผลิต และทางเลือกสเปก เพื่อให้งบประมาณ เวลา และคุณภาพสมดุลกันก่อนออกใบเสนอราคา": "We help select printing methods, materials, quantities and specification options to balance budget, lead time and quality before quotation.", "เหมาะกับ: Procurement • Marketing • Agency": "Best for: Procurement • Marketing • Agency", "กลุ่มธุรกิจที่เราเหมาะจะเป็น Partner": "Industries We Support", "รองรับงานที่ต้องการความต่อเนื่อง ความสม่ำเสมอ และการประสานงานหลายฝ่าย": "Built for projects that require continuity, consistency and coordination across multiple teams.", "ทดลองตลาด ปรับสเปก และขยายจำนวนผลิตเมื่อยอดเติบโต": "Test the market, refine specifications and scale production as demand grows.", "ทำไมลูกค้าองค์กรควรคุยกับเรา": "Why Businesses Work With Us", "เป้าหมายไม่ใช่แค่ “พิมพ์ได้” แต่ต้องทำให้ทีมคุณบริหารงานง่ายขึ้น": "It is not just about printing—it is about making production easier for your team.", "Expert Interprint มีประสบการณ์งานพิมพ์มากกว่า 15 ปี และให้บริการหลายหมวดงาน จึงเหมาะกับองค์กรที่ต้องการลดงานประสานหลาย Supplier และต้องการผู้ดูแลโครงการที่เข้าใจงานผลิต": "With more than 15 years of printing experience across multiple categories, Expert Interprint is suited to organizations looking to reduce supplier coordination and work with a production-aware project partner.", "หลายหมวดงานในช่องทางประสานงานเดียว": "Multiple production categories through one point of contact", "ช่วยปรับวัสดุ/จำนวน/เทคนิคให้เหมาะกับงบ": "Adjust materials, quantities and techniques to fit your budget", "วางแผนงานตาม Deadline และลำดับส่งมอบ": "Plan production around deadlines and delivery priorities", "รองรับการวางแผนจัดส่งตามโครงการ": "Delivery planning to match project requirements", "สิ่งที่ส่งมาเพื่อประเมินราคาได้ทันที": "What to send for a faster quotation", "ประเภทงาน / ขนาด / จำนวน": "Product type / size / quantity", "วัสดุหรือสเปกที่ต้องการ (ถ้ามี)": "Preferred material or specification (if any)", "ไฟล์ Artwork หรือภาพตัวอย่าง": "Artwork file or reference image", "กำหนดส่งและสถานที่จัดส่ง": "Required delivery date and location", "งบประมาณเป้าหมาย (ถ้ามี) เพื่อเสนอทางเลือกได้เร็วขึ้น": "Target budget (if any), so we can recommend suitable options faster", "ส่งรายละเอียดขอราคา": "Send Quote Details", "ตัวอย่างผลงาน": "Portfolio", "คุณภาพงานที่ลูกค้าเห็นและสัมผัสได้จริง": "Print quality you can see and feel", "ตัวอย่างจากแกลเลอรีเดิมของบริษัท เพื่อให้ลูกค้าเห็นประเภทงานก่อนส่งสเปกขอราคา": "A selection from our existing gallery so you can review production types before sending specifications for quotation.", "เริ่มจาก Brief จนถึงส่งมอบ": "From brief to delivery", "ออกแบบ flow ให้เหมาะกับงานองค์กรและลดการคุยวนหลายรอบ": "A workflow designed for corporate projects to reduce unnecessary back-and-forth.", "รับ Brief": "Receive Brief", "ส่งสเปก จำนวน ไฟล์ และกำหนดส่งเพื่อประเมินความเหมาะสม": "Send specifications, quantity, files and deadline for an initial production assessment.", "เสนอราคา & ทางเลือก": "Quotation & Options", "แนะนำวัสดุ วิธีพิมพ์ และทางเลือกตามคุณภาพ/งบประมาณ": "We recommend materials, printing methods and options based on quality and budget.", "อนุมัติผลิต": "Production Approval", "ตรวจรายละเอียดก่อนผลิต และประสานงานตามแผนโครงการ": "Confirm details before production and coordinate according to the project plan.", "ส่งมอบ": "Delivery", "จัดส่งตามสถานที่และเงื่อนไขที่ตกลง พร้อมดูแลงานต่อเนื่อง": "Deliver according to the agreed location and conditions, with continued project support.", "มากกว่า 15 ปีของประสบการณ์งานพิมพ์": "More than 15 years of printing experience", "เรามุ่งเน้นคุณภาพ การประสานงาน และความยืดหยุ่นในการผลิต เพื่อให้งานของลูกค้าธุรกิจเดินต่อได้ตามแผน": "We focus on quality, coordination and production flexibility so our business clients can keep projects moving as planned.", "เหมาะกับงาน B2B": "Built for B2B", "รองรับการทำงานร่วมกับ Marketing / Procurement / Agency": "Works smoothly with Marketing / Procurement / Agency teams", "หลายหมวดงาน": "Multiple Categories", "Print, Label, Packaging และ Premium ในที่เดียว": "Print, Label, Packaging and Premium in one place", "คุยสเปกก่อนผลิต": "Specification Review", "ลดความคลาดเคลื่อนและช่วยเลือกทางเลือกที่เหมาะสม": "Reduce errors and select the most suitable production option", "พร้อมเป็น Production Partner": "Ready to be your Production Partner", "รองรับทั้งงานครั้งเดียวและงานต่อเนื่องขององค์กร": "Support for both one-off projects and ongoing corporate production", "เริ่มคุยโปรเจกต์": "Start a Project", "ส่ง Brief มาได้เลย เราช่วยดูสเปกก่อนออกใบเสนอราคา": "Send us your brief—we will review the specifications before quoting.", "เหมาะสำหรับงานองค์กร งาน Campaign งานหลายรายการ และผู้ที่กำลังหา Supplier สำรองหรือ Production Partner ระยะยาว": "Ideal for corporate projects, campaigns, multi-item production, and teams looking for a backup supplier or long-term production partner.", "โทรศัพท์": "Phone", "ที่อยู่": "Address", "5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง": "5/185 Moo 2, Soi Bearing 58, Bearing Road", "ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ": "Samrong Nuea, Mueang Samut Prakan", "สมุทรปราการ 10270": "Samut Prakan 10270, Thailand", "เปิด Google Maps": "Open Google Maps", "เวลาทำการ": "Business Hours", "จันทร์–ศุกร์ 09:00–18:00 น.": "Monday–Friday 09:00–18:00", "องค์กรที่เราเคยร่วมงาน": "Organizations We've Worked With", "ประสบการณ์ที่ได้รับความไว้วางใจจากหลายอุตสาหกรรม": "Experience trusted across a wide range of industries", "ตัวอย่างลูกค้าและองค์กรที่ Expert Interprint เคยมีโอกาสให้บริการด้านงานพิมพ์ บรรจุภัณฑ์ และงานสนับสนุนการผลิต": "A selection of clients and organizations Expert Interprint has had the opportunity to support with printing, packaging and production services.", "โลโก้และเครื่องหมายการค้าเป็นทรัพย์สินของเจ้าของแต่ละราย และใช้เพื่อแสดงประสบการณ์การทำงานเท่านั้น": "Logos and trademarks remain the property of their respective owners and are shown solely to reference past work experience.", "โรงพิมพ์สมุทรปราการ": "Printing in Samut Prakan", "รับพิมพ์หนังสือ": "Books & Print", "กล่อง ฉลาก และของพรีเมียม": "Packaging, Labels & Corporate Gifts", "Expert Interprint โรงพิมพ์ย่านแบริ่ง สมุทรปราการ รับพิมพ์หนังสือ คู่มือ แคตตาล็อก โบรชัวร์ ผลิตกล่อง ฉลากสินค้า และของพรีเมียม ช่วยดูสเปกก่อนผลิต พร้อมประสานงานสำหรับธุรกิจและองค์กร": "Expert Interprint in Bearing, Samut Prakan provides books, manuals, catalogs, brochures, packaging, product labels and corporate gifts, with specification advice and project coordination.", "รับพิมพ์หนังสือและคู่มือ": "Book & Manual Printing", "รับพิมพ์แคตตาล็อกและโบรชัวร์": "Catalog & Brochure Printing", "รับผลิตกล่องสินค้าและบรรจุภัณฑ์": "Product Packaging", "รับพิมพ์สติกเกอร์และฉลากสินค้า": "Sticker & Label Printing", "รับทำของพรีเมียมพร้อมโลโก้": "Branded Corporate Gifts", "รายละเอียดบริการภาษาไทย": "Service details in Thai"}, "zh": {"บริการ": "服务", "กลุ่มธุรกิจ": "行业", "ทำไมต้องเรา": "为什么选择我们", "ผลงาน": "案例", "ขั้นตอนทำงาน": "合作流程", "ติดต่อ": "联系我们", "โรงพิมพ์และ": "印刷服务与", "สำหรับธุรกิจที่ต้องการงานจบจริง": "为需要可靠落地执行的企业服务", "ดูแลงานพิมพ์องค์กรตั้งแต่ Digital และ Offset ไปจนถึง Sticker & Label, Packaging และของพรีเมียม พร้อมประสานงานโครงการและจัดส่งตามแผนงานของทีม Marketing / Procurement": "提供一站式企业印刷服务，涵盖数码印刷、胶印、贴纸与标签、包装及企业礼品，并可配合市场与采购团队进行项目协调和交付安排。", "ขอใบเสนอราคาโครงการ": "获取项目报价", "คุยงานทาง LINE": "通过 LINE 洽谈", "รับงานองค์กรและงานโครงการ": "承接企业及项目型订单", "รองรับหลายประเภทงานในเจ้าเดียว": "多类印刷项目一站式完成", "ให้คำแนะนำสเปกก่อนผลิต": "生产前提供规格建议", "บริการสำหรับองค์กร": "企业服务", "ลดจำนวน Supplier และให้งานพิมพ์หลายประเภทจบในทีมเดียว": "减少供应商数量，让多类印刷项目由一个团队完成", "เหมาะสำหรับฝ่ายจัดซื้อ ฝ่ายการตลาด Brand, Trade Marketing, HR, Event และทีมที่ต้องบริหารงานหลายรายการพร้อมกัน": "适合采购、市场、品牌、渠道营销、人力资源、活动团队，以及需要同时管理多项制作任务的企业团队。", "โบรชัวร์ แคตตาล็อก คู่มือ โปสเตอร์ แผ่นพับ นามบัตร และสื่อส่งเสริมการขายสำหรับงานจำนวนน้อยถึงงานผลิตจำนวนมาก": "宣传册、目录、手册、海报、折页、名片及促销物料，支持小批量到大批量生产。", "เหมาะกับ: Marketing Kit • POSM • Corporate Print": "适合：Marketing Kit • POSM • Corporate Print", "สติ๊กเกอร์สินค้า ฉลาก PVC/PP งานไดคัท ฉลากกันน้ำ และงานเฉพาะสเปกสำหรับสินค้าและบรรจุภัณฑ์": "产品贴纸、PVC/PP 标签、模切标签、防水标签，以及适用于产品和包装的定制规格。", "เหมาะกับ: FMCG • Food • Cosmetic • Industrial": "适合：FMCG • 食品 • 化妆品 • 工业", "กล่องสินค้า กล่องอาหาร ถุงกระดาษ และแพ็กเกจจิ้งสำหรับแคมเปญ โดยช่วยแนะนำวัสดุและรูปแบบให้เหมาะกับการผลิต": "产品盒、食品包装、纸袋及活动包装，并提供材料与结构建议，使方案更适合实际生产。", "เหมาะกับ: Product Launch • Gift Set • Retail": "适合：新品上市 • 礼盒 • 零售", "ของพรีเมียมพร้อมโลโก้สำหรับลูกค้า พนักงาน อีเวนต์ และเทศกาล เช่น ปากกา ร่ม กระบอกน้ำ ถุงผ้า และชุดของขวัญ": "为客户、员工、活动及节庆提供定制 LOGO 企业礼品，包括笔、雨伞、水瓶、布袋和礼品套装等。", "เหมาะกับ: HR • Event • Loyalty • New Year": "适合：HR • 活动 • 客户忠诚计划 • 新年礼赠", "รองรับการจัดชุดงานหลายรายการ แยกตามสาขา/หน่วยงาน และวางแผนการส่งมอบตามโปรเจกต์": "支持多种物料组合打包，可按分店或部门分类，并根据项目计划安排交付。", "เหมาะกับ: Retail Chain • Franchise • Nationwide Campaign": "适合：连锁零售 • 加盟体系 • 全国性活动", "ช่วยเลือกวิธีพิมพ์ วัสดุ จำนวนผลิต และทางเลือกสเปก เพื่อให้งบประมาณ เวลา และคุณภาพสมดุลกันก่อนออกใบเสนอราคา": "协助选择印刷方式、材料、数量及规格方案，在报价前平衡预算、交期与品质。", "เหมาะกับ: Procurement • Marketing • Agency": "适合：采购 • 市场 • 广告/活动代理公司", "กลุ่มธุรกิจที่เราเหมาะจะเป็น Partner": "适合合作的行业", "รองรับงานที่ต้องการความต่อเนื่อง ความสม่ำเสมอ และการประสานงานหลายฝ่าย": "适合需要持续供应、品质一致和多部门协作的项目。", "ทดลองตลาด ปรับสเปก และขยายจำนวนผลิตเมื่อยอดเติบโต": "支持市场测试、规格优化，并随着需求增长扩大生产数量。", "ทำไมลูกค้าองค์กรควรคุยกับเรา": "企业为什么选择我们", "เป้าหมายไม่ใช่แค่ “พิมพ์ได้” แต่ต้องทำให้ทีมคุณบริหารงานง่ายขึ้น": "目标不只是“能印”，而是让您的团队更轻松地管理生产项目。", "Expert Interprint มีประสบการณ์งานพิมพ์มากกว่า 15 ปี และให้บริการหลายหมวดงาน จึงเหมาะกับองค์กรที่ต้องการลดงานประสานหลาย Supplier และต้องการผู้ดูแลโครงการที่เข้าใจงานผลิต": "Expert Interprint 拥有超过 15 年的印刷经验，覆盖多种生产类别，适合希望减少多供应商沟通成本，并寻找懂生产的项目合作伙伴的企业。", "หลายหมวดงานในช่องทางประสานงานเดียว": "多类生产项目由单一窗口统一沟通", "ช่วยปรับวัสดุ/จำนวน/เทคนิคให้เหมาะกับงบ": "根据预算调整材料、数量和制作工艺", "วางแผนงานตาม Deadline และลำดับส่งมอบ": "根据截止日期和交付优先级规划生产", "รองรับการวางแผนจัดส่งตามโครงการ": "支持按项目需求规划配送", "สิ่งที่ส่งมาเพื่อประเมินราคาได้ทันที": "快速报价所需资料", "ประเภทงาน / ขนาด / จำนวน": "产品类型 / 尺寸 / 数量", "วัสดุหรือสเปกที่ต้องการ (ถ้ามี)": "所需材料或规格（如有）", "ไฟล์ Artwork หรือภาพตัวอย่าง": "设计文件或参考图片", "กำหนดส่งและสถานที่จัดส่ง": "要求交期及配送地点", "งบประมาณเป้าหมาย (ถ้ามี) เพื่อเสนอทางเลือกได้เร็วขึ้น": "目标预算（如有），方便我们更快提供合适方案", "ส่งรายละเอียดขอราคา": "发送报价需求", "ตัวอย่างผลงาน": "案例展示", "คุณภาพงานที่ลูกค้าเห็นและสัมผัสได้จริง": "看得见、摸得到的印刷品质", "ตัวอย่างจากแกลเลอรีเดิมของบริษัท เพื่อให้ลูกค้าเห็นประเภทงานก่อนส่งสเปกขอราคา": "精选公司现有案例，让客户在提交报价规格前先了解我们的生产类型。", "เริ่มจาก Brief จนถึงส่งมอบ": "从需求简报到交付", "ออกแบบ flow ให้เหมาะกับงานองค์กรและลดการคุยวนหลายรอบ": "专为企业项目设计的流程，减少不必要的反复沟通。", "รับ Brief": "接收需求", "ส่งสเปก จำนวน ไฟล์ และกำหนดส่งเพื่อประเมินความเหมาะสม": "提供规格、数量、文件和交期，以便进行初步生产评估。", "เสนอราคา & ทางเลือก": "报价与方案", "แนะนำวัสดุ วิธีพิมพ์ และทางเลือกตามคุณภาพ/งบประมาณ": "根据品质和预算建议材料、印刷方式及替代方案。", "อนุมัติผลิต": "确认生产", "ตรวจรายละเอียดก่อนผลิต และประสานงานตามแผนโครงการ": "生产前确认细节，并按照项目计划进行协调。", "ส่งมอบ": "交付", "จัดส่งตามสถานที่และเงื่อนไขที่ตกลง พร้อมดูแลงานต่อเนื่อง": "按照约定地点和条件配送，并持续提供项目支持。", "มากกว่า 15 ปีของประสบการณ์งานพิมพ์": "超过 15 年印刷经验", "เรามุ่งเน้นคุณภาพ การประสานงาน และความยืดหยุ่นในการผลิต เพื่อให้งานของลูกค้าธุรกิจเดินต่อได้ตามแผน": "我们重视品质、沟通协调和生产灵活性，让企业客户的项目能够按计划推进。", "เหมาะกับงาน B2B": "专注 B2B", "รองรับการทำงานร่วมกับ Marketing / Procurement / Agency": "可配合市场 / 采购 / 代理公司团队工作", "หลายหมวดงาน": "多类服务", "Print, Label, Packaging และ Premium ในที่เดียว": "印刷、标签、包装及企业礼品一站式完成", "คุยสเปกก่อนผลิต": "生产前确认规格", "ลดความคลาดเคลื่อนและช่วยเลือกทางเลือกที่เหมาะสม": "减少误差，并协助选择更合适的生产方案", "พร้อมเป็น Production Partner": "成为您的生产合作伙伴", "รองรับทั้งงานครั้งเดียวและงานต่อเนื่องขององค์กร": "支持一次性项目及长期持续的企业订单", "เริ่มคุยโปรเจกต์": "开始项目洽谈", "ส่ง Brief มาได้เลย เราช่วยดูสเปกก่อนออกใบเสนอราคา": "直接发送需求简报，我们会在报价前协助审核规格。", "เหมาะสำหรับงานองค์กร งาน Campaign งานหลายรายการ และผู้ที่กำลังหา Supplier สำรองหรือ Production Partner ระยะยาว": "适合企业项目、营销活动、多品项制作，以及正在寻找备用供应商或长期生产合作伙伴的团队。", "โทรศัพท์": "电话", "ที่อยู่": "地址", "5/185 หมู่ 2 ซอยแบริ่ง 58 ถนนแบริ่ง": "5/185 Moo 2, Soi Bearing 58, Bearing Road", "ตำบลสำโรงเหนือ อำเภอเมืองสมุทรปราการ": "Samrong Nuea, Mueang Samut Prakan", "สมุทรปราการ 10270": "泰国北榄府 10270", "เปิด Google Maps": "打开 Google Maps", "เวลาทำการ": "营业时间", "จันทร์–ศุกร์ 09:00–18:00 น.": "周一至周五 09:00–18:00", "B2B PRINTING • PACKAGING • PREMIUM • PRODUCTION SUPPORT": "企业印刷 • 包装 • 礼品 • 生产支持", "Production Partner": "生产合作伙伴", "One-stop production": "一站式生产", "Print • Label • Packaging • Premium": "印刷 • 标签 • 包装 • 企业礼品", "Digital Print": "数码印刷", "Offset Print": "胶印", "Sticker & Label": "贴纸与标签", "Packaging": "包装", "Premium Gifts": "企业礼品", "Digital & Offset Printing": "数码印刷与胶印", "Corporate Premium": "企业定制礼品", "Kitting & Multi-location Support": "套装打包与多地点配送支持", "Project Consultation": "项目咨询", "FMCG / Consumer": "快消品 / 消费品", "Label, Packaging, POSM, Promotion Materials": "标签、包装、POSM、促销物料", "Retail / Franchise": "零售 / 加盟", "Poster, Menu, Sticker, Branch Kits, Promotion Set": "海报、菜单、贴纸、分店物料包、促销套装", "Factory / Industrial": "工厂 / 工业", "Manual, Label, Safety Print, Internal Communication": "手册、标签、安全印刷、内部沟通物料", "Hotel / Property": "酒店 / 房地产", "Sales Kit, Brochure, Signage, Premium, Event Materials": "销售资料、宣传册、标识、礼品、活动物料", "Food & Restaurant": "食品 / 餐饮", "Menu, Packaging, Label, Table Tent, Promotion Print": "菜单、包装、标签、桌牌、促销印刷品", "Agency / Event": "广告代理 / 活动", "Production Partner, POSM, Premium, Rush Project Support": "生产合作、POSM、礼品、紧急项目支持", "Corporate / HR": "企业 / 人力资源", "Corporate Print, Employee Kit, Premium & Event Materials": "企业印刷、员工套装、礼品及活动物料", "Brand & SME Growth": "品牌 / 中小企业成长", "One-stop Supplier": "一站式供应商", "Flexible Specification": "灵活规格", "Project Coordination": "项目协调", "Delivery Support": "配送支持", "For procurement & marketing": "面向采购与市场团队", "Printing • Label • Packaging • Premium": "印刷 • 标签 • 包装 • 企业礼品", "Expert Interprint. All rights reserved.": "Expert Interprint. 保留所有权利。", "องค์กรที่เราเคยร่วมงาน": "合作过的企业与机构", "ประสบการณ์ที่ได้รับความไว้วางใจจากหลายอุตสาหกรรม": "获得多个行业客户信赖的合作经验", "ตัวอย่างลูกค้าและองค์กรที่ Expert Interprint เคยมีโอกาสให้บริการด้านงานพิมพ์ บรรจุภัณฑ์ และงานสนับสนุนการผลิต": "以下为 Expert Interprint 曾有机会提供印刷、包装及生产支持服务的部分客户与机构。", "โลโก้และเครื่องหมายการค้าเป็นทรัพย์สินของเจ้าของแต่ละราย และใช้เพื่อแสดงประสบการณ์การทำงานเท่านั้น": "各品牌标志及商标归其各自权利人所有，此处仅用于展示过往合作经验。", "โรงพิมพ์สมุทรปราการ": "北榄府印刷服务", "รับพิมพ์หนังสือ": "书籍与印刷", "กล่อง ฉลาก และของพรีเมียม": "包装、标签与企业礼品", "Expert Interprint โรงพิมพ์ย่านแบริ่ง สมุทรปราการ รับพิมพ์หนังสือ คู่มือ แคตตาล็อก โบรชัวร์ ผลิตกล่อง ฉลากสินค้า และของพรีเมียม ช่วยดูสเปกก่อนผลิต พร้อมประสานงานสำหรับธุรกิจและองค์กร": "Expert Interprint 位于北榄府 Bearing，提供书籍、手册、目录、宣传册、包装、产品标签及企业礼品，并协助确认规格与协调项目。", "รับพิมพ์หนังสือและคู่มือ": "书籍与手册印刷", "รับพิมพ์แคตตาล็อกและโบรชัวร์": "目录与宣传册印刷", "รับผลิตกล่องสินค้าและบรรจุภัณฑ์": "产品包装", "รับพิมพ์สติกเกอร์และฉลากสินค้า": "贴纸与标签印刷", "รับทำของพรีเมียมพร้อมโลโก้": "企业定制礼品", "รายละเอียดบริการภาษาไทย": "服务详情（泰语）"}};
+    Object.assign(i18nTranslations.en, {"ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์ Pacific Healthcare": "Backdrop & event counter — Backdrop and promotional counter", "ชุดบูธและแบ็กดรอป": "Backdrop & event counter", "ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์": "Backdrop and promotional counter", "ภาพถ่ายชุดบรรจุภัณฑ์ Fluifort บนฉากสีขาว": "Fluifort product photography — Product and packaging detail photography", "ภาพถ่ายสินค้า Fluifort": "Fluifort product photography", "ภาพถ่ายสินค้าและรายละเอียดบรรจุภัณฑ์": "Product and packaging detail photography", "หนังสือ Public วางแสดงบนชั้น": "Books & publications — Print for reading and display", "หนังสือและสิ่งพิมพ์เข้าเล่ม": "Books & publications", "งานพิมพ์สำหรับอ่านและจัดแสดง": "Print for reading and display", "ปกประกาศนียบัตรผ้าไหมสีน้ำเงินพร้อมตราสัญลักษณ์": "Silk certificate folders — Silk covers with an emblem", "ปกประกาศนียบัตรผ้าไหม": "Silk certificate folders", "ปกผ้าไหมพร้อมตราสัญลักษณ์": "Silk covers with an emblem", "ถุงกระดาษสีน้ำตาลพิมพ์โลโก้": "Branded paper bags — Brand and event packaging", "ถุงกระดาษพร้อมโลโก้": "Branded paper bags", "บรรจุภัณฑ์สำหรับแบรนด์และงานอีเวนต์": "Brand and event packaging", "เคาน์เตอร์ประชาสัมพันธ์ Invisalign และ iTero": "Promotional counter — Display for promotional spaces", "เคาน์เตอร์ประชาสัมพันธ์": "Promotional counter", "งานจัดแสดงสำหรับพื้นที่ประชาสัมพันธ์": "Display for promotional spaces", "ปฏิทินตั้งโต๊ะเข้าเล่มห่วงบนพื้นหลังสีเขียว": "Desk calendar — Spiral-bound desktop print", "ปฏิทินตั้งโต๊ะ": "Desk calendar", "งานพิมพ์เข้าเล่มห่วงสำหรับตั้งโต๊ะ": "Spiral-bound desktop print", "ภาพถ่ายกล่อง Fluifort พร้อมซองสินค้าจัดวางบนฉาก": "Styled product photography — Product styling and detail photography", "ภาพถ่ายสินค้าแบบจัดชุด": "Styled product photography", "จัดวางสินค้าเพื่อแสดงรายละเอียดของชุด": "Product styling and detail photography", "พัดประชาสัมพันธ์รูปทรงไดคัทพร้อมด้ามจับ": "Die-cut promotional fans — Items for events and campaigns", "พัดประชาสัมพันธ์ไดคัท": "Die-cut promotional fans", "ชิ้นงานสำหรับกิจกรรมและแคมเปญ": "Items for events and campaigns", "ชุดสื่อจัดแสดงแบรนด์ Abbott ในพื้นที่งานอีเวนต์": "Event exhibition display — Coordinated display materials", "สื่อจัดแสดงในงานอีเวนต์": "Event exhibition display", "จัดชุดสื่อให้ใช้ร่วมกันในพื้นที่งาน": "Coordinated display materials", "ปฏิทินตั้งโต๊ะสีน้ำเงินพร้อมงานพิมพ์ประกอบ": "Campaign calendar — Print for year-round brand communication", "ปฏิทินสำหรับแคมเปญ": "Campaign calendar", "สิ่งพิมพ์สำหรับสื่อสารแบรนด์ตลอดปี": "Print for year-round brand communication", "การ์ดสีน้ำเงินตั้งแสดงพร้อมรายละเอียดสีทอง": "Cards & specialty print — Print for special occasions", "การ์ดและสิ่งพิมพ์พิเศษ": "Cards & specialty print", "งานพิมพ์สำหรับโอกาสพิเศษ": "Print for special occasions", "ทั้งหมด": "All work", "หนังสือและสิ่งพิมพ์": "Print & books", "บูธและสื่อจัดแสดง": "Event & display", "บรรจุภัณฑ์และของพรีเมียม": "Packaging & gifts", "ถ่ายภาพสินค้า": "Product photography", "จากไอเดีย สู่ชิ้นงานจริง": "From ideas to finished work", "สัมผัสรายละเอียดผ่านผลงานของเรา ทั้งสิ่งพิมพ์ บรรจุภัณฑ์ และสื่อจัดแสดงสำหรับแบรนด์ของคุณ": "Explore our work in print, packaging and event displays for your brand.", "เลือกหมวดที่สนใจ แล้วกดภาพเพื่อดูรายละเอียด": "Choose a category. Open an image to take a closer look.", "ผลงาน": "projects", "มีงานที่อยากทำในแบบของคุณ?": "What would you like to create?", "ส่งภาพตัวอย่าง ขนาด และจำนวนมาให้เรา ช่วยดูสเปกก่อนเริ่มผลิต": "Share a reference, size and quantity. We will help review your specifications.", "คุยรายละเอียดงาน": "Discuss your project"});
+    Object.assign(i18nTranslations.zh, {"ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์ Pacific Healthcare": "Pacific Healthcare 展示背景与接待台 — 展示背景与接待台", "ชุดบูธและแบ็กดรอป": "Pacific Healthcare 展示背景与接待台", "ชุดแบ็กดรอปและโต๊ะประชาสัมพันธ์": "展示背景与接待台", "ภาพถ่ายชุดบรรจุภัณฑ์ Fluifort บนฉากสีขาว": "Fluifort 产品摄影 — 产品与包装细节摄影", "ภาพถ่ายสินค้า Fluifort": "Fluifort 产品摄影", "ภาพถ่ายสินค้าและรายละเอียดบรรจุภัณฑ์": "产品与包装细节摄影", "หนังสือ Public วางแสดงบนชั้น": "书籍与出版物 — 阅读与展示印刷品", "หนังสือและสิ่งพิมพ์เข้าเล่ม": "书籍与出版物", "งานพิมพ์สำหรับอ่านและจัดแสดง": "阅读与展示印刷品", "ปกประกาศนียบัตรผ้าไหมสีน้ำเงินพร้อมตราสัญลักษณ์": "丝绸证书封套 — 带徽标的丝绸封套", "ปกประกาศนียบัตรผ้าไหม": "丝绸证书封套", "ปกผ้าไหมพร้อมตราสัญลักษณ์": "带徽标的丝绸封套", "ถุงกระดาษสีน้ำตาลพิมพ์โลโก้": "品牌纸袋 — 品牌与活动包装", "ถุงกระดาษพร้อมโลโก้": "品牌纸袋", "บรรจุภัณฑ์สำหรับแบรนด์และงานอีเวนต์": "品牌与活动包装", "เคาน์เตอร์ประชาสัมพันธ์ Invisalign และ iTero": "推广接待台 — 推广空间展示制作", "เคาน์เตอร์ประชาสัมพันธ์": "推广接待台", "งานจัดแสดงสำหรับพื้นที่ประชาสัมพันธ์": "推广空间展示制作", "ปฏิทินตั้งโต๊ะเข้าเล่มห่วงบนพื้นหลังสีเขียว": "台历 — 螺旋装订台式印刷品", "ปฏิทินตั้งโต๊ะ": "台历", "งานพิมพ์เข้าเล่มห่วงสำหรับตั้งโต๊ะ": "螺旋装订台式印刷品", "ภาพถ่ายกล่อง Fluifort พร้อมซองสินค้าจัดวางบนฉาก": "产品组合摄影 — 产品陈列与细节摄影", "ภาพถ่ายสินค้าแบบจัดชุด": "产品组合摄影", "จัดวางสินค้าเพื่อแสดงรายละเอียดของชุด": "产品陈列与细节摄影", "พัดประชาสัมพันธ์รูปทรงไดคัทพร้อมด้ามจับ": "异形推广手扇 — 活动与推广用品", "พัดประชาสัมพันธ์ไดคัท": "异形推广手扇", "ชิ้นงานสำหรับกิจกรรมและแคมเปญ": "活动与推广用品", "ชุดสื่อจัดแสดงแบรนด์ Abbott ในพื้นที่งานอีเวนต์": "活动展览展示 — 配套展示物料", "สื่อจัดแสดงในงานอีเวนต์": "活动展览展示", "จัดชุดสื่อให้ใช้ร่วมกันในพื้นที่งาน": "配套展示物料", "ปฏิทินตั้งโต๊ะสีน้ำเงินพร้อมงานพิมพ์ประกอบ": "活动台历 — 全年品牌传播印刷品", "ปฏิทินสำหรับแคมเปญ": "活动台历", "สิ่งพิมพ์สำหรับสื่อสารแบรนด์ตลอดปี": "全年品牌传播印刷品", "การ์ดสีน้ำเงินตั้งแสดงพร้อมรายละเอียดสีทอง": "卡片与特色印刷 — 特别场合印刷品", "การ์ดและสิ่งพิมพ์พิเศษ": "卡片与特色印刷", "งานพิมพ์สำหรับโอกาสพิเศษ": "特别场合印刷品", "ทั้งหมด": "全部", "หนังสือและสิ่งพิมพ์": "书刊印刷", "บูธและสื่อจัดแสดง": "活动展示", "บรรจุภัณฑ์และของพรีเมียม": "包装与礼品", "ถ่ายภาพสินค้า": "产品摄影", "จากไอเดีย สู่ชิ้นงานจริง": "从创意到实物", "สัมผัสรายละเอียดผ่านผลงานของเรา ทั้งสิ่งพิมพ์ บรรจุภัณฑ์ และสื่อจัดแสดงสำหรับแบรนด์ของคุณ": "探索我们为品牌制作的印刷、包装与活动展示作品。", "เลือกหมวดที่สนใจ แล้วกดภาพเพื่อดูรายละเอียด": "选择类别，点击图片查看细节。", "ผลงาน": "个作品", "มีงานที่อยากทำในแบบของคุณ?": "您想打造怎样的作品？", "ส่งภาพตัวอย่าง ขนาด และจำนวนมาให้เรา ช่วยดูสเปกก่อนเริ่มผลิต": "分享参考图片、尺寸与数量，我们将协助确认制作规格。", "คุยรายละเอียดงาน": "洽谈项目"});
+    Object.assign(i18nTranslations.en, {"ป้ายไดคัทตั้งพื้น": "Die-cut floor display", "ชิ้นงานรูปทรงพิเศษสำหรับจุดขาย": "Custom shapes for point-of-sale displays", "โรลอัพตั้งโต๊ะ": "Desktop roll-up banner", "สื่อประชาสัมพันธ์ขนาดกะทัดรัด": "Compact promotional display", "โรลอัพสำหรับองค์กร": "Corporate roll-up banner", "งานพิมพ์พร้อมฐานตั้งสำหรับประชาสัมพันธ์": "Printed banner with a freestanding base", "แบ็กดรอปผ้าพร้อมโครง": "Fabric exhibition backdrop", "พื้นหลังจัดแสดงสำหรับบูธและพื้นที่กิจกรรม": "A display background for booths and events", "บูธประชาสัมพันธ์พร้อมป้าย": "Branded promotional booth", "เคาน์เตอร์และป้ายในชุดงานเดียวกัน": "Coordinated counter and header display", "โรลอัพสื่อสารแบรนด์": "Brand communication roll-up", "สื่อแนวตั้งสำหรับพื้นที่ประชาสัมพันธ์": "Vertical signage for promotional spaces"});
+    Object.assign(i18nTranslations.zh, {"ป้ายไดคัทตั้งพื้น": "异形落地展示牌", "ชิ้นงานรูปทรงพิเศษสำหรับจุดขาย": "用于销售点展示的定制造型", "โรลอัพตั้งโต๊ะ": "桌面易拉宝", "สื่อประชาสัมพันธ์ขนาดกะทัดรัด": "小型推广展示", "โรลอัพสำหรับองค์กร": "企业易拉宝", "งานพิมพ์พร้อมฐานตั้งสำหรับประชาสัมพันธ์": "配有独立底座的印刷展示横幅", "แบ็กดรอปผ้าพร้อมโครง": "布艺展览背景", "พื้นหลังจัดแสดงสำหรับบูธและพื้นที่กิจกรรม": "用于展台与活动的展示背景", "บูธประชาสัมพันธ์พร้อมป้าย": "品牌推广展台", "เคาน์เตอร์และป้ายในชุดงานเดียวกัน": "配套接待台与顶部展示牌", "โรลอัพสื่อสารแบรนด์": "品牌传播易拉宝", "สื่อแนวตั้งสำหรับพื้นที่ประชาสัมพันธ์": "用于推广空间的竖式展示牌"});
     const i18nMeta = {"th": {"title": "โรงพิมพ์สมุทรปราการ รับพิมพ์หนังสือ กล่อง ฉลาก | Expert Interprint", "description": "Expert Interprint โรงพิมพ์ย่านแบริ่ง สมุทรปราการ รับพิมพ์หนังสือ คู่มือ แคตตาล็อก โบรชัวร์ ผลิตกล่อง ฉลากสินค้า และของพรีเมียม ติดต่อส่งสเปกเพื่อขอใบเสนอราคา", "menuAria": "เปิดเมนู", "lineAria": "ติดต่อผ่าน LINE", "heroAlt": "ตัวอย่างงานพิมพ์ Expert Interprint", "workAlt": "ตัวอย่างงานพิมพ์", "mailSubject": "ขอใบเสนอราคางานพิมพ์องค์กร"}, "en": {"title": "Expert Interprint | Printing & Production Partner for Business", "description": "Expert Interprint provides corporate printing services including Digital, Offset, Sticker & Label, Packaging and Premium Gifts, with project coordination and multi-location delivery support.", "menuAria": "Open menu", "lineAria": "Contact us on LINE", "heroAlt": "Expert Interprint printing portfolio", "workAlt": "Printing portfolio sample", "mailSubject": "Corporate Printing Quotation Request"}, "zh": {"title": "Expert Interprint | 企业印刷与生产合作伙伴", "description": "Expert Interprint 提供企业印刷服务，涵盖数码印刷、胶印、贴纸与标签、包装及企业礼品，并支持项目协调与多地点配送。", "menuAria": "打开菜单", "lineAria": "通过 LINE 联系我们", "heroAlt": "Expert Interprint 印刷案例", "workAlt": "印刷案例", "mailSubject": "企业印刷报价申请"}};
 
     const i18nTextNodes = [];
@@ -953,9 +1055,12 @@
       const heroImg = document.querySelector('header#home img[alt]');
       if (heroImg) heroImg.setAttribute('alt', meta.heroAlt);
 
-      document.querySelectorAll('#works .work-card img').forEach((img, index) => {
-        img.setAttribute('alt', `${meta.workAlt} ${index + 1}`);
+      document.querySelectorAll('#works .portfolio-open').forEach(button => {
+        const alt = button.dataset['alt' + lang[0].toUpperCase() + lang.slice(1)];
+        button.querySelector('img').alt = alt;
+        button.setAttribute('aria-label', button.querySelector('.portfolio-title').textContent);
       });
+      document.dispatchEvent(new Event('portfolio-language-change'));
 
       document.querySelectorAll('a[href^="mailto:expertinterprint@gmail.com"]').forEach(link => {
         link.href = `mailto:expertinterprint@gmail.com?subject=${encodeURIComponent(meta.mailSubject)}`;
